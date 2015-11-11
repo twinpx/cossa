@@ -1140,6 +1140,10 @@ h2 a.expert, h1 a.expert {color:#b87100;}
 .articles_list .intro {
 	font-size:11pt;
 	margin-bottom:12px;}
+.articles_list .text p a,
+.articles_list .intro p a {
+  text-decoration: underline;
+}
 .info_bar {
 	color:#b0b0b0;
 	font-size:9pt;}
@@ -1340,6 +1344,9 @@ h2 a.expert, h1 a.expert {color:#b87100;}
 	background-color:#e14d4d;
 	border-color:#e14d4d;
 	color:#ffffff;}
+#articles_list .text p a {
+  text-decoration: underline;
+}
 #articles_list .text .label {margin-top:3px;}
 .info_bar a.hide_tags, .info_bar a.hide_tags:hover {
 	border-bottom:1px dashed #b0b0b0;
@@ -1658,6 +1665,9 @@ table.table {
 	float:right;
 	width:467px;
 	margin-bottom:30px;}
+#news_list .items_block .text p a {
+  text-decoration: underline;
+}
 #news_list .items_block .info_bar, #search_list .items_block .info_bar {margin:8px 0 2px 0;}
 #news_list .items_block h2, #search_list .items_block h2 {
 	margin:0 0 11px 0;
