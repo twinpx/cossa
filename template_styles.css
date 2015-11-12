@@ -1438,8 +1438,7 @@ a.fav:hover {background-position:-22px -189px;}
 .item_hover .fav {visibility:visible;}
 
 #article_item {}
-#article_item .intro .text {}
-.intro {
+#article_item .intro .text{
 font-size:13pt;
 font-weight:bold;}
 #article_item .intro .info_bar, #news_item .intro .info_bar, #event_item .intro .info_bar, #vacancies_item .intro .info_bar {margin-bottom:30px;}
