@@ -1,0 +1,20 @@
+<div id="top_menu_more">
+	<div class="relative">
+		<ul>
+			<li>
+				<!--#if expr="$page='vocabulary'" --><span>Словарь</span>
+				<!--#elif expr="$page='vocabulary_item'" --><a href="/vocabulary/" class="current">Словарь</a>
+				<!--#else --><a href="/vocabulary/">Словарь</a><!--#endif -->
+			</li>
+			<li>
+				<!--#if expr="$page='about'" --><span>О проекте</span>
+				<!--#else --><a href="/about/">О проекте</a><!--#endif -->
+			</li>
+			<li>
+				<!--#if expr="$page='ads'" --><span>Рекламодателям</span>
+				<!--#else --><a href="/ads/">Рекламодателям</a><!--#endif -->
+			</li>
+		</ul>
+		<a href="#" class="visible"></a>
+	</div>
+</div>

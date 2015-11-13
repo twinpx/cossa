@@ -1,0 +1,96 @@
+<!--#set var="page" value="create_event" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+<script src="/js/jscript.js" type="text/javascript"></script>
+<title>Тест формы</title>
+<style>
+.no_text {visibility:hidden;}
+.attention {color:#cc0000;}
+.attention .no_text {visibility:visible;}
+.buttons {margin-top:20px;}
+</style>
+</head>
+
+<body>
+	<iframe width="500" height="500" id="iframe"></iframe>
+	<form action="" method="get" enctype="multipart/form-data">
+		<div class="form_field">
+			<h5>Заголовок <span class="no_text">?</span></h5>
+			<input type="text" name="heading" class="text" value="" />
+		</div>
+		<div class="form_field">
+			<h5>Адрес <span class="no_text">?</span></h5>
+			<input type="text" name="address" class="text" value="" />
+		</div>
+		<div class="form_field">
+			<h5>Сайт <span class="no_text">?</span></h5>
+			<input type="text" name="address" class="text web" value="" />
+		</div>
+		<div class="form_field">
+			<h5>Телефон <span class="no_text">?</span></h5>
+			<input type="text" name="address" class="text phone" value="" />
+		</div>
+		<div class="form_field">
+			<h5>Файлы <span class="no_text">?</span></h5>
+			<input type="file" name="images[]" class="text" value="" multiple />
+		</div>
+		<div class="form_field entry">
+			<h5>Текст поста <span class="no_text">?</span></h5>
+			<textarea name="entry" cols="80" rows="20" id="textarea"></textarea>
+		</div>
+		<div class="buttons">
+			<div class="submit"><input type="submit" value="Отправить" class="submit" name="submit_button" /></div>
+			<div id="pos" style="width:100px; height:100px; background:pink;"></div>
+		</div>
+	</form>
+	
+<h3>Улучшения</h3>
+<ul>
+	<li>Отправка по Ctrl+Enter из textarea, не работает в IE, Chrome;</li>
+	<li>Не отправлять если в textarea только пробелы или переводы строки, но нет текста.</li>
+</ul>
+<script type="text/javascript">
+//alert(document.getElementById("iframe").contentWindow);
+function getCaretPos(obj)
+{
+  obj.focus();
+  
+  if(obj.selectionStart) return obj.selectionStart;//Gecko
+  else if (document.selection)//IE
+  {
+    var sel = document.selection.createRange();
+    var clone = sel.duplicate();
+    sel.collapse(true);
+    clone.moveToElementText(obj);
+    clone.setEndPoint('EndToEnd', sel);
+    return clone.text.length;
+  }
+  
+  return 0;
+}
+function setCaretPosition(ctrl, pos)
+{
+ 
+	if(ctrl.setSelectionRange)
+	{
+		ctrl.focus();
+		ctrl.setSelectionRange(pos,pos);
+	}
+	else if (ctrl.createTextRange) {
+		var range = ctrl.createTextRange();
+		range.collapse(true);
+		range.moveEnd('character', pos);
+		range.moveStart('character', pos);
+		range.select();
+	}
+}
+setCaretPosition(document.getElementById("textarea"));
+$("#pos").click(function() {setCaretPosition(document.getElementById("textarea"), 20);});
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<div id="top_navigation">
+	<div id="top_navigation_fixed">
+		<div class="page">
+			<!--#include virtual="/blocks/logo.html"-->
+			<!--#include virtual="/blocks/top_menu.html"-->
+			<!--#include virtual="/blocks/top_menu_more.html"-->
+			<!--#include virtual="/quest/blocks/quest-link.html"-->
+			<!--#include virtual="/digital/blocks/slogan.html"-->
+<style>
+.b-ok-link {
+	color: #f3892e;
+	font-size: 18pt;
+	font-weight: bold;
+	padding: 0;
+	float: right;
+	line-height: 1.1;
+	text-transform: uppercase;
+	width: 50px;
+	height: 50px;
+	background: url(/images/ok/link.jpg) no-repeat 0 0;
+	margin: -3px -4px 0 0;
+}
+.b-digital-link {
+	float: right;
+	display: inline-block;
+	width: 48px;
+	height: 54px;
+	background: url(/images/digital/submenu-logo.png) no-repeat 0 0;
+	vertical-align: top;
+	margin: -3px 4px -18px 0;
+}
+.b-quest-link {
+	float: right;
+	display: inline-block;
+	vertical-align: top;
+	margin: 3px 0 -18px 0;
+	width: 46px;
+	height: 46px;
+	background: url(/quest/images/sma_icon.png) no-repeat 0 0;
+}
+#top_navigation.fixed .b-ok-link,
+#top_navigation.fixed .b-digital-link,
+#top_navigation.fixed .b-quest-link {
+	display: none;
+}
+</style>
+			<div class="clear"></div>
+			<!--#include virtual="/blocks/submenu_panel.html"-->
+		</div>
+	</div>
+	<div id="top_navigation_spacer"></div>
+</div>

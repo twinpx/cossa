@@ -1,0 +1,63 @@
+<!--#set var="page" value="create_tesis" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section">
+						<h1>Создание термина</h1>
+						<form action="" method="get" enctype="multipart/form-data">
+							<div class="form_field">
+								<h5>Заголовок <span class="no_text">?</span></h5>
+								<div class="note"><div>Заголовок не должен превышать 100 символов. </div></div>
+								<input type="text" name="heading" class="text" value="" />
+							</div>
+							<div class="form_field transcription">
+								<h5>Транскрипция <span class="no_text">?</span></h5>
+								<div class="note"><div>Транскрипция не должна превышать 200 символов. Интересно узнать как слово выглядит на языке-основателе, например слово Инсайт (с англ. insight [’in’sait]) — проницательность, способность проникновения в суть.</div></div>
+								<textarea name="intro" cols="80" rows="5"></textarea>
+							</div>
+							<div class="form_field entry">
+								<h5>Текст поста <span class="no_text">?</span></h5>
+								<textarea name="entry" cols="80" rows="20"></textarea>
+								<div class="draft_note">Черновик автоматически сохранён в 11:13:58 PM</div>
+							</div>
+							<div class="form_field">
+								<h5>Связанная отрасль <span class="no_text">?</span></h5>
+								<div class="note"><div>Что такое связанная отрасль? вопрос к Лизе</div></div>
+								<input type="text" name="tags" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<h5>Направление <span class="no_text">?</span></h5>
+								<div class="note"><div>Что такое Направление? вопрос к Лизе</div></div>
+								<input type="text" name="tags" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<h5>Синонимы <span class="no_text">?</span></h5>
+								<div class="note"><div>Напишите, с чем ассоциируется ваш термин</div></div>
+								<input type="text" name="tags" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<h5>Ссылка в википедии <span class="no_text">?</span></h5>
+								<input type="text" name="tags" class="text" value="" />
+							</div>
+							<div class="buttons">
+								<div class="note"><div>Материал отправлен в редакцию</div></div>
+								<div class="submit"><input type="submit" value="Отправить" class="submit" /></div>
+								<div class="preview"><input type="submit" value="Просмотр" class="preview" /></div>
+								<div class="clear"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!--#set var="page" value="create_event" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section">
+						<h1>Создание события</h1>
+						<div id="preview_section">
+							<h2>Предпросмотр</h2>
+							<div id="event_item">
+								<div class="intro">
+									<div class="info_bar">
+										<a href="" class="author">Василий Лебедев</a>
+										<span class="date">21 апреля, 16:00, <span class="view">605 просмотров</span></span>						
+										<span class="rating up">2030</span>
+									</div>
+									<h1>Открытие дверей курсов «ИКРа»</h1>
+									<div class="text">
+										<div class="image"><img src="/upload/gallery/7.jpg" width="400" height="200" alt="Открытие дверей курсов «ИКРа»" /></div>
+										<div class="event_info">
+											<div class="date"><span class="num">12</span>июня</div>
+											<div class="time">начало в<span class="num">10:00</span></div>
+										</div>
+									</div>
+									<div class="clear"></div>
+									<!--#include virtual="/blocks/visit_button.html"-->
+									<div class="share">Вконтакте, Tweet, facebook like-buttons here</div>
+								</div>
+								<div class="separator"><span></span></div>
+								<div class="info_block">
+									<div class="place">
+										<h6>Место</h6>
+										<div class="name">Кафе Чернышевский</div>
+										<div class="address">Дербеневская наб. 13<br />+7 (495) 564 3343</div>
+										<div class="web"><a href="http://www.ikraikra.ru" class="external">www.ikraikra.ru</a></div>
+									</div>
+									<div class="company"><h6>Организатор</h6><a href="">Red Keds Creative Agency</a></div>
+									<div class="price"><h6>Стоимость</h6>70 000 руб.</div>
+									<div class="duration"><h6>Длительность курса</h6>4 месяца</div>
+									<div class="clear"></div>
+								</div>
+								
+								<div class="main">
+									<p>В целом, материалы, которыми делятся пользователи производят примерно 10% всего интернет-трафика и 31% переходов на сайты из внешних ресурсов. Поиск по-прежнему генерирует в два раза больше трафика.</p>
+									<div class="description">
+										<h5>Описание</h5>
+										<p>Только часть маркетологов в США делегирует digital-активности отдельным агентствам. Большинство предпочитает работать с агентствами полного цикла.</p>
+										<p>Digital все больше внедряется в общую инфраструктуру маркетинга, заставляя крупные агентства создавать у себя специализированные отделы. В отношении же digital-агентств мало кто испытывает оптимизм. Только треть маркетологов считает, что digital-агентства выживут в текущем виде.</p>
+									</div>
+									<div class="presenters">
+										<h3 class="block_header">Лекторы</h3>
+										<div class="item">
+											<div class="userpic"><a href="/personal/"><img src="/upload/user/3.jpg" width="70" height="70" alt="" /></a></div>
+											<h6><a href="/personal/">Василий Лебедев</a></h6>
+											<p>Соучредитель креативного агентства Red Keds и обучающего курса ИКРА</p>
+										</div>
+										<div class="item">
+											<div class="userpic"><a href="/personal/"><img src="/upload/user/2.jpg" width="70" height="70" alt="" /></a></div>
+											<h6><a href="/personal/">Виталий Быков</a></h6>
+											<p>Специалист по апатажу и организации флешмобов</p>
+										</div>
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<form action="" method="get" enctype="multipart/form-data">
+							<div class="form_field">
+								<h5>Заголовок <span class="no_text">?</span></h5>
+								<div class="note"><div>Заголовок не должен превышать 100 символов. </div></div>
+								<input type="text" name="heading" class="text" value="" />
+							</div>
+							<div class="form_field teaser_img">
+								<h5>Тизер <span class="no_text">?</span></h5>
+								<div class="note"><div>Красивые, яркие картинки помогут сделать ваш пост заметным и привлекательным.</div></div>
+								<div class="empty"><div><p>Изображение не должно быть меньше чем 200 x 200 пикселей и не превышать 1 MB</p></div></div>
+								<div class="preview"><img src="/upload/gallery/3.jpg" width="200" height="200" alt="" /></div>
+								<div class="file"><input type="file" name="teaser_img" /></div>
+								<label class="checkbox"><input type="checkbox" name="tease" /> Оставить тизер в новости</label>
+							</div>
+							<div class="form_field date_field">
+								<h5>Начало <span class="no_text">?</span></h5>
+								<span class="date_field">
+									<select name="beginning_day" class="day">
+										<option>20</option>
+										<option>21</option>
+										<option>21</option>
+									</select>
+									<select name="beginning_month" class="month">
+										<option value="june">июня</option>
+										<option value="july">июля</option>
+										<option value="august">августа</option>
+									</select>
+									<select name="beginning_year" class="year">
+										<option>2011</option>
+										<option>2012</option>
+										<option>2013</option>
+									</select>
+								</span>
+								<span class="time">
+									<select name="beginning_hour" class="hour">
+										<option>11</option>
+										<option>12</option>
+										<option>13</option>
+									</select>
+									<span class="colon">:</span>
+									<select name="beginning_minutes" class="minutes">
+										<option>00</option>
+										<option>15</option>
+										<option>30</option>
+									</select>
+								</span>
+							</div>
+							<div class="form_field date_field">
+								<h5>Окончание <span class="no_text">?</span></h5>
+								<span class="date_field">
+									<select name="ending_day" class="day">
+										<option>20</option>
+										<option>21</option>
+										<option>21</option>
+									</select>
+									<select name="ending_month" class="month">
+										<option value="june">июня</option>
+										<option value="july">июля</option>
+										<option value="august">августа</option>
+									</select>
+									<select name="ending_year" class="year">
+										<option>2011</option>
+										<option>2012</option>
+										<option>2013</option>
+									</select>
+								</span>
+								<span class="time">
+									<select name="ending_hour" class="hour">
+										<option>11</option>
+										<option>12</option>
+										<option>13</option>
+									</select>
+									<span class="colon">:</span>
+									<select name="ending_minutes" class="minutes">
+										<option>00</option>
+										<option>15</option>
+										<option>30</option>
+									</select>
+								</span>
+							</div>
+							<div class="two">
+								<div class="form_field">
+									<h5>Город <span class="no_text">?</span></h5>
+									<input type="text" name="heading" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<h5>Место <span class="no_text">?</span></h5>
+									<input type="text" name="heading" class="text" value="" />
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="form_field">
+								<h5>Адрес <span class="no_text">?</span></h5>
+								<input type="text" name="address" class="text" value="" />
+							</div>
+							<div class="two">
+								<div class="form_field">
+									<h5>Сайт <span class="no_text">?</span></h5>
+									<input type="text" name="web" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<h5>Телефон <span class="no_text">?</span></h5>
+									<input type="text" name="phone" class="text" value="" />
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="form_field">
+								<h5>Организатор <span class="no_text">?</span></h5>
+								<input type="text" name="address" class="text" value="" />
+							</div>
+							<div class="form_field price">
+								<h5>Стоимость <span class="no_text">?</span></h5>
+								<input type="text" name="price" class="text" value="" />
+								<select name="currency">
+									<option value="rub">руб.</option>
+									<option value="dol">$</option>
+									<option value="euro">&euro;</option>
+								</select>
+							</div>
+							<hr />
+							<div class="form_field entry">
+								<h5>Текст поста <span class="no_text">?</span></h5>
+								<textarea name="entry" cols="80" rows="20"></textarea>
+								<div class="draft_note">Черновик автоматически сохранён в 11:13:58 PM</div>
+							</div>
+							<div class="lecturer_fields">
+								<div class="item">
+									<div class="pad">
+										<div class="form_field photo">
+											<img src="/images/forms/empty_48x48.gif" width="48" height="48" alt="" class="image" />
+											<input type="file" name="lecturer_photo" class="file" />
+											<a href="#" class="delete_photo">Удалить</a>
+										</div>
+										<div class="form_field"><input type="text" name="lecturer_name" value="" placeholder="Имя и фамилия лектора" class="text" /></div>
+										<div class="form_field"><textarea name="lecturer_info" rows="2" cols="10" placeholder="Краткая информация"></textarea></div>
+										<a href="#" class="delete_item">Удалить</a>
+									</div>
+								</div>
+								<a href="#" class="add">Добавить</a>
+								<div class="clear"></div>
+							</div>
+							<div class="form_field">
+								<h5>Теги <span class="no_text">?</span></h5>
+								<div class="note"><div>Теги заполняются так: маркетинг, Гарри Поттер, менеджер и т.д.</div></div>
+								<input type="text" name="tags" class="text" value="" />
+							</div>
+							<div class="buttons">
+								<div class="note"><div>Материал отправлен в редакцию</div></div>
+								<div class="submit"><input type="submit" value="Отправить" class="submit" /></div>
+								<div class="edit"><input type="submit" value="Редактировать" class="submit" /></div>
+								<div class="clear"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

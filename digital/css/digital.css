@@ -1,0 +1,290 @@
+#logo {
+	margin-top: -37px;
+}
+#logo a,
+#logo span {
+    background: url(/images/digital/cossa-digital-logo.gif) no-repeat 0 0 !important;
+	width: 128px;
+	height: 76px;
+}
+.b-slogan {
+	color: #000;
+	font-size: 9pt;
+	padding: 0;
+	float: right;
+	line-height: 1.1;
+	text-transform: uppercase;
+	margin-top: -14px;
+}
+.b-slogan strong {
+	font-size: 17pt;
+}
+.b-slogan-date {
+	color: #c144ff;
+}
+a.b-slogan:hover {
+	color: #000;
+}
+
+.b-top-banner {
+	margin-top: 20px;
+	display: block;
+	position: relative;
+}
+.b-top-banner__text {
+	border: 5px solid #fff;
+	background: #000;
+	color: #fff;
+	padding: 16px 20px;
+	font-size: 11pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 10;
+}
+.b-top-banner__text a,
+.b-top-banner__text a:hover {
+	color: #c144ff;
+	text-decoration: underline;
+}
+
+.b-top-banner__networks {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 10;
+	text-align: right;
+	font-size: 7.5pt;
+}
+.b-top-banner__networks__links {
+	margin-bottom: 12px;
+}
+.b-top-banner__networks__links__heading {
+	margin-bottom: 10px;
+}
+.b-top-banner__networks__links__item {
+	display: inline-block;
+	margin-right: 5px;
+	background: url(/images/digital/networks.gif) no-repeat 0 0;
+	width: 18px;
+	height: 18px;
+}
+.b-top-banner__networks__links__item.i-facebook {
+	background-position: 0 -1px;
+}
+.b-top-banner__networks__links__item.i-twitter {
+	background-position: -27px 0;
+	width: 24px;
+	height: 19px;
+}
+.b-top-banner__networks__links__item.i-linked-in {
+	background-position: -61px 0;
+	width: 21px;
+	height: 21px;
+}
+
+.b-top-banner__networks__buttons__heading {
+	margin-bottom: 8px;
+}
+.b-top-banner__networks__buttons__item {
+	float: left;
+	margin-left: 10px;
+}
+
+#submenu_panel {
+	margin-top: 0;
+	padding-top: 5px;
+}
+
+#submenu {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#submenu .item {
+	display: inline-block;
+	vertical-align: middle;
+	width: 104px;
+	text-align: center;
+}
+.b-submenu-logo__link {
+	position: absolute;
+	top: -28px;
+	right: 0;
+}
+#submenu .current {
+	padding: 2px 8px 5px;
+	color: #d7d7d7;
+	font-weight: normal;
+	background: url(/images/digital/submenu-current-decor.gif) no-repeat center bottom;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-khtml-box-sizing: content-box;
+	height: 40px;
+	margin-bottom: -25px;
+}
+.b-digital-link {
+	float: right;
+	display: inline-block;
+	width: 48px;
+	height: 54px;
+	background: url(/images/digital/submenu-logo.png) no-repeat 0 0;
+	vertical-align: top;
+	margin: -3px 4px -18px 0;
+}
+
+#top_navigation.fixed .b-slogan,
+#top_navigation.fixed .b-top-banner {
+    display: none;
+}
+#top_navigation.fixed #submenu_panel {
+}
+
+.b-hr {
+	border-top: 8px solid #000;
+	margin: 30px 0 40px 0;
+}
+
+#registration-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 0;
+    width: 525px;
+}
+
+#registration-form h2 a {
+	color: #C144FF;
+	text-decoration: underline;
+	font-weight: bold;
+}
+#registration-form h2 a:hover {
+	text-decoration: none;
+}
+
+#registration-form h2 a,
+[href="#reg-jur"] {
+    float: right;
+}
+
+#gossip.b-suggest-gossip {
+	border: 8px solid #000;
+}
+
+#gossip .buttons .pay {
+	background: url(/images/but_images.png) no-repeat scroll -38px -1718px;
+    display: inline-block;
+    height: 32px;
+    width: 112px;
+}
+#gossip .buttons .pay:hover {
+	background-position: -38px -1751px;
+}
+#gossip .buttons .pay:active {
+	background-position: -38px -1784px;
+}
+
+
+
+#program ul{ overflow:hidden; margin:0 0 40px;}
+#program li{ overflow:hidden; margin:0 0 10px;}
+#program #th_1 { margin-left: 142px; padding: 17px 0px 0px 0px; background:#000; width:519px; min-height:34px; float: left; text-align: center;}
+#program #th_1 p { font:bold 16px/16px Arial, Helvetica, sans-serif; color:#fff;}
+#program #th_2 { margin-left: 3px; padding: 17px 0px 0px 0px; background:#000; width:244px; min-height:34px; float: left; text-align: center;}
+#program #th_2 p { font:bold 16px/16px Arial, Helvetica, sans-serif; color:#fff;}
+
+/* --- PROGRAM NEW --- */
+
+#program { padding : 1px 0; }
+#program ul { margin : 0; margin-left : 35px; }
+#program ul li { margin : 00px 0; }
+
+.pr-schedule-block { width : 903px; _border : 1px solid #ff0000; overflow : hidden; background : #ffffff; }
+.pr-schedule-border { border-left : 1px dotted #000000; border-right : 1px dotted #000000; }
+
+.pr-schedule-navi { font-size : 18px; font-weight : bold; margin : 25px 0 15px 0; }
+.pr-schedule-navi a { text-decoration : none; color : #000000; background : url(../images/program/navi.png) no-repeat 0 0; }
+.pr-schedule-navi a span { border-bottom : 1px dashed #000000; }
+.pr-schedule-navi a[href='#prev'] { padding-left : 20px; background-position : left 4px; float : left; display : none; }
+.pr-schedule-navi a[href='#next'] { padding-right : 20px; background-position : right -16px; float : right; }
+
+.pr-schedule-table { font-family : Arial, sans-serif; color : #000000; width : 1475px; }
+.pr-schedule-row { border-top : 1px solid #000000; border-bottom : 1px solid #000000; position : relative; overflow : hidden; }
+.pr-schedule-column { float : left; position : relative; margin-bottom : -1000px; padding-bottom : 1000px; border-right : 1px dotted #000000; background : #ffffff; }
+.pr-schedule-column.content:hover { background : #fefefe; cursor : pointer; }
+.pr-schedule-column:last-child { border-right : none; }
+.pr-schedule-column.pr-schedule-time { width : 45px; border-left : none; position : relative; z-index : 100; }
+.pr-schedule-column.pr-schedule-time sup { font-size : 9px; position : relative; top : 3px; }
+.pr-schedule-column.pr-schedule-room { width : 285px; line-height : 18px; }
+.pr-schedule-header { color :#ffffff; text-align : center; }
+.pr-schedule-header .pr-schedule-column { height : 33px; font-size : 13px; line-height : 37px; font-weight : bold; text-transform : uppercase; border-color : #ffffff; background-color : #000000; }
+.pr-schedule-header .pr-schedule-column.pr-schedule-time { background-image : url(../images/program/clock.png); background-repeat : no-repeat; background-position : center 8px; }
+.pr-schedule-teaser .pr-schedule-column.pr-schedule-room { font-size : 11px; line-height : 15px; }
+.pr-schedule-column .pr-schedule-wrapper { padding : 10px 15px; }
+.pr-schedule-column .pr-schedule-wrapper h3 span{ display: block; border-top: 2px solid #000; margin-top: 3px;}
+#icon_platc img{ float:left; padding-top: 10px; padding-left: 16px; padding-right: 8px;}
+#icon_platc h3{ padding-top: 18px;}
+.pr-schedule-column.pr-schedule-time .pr-schedule-wrapper { padding : 10px 7px; }
+.pr-schedule-column .pr-schedule-wrapper p { margin : 10px 0; }
+.pr-schedule-column .pr-schedule-wrapper h3 { font-size : 18px; line-height : 18px; margin : 15px 0; }
+.pr-schedule-table .pr-lecture li .pr-lecture-time { position : absolute; font-size : 9px; line-height : 18px; width : 35px; text-align : right; margin : 16px 0; margin-left : -50px; }
+.pr-schedule-table .pr-lecture > ul { display : none; }
+.pr-schedule-column .pr-schedule-wrapper h3.pr-schedule-icon { padding : 2px 0 2px 35px; background : url(../images/program/icon.png) no-repeat 0 0; margin : 13px 0; }
+.pr-schedule-column .pr-schedule-wrapper h3.pr-schedule-icon.pr-schedule-icon.icon-coffee { background-position : 0 0; }
+.pr-schedule-column .pr-schedule-wrapper h3.pr-schedule-icon.pr-schedule-icon.icon-lunch { background-position : 0 -21px; }
+
+.pr-fixed {position: static;}/*{ top : 0; z-index : 1100; }*/
+.pr-fixed .pr-schedule-block:first-child { width : 905px; }
+
+.pr-clip { float : left; }
+.pr-clip > div { left : 0;
+	transition : all 0.5s;
+	-o-transition : all 0.5s;
+	-ms-transition : all 0.5s;
+	-moz-transition : all 0.5s;
+	-webkit-transition : all 0.5s;
+}
+
+.pr-schedule-details { position : fixed; width : 450px; left : 50%; margin-left : -225px; top : 50%; z-index : 1100; display : none; }
+.pr-schedule-details .pr-details-content { position : relative; z-index : 1200; background : #ffffff; border : 4px solid #000000; }
+.pr-schedule-details .pr-details-content a[href='#close'] { position : absolute; width : 23px; height : 23px; background : url(../images/program/close.png) no-repeat 0 0; top : 15px; right : 15px; }
+
+.pr-schedule-details .pr-details-shadow { position : absolute; width : 100%; height : 100%; background : url(../images/program/shadow.png) repeat 0 0; top : 20px; left : 20px; z-index : 1150; }
+
+.pr-details-wrapper { padding : 15px 35px; }
+.pr-details-content p { margin : 15px 0; font-size : 16px; line-height : 24px; }
+.pr-details-content h3 { font-size : 30px; line-height : 30px; margin : 25px 0; }
+.pr-details-content ul { margin-left : 0 !important; }
+.pr-details-content ul.pr-theme { border-top : 2px solid #000000; margin : 15px 0 !important; list-style : circle !important; }
+.pr-details-content ul.pr-theme li { margin : 15px 0 !important; font-size : 13px; line-height :18px; margin-left : 25px !important; overflow : visible !important; }
+.pr-details-content .pr-lecture-time { font-size : 12px; line-height : 16px; margin : 15px 0; display : block; }
+
+.nav-container {}
+.nav-container { position:absolute; left:0; top:0;}
+
+.panel_reg {
+	z-index: 42;	
+	width: 100%;	
+	position: relative; padding:11px 0 9px 0;  border-bottom:1px solid #555658; background: #FFF; display:none;
+}
+.sticky {
+	position: fixed;
+	top: 15px;
+	display:block;
+	
+	animation:thedrop 1s 1;
+	-moz-animation:thedrop 1s 1;
+	-webkit-animation:thedrop 1s 1;
+}
+
+.cent {width:940px; margin:0 auto; position:relative;}
+.panel_reg .btn_reg {float:left; background: url(../images/details/reg_bg.gif) repeat left top; padding:0 2px 2px 0;}
+.panel_reg .btn_reg a { float:left; background:#be48fc; padding:0 18px; height:38px; line-height:38px; font-size:12px; color:#FFFFFF; font-weight:bold; text-transform:uppercase; text-decoration:none; margin:-2px 0 0 -2px;}
+.panel_reg .btn_reg:hover {padding:0;}
+.panel_reg .btn_reg a:hover {margin:0;}
+.panel_reg .tet {float:left; font-size:14px; font-weight:bold; line-height:40px; padding:0 0 0 10px; position:absolute; left:153px; top:0;}
+
+.pr-schedule-table .pr-lecture ul {
+	display: none;
+}

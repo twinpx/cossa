@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>source regExp</title>
+</head>
+
+<body>
+<input type="text" value="" id="input" />
+<button id="button">Button</button>
+
+<script>
+var sourceRegexp = /^(([a-z]+:\/\/)?[-a-zа-я0-9]+\.)+[a-zа-я]{2,5}$/i;
+var input = document.getElementById("input");
+var button = document.getElementById("button");
+
+button.onclick = function() {
+	var value = input.value;
+	value = sourceRegexp.test(value);
+	console.log(value);
+};
+</script>
+</body>
+</html>

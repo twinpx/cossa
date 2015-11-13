@@ -1,0 +1,54 @@
+<div id="top_menu">
+
+			<span class="sep"></span>
+			
+			<!--#if expr="$page='articles'" --><span class="item articles">Статьи</span>
+			<!--#elif expr="$page='articles_item'" --><a href="/articles/" class="current item articles">Статьи</a>
+			<!--#else --><a href="/articles/" class="item articles">Статьи</a><!--#endif -->
+			
+			<span class="sep"></span>
+						
+			<!--#if expr="$page='news'" --><span class="item news">Новости</span>
+			<!--#elif expr="$page='news_item'" --><a href="/news/" class="current item news">Новости</a>
+			<!--#else --><a href="/news/" class="item news">Новости</a><!--#endif -->
+			
+			<span class="sep"></span>
+						
+			<!--#if expr="$page='events'" --><span class="item events">События</span>
+			<!--#elif expr="$page='events_item'" --><a href="/events/" class="current item events">События</a>
+			<!--#else --><a href="/events/" class="item events">События</a><!--#endif -->
+			
+			<script type="menu">
+			<span class="sep"></span>
+			
+			<!--#if expr="$page='education'" --><span class="item education">Обучение</span>
+			<!--#elif expr="$page='education_item'" --><a href="/education/" class="current item education">Обучение</a>
+			<!--#else --><a href="/education/" class="item education">Обучение</a><!--#endif -->
+			
+			<span class="sep"></span>
+			
+			<!--#if expr="$page='bazz'" --><span class="item bazz">Живая лента</span>
+			<!--#else --><a href="/bazz/" class="item bazz">Живая лента</a><!--#endif -->
+			</script>
+			
+			<span class="sep"></span>
+			
+			<!--#if expr="$page='vacancies'" --><span class="item vacancies">Вакансии</span>
+			<!--#elif expr="$page='vacancies_item'" --><a href="/vacancies/" class="current item vacancies">Вакансии</a>
+			<!--#else --><a href="/vacancies/" class="item vacancies">Вакансии</a><!--#endif -->
+			
+			<span class="sep"></span>
+			
+			<!--#if expr="$page='rating'" --><span class="item ratings">Рейтинги</span>
+			<!--#elif expr="$page='rating_item' || $page='rating_person' || $page='rating_facebook'" --><a href="/rating/" class="current item ratings">Рейтинги</a>
+			<!--#else --><a href="/rating/" class="item ratings">Рейтинги</a><!--#endif -->
+						
+			<span class="sep"></span>
+			
+			<!--#if expr="$page='sandbox'" --><span class="item sandbox">Песочница</span>
+			<!--#elif expr="$page='sandbox__item'" --><a href="/sandbox/" class="current item sandbox">Песочница</a>
+			<!--#else --><a href="/sandbox/" class="item sandbox">Песочница</a><!--#endif -->
+			
+			<span class="sep"></span>
+			
+		</div>

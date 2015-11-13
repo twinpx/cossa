@@ -1,0 +1,1 @@
+a:1:{s:4:"file";a:5:{s:4:"name";s:8:"2787.jpg";s:4:"type";s:10:"image/jpeg";s:8:"tmp_name";s:14:"/tmp/php14z60n";s:5:"error";i:0;s:4:"size";i:33242;}}

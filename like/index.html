@@ -1,0 +1,710 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Cossa.ru, маркетинг, digital" />
+<meta name="description" content="Cossa.ru - информационный портал о маркетинге и коммуникациях в цифровой среде. Новые инструменты продвижения и оптимизация работы. Различные формы взаимодействия (SMM, вирусные видео, QR-коды, мобильный маркетинг) и аналитика (ROI, KPI, CPA, lead generation). Мы храним ценный опыт ошибок и успехов, которым делятся представители брендов и рекламных агентств, на своих страницах." />
+<link href="/bitrix/js/main/core/css/core.css?1320226399" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/reklam.teaser.list/templates/.default/style.css?1330545145" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/advise.list/templates/.default/style.css?1326974403" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/cossa/components/bitrix/menu/left.menu.new/style.css?1330534890" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/cossa/components/bitrix/menu/sub.menu.new/style.css?1330534892" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/search.title/templates/.default/style.css?1330544410" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/editor.last.news/templates/articles_block_new/style.css?1330535171" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/editor.last.news/templates/news_block_new/style.css?1330535173" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/editor.last.news/templates/vacancy_block_new/style.css?1330535175" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/last.sandbox/templates/.default/style.css?1330535232" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/last.sandbox/templates/events/style.css?1330535235" type="text/css" rel="stylesheet" />
+<link href="/bitrix/js/socialservices/css/ss.css?1313082139" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/cossa/styles.css?1340202275" type="text/css" rel="stylesheet" />
+<link href="like-buttons.css" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/cossa/template_styles.css?1317199120" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/bitrix/js/main/core/core.js?1320226403"></script>
+<script type="text/javascript">BX.message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI','COOKIE_PREFIX':'BITRIX_SM','bitrix_sessid':'d0d97a5364bc4108e5621219f0706a9e','JS_CORE_LOADING':'Загрузка...','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с'})</script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_ajax.js?1320226403"></script>
+<script type="text/javascript" src="/bitrix/js/main/session.js?1313082139"></script>
+<script type="text/javascript">
+bxSession.Expand(1440, 'd0d97a5364bc4108e5621219f0706a9e', false, 'a51de250eb8c2d9060df979124f76ce6');
+</script>
+<script type="text/javascript" src="http://vkontakte.ru/js/api/openapi.js"></script>
+<script type="text/javascript">
+BX.ready(function(){VK.init({apiId: '2672095'});});
+
+function BxVKAuthInfo(response) 
+{
+	var url_err = '/?auth_service_id=VKontakte&auth_service_error=1';
+	if(response.session) 
+	{
+		var url_post = '/?login=yes';
+		var url_ok = '/';
+		var data = {
+			"auth_service_id": "VKontakte",
+			"vk_session": response.session
+		};
+		BX.ajax.post(url_post, data, function(res){window.location = (res == "OK"? url_ok : url_err);});
+	} 
+	else 
+	{
+		window.location = url_err;
+	}
+}
+</script>
+<script type="text/javascript" src="/bitrix/components/cossa/search.title/script.js?1330544407"></script>
+<script type="text/javascript" src="/bitrix/js/socialservices/ss.js?1313082139"></script>
+<title>Cossa.ru — маркетинг в социальных медиа, digital-маркетинг, интегрированные маркетинговые коммуникации</title>
+<!--[if lte IE 7]>
+<link href="/css/ie6.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?34"></script>
+<script type="text/javascript">VK.init({apiId: 2472453, onlyWidgets: true});</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+<script src="jscript.js" type="text/javascript"></script>
+<!-- Google Analytics Social Button Tracking -->
+<script src="http://analytics-api-samples.googlecode.com/svn/trunk/src/tracking/javascript/v5/social/ga_social_tracking.js"></script>
+<script type="text/javascript">
+_ga.trackVkontakte = function(opt_pageUrl, opt_trackerName, opt_targetUrl) {
+	try {
+		if (VK && VK.Observer && VK.Observer.subscribe) {
+			if(window.console) {
+				console.log("observer");
+			}
+			VK.Observer.subscribe('widgets.like.liked', function() {
+				_gaq.push(_ga.getSocialActionTrackers_('vkontakte', 'like', opt_targetUrl, opt_pageUrl));
+			});
+			VK.Observer.subscribe('widgets.like.unliked', function() {
+				_gaq.push(_ga.getSocialActionTrackers_('vkontakte', 'unlike', opt_targetUrl, opt_pageUrl));
+			});
+		}
+	} catch (e) {}
+};
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2910684-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=238031246215307";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+window.fbAsyncInit = function() {
+	FB.init({appId: '164838206912600', status: true, cookie: true, xfbml: true});
+	_ga.trackFacebook();
+};
+
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0];
+	
+	if(!d.getElementById(id)){
+		js=d.createElement(s);
+		js.id=id;
+		js.src="//platform.twitter.com/widgets.js";
+		js.onload = _ga.trackTwitter;
+		fjs.parentNode.insertBefore(js,fjs);
+	}
+}(document,"script","twitter-wjs");
+
+
+</script>
+<div id="login_menu">
+  <div class="page">
+    <div class="item"><a id="login_link" href="#">Вход</a></div>
+    <div class="item"><a href="/registration/?backurl=/">Зарегистрироваться</a></div>
+  </div>
+</div>
+<div id="head">
+  <div class="page">
+    <div id="top_gallery">
+      <script type="text/javascript">var topTeaserInterval = 10000;</script>
+      <div class="items_block"> <a href="/bitrix/rk.php?id=116&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B116%5D+%5BTEASER%5D++%D0%91%D0%BE%D1%82%D1%8B+%D0%B2+%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D1%8F%D1%85+&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D0%25B1%25D0%25BE%25D1%2582%25D1%258B%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/32f/bot.jpg" width="197" height="120" border="0" /></span><span class="heading"> Боты в социальных сетях </span></a> <a href="/bitrix/rk.php?id=117&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B117%5D+%5BTEASER%5D+%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0+%D0%B2+Facebook&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D1%2580%25D0%25B5%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25BC%25D0%25B0%2B%25D0%25B2%2BFacebook%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/dc8/adsfb.jpg" width="197" height="120" border="0" /></span><span class="heading">Реклама в Facebook</span></a> <a href="/bitrix/rk.php?id=119&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B119%5D+%5BTEASER%5D+%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%89%D0%B8%D0%B9+Pinterest&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3DPinterest%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/82f/pin.jpg" width="197" height="120" border="0" /></span><span class="heading">Быстрорастущий Pinterest</span></a> <a href="/bitrix/rk.php?id=120&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B120%5D+%5BTEASER%5D+%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0+%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D1%2580%25D0%25B5%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25BC%25D0%25B0%2B%25D0%25B2%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D0%25B0%25D0%25BA%25D1%2582%25D0%25B5%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/624/vk.jpg" width="197" height="120" border="0" /></span><span class="heading">Реклама ВКонтакте</span></a> <a href="/bitrix/rk.php?id=135&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B135%5D+%5BTEASER%5D+%D0%9D%D0%B0%D1%83%D1%87%D0%B8%D1%82%D0%B5%D1%81%D1%8C+%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C+%D0%B2%D0%B8%D1%80%D1%83%D1%81%D0%BD%D0%BE%D0%B5+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D0%2592%25D0%25B8%25D1%2580%25D1%2583%25D1%2581%25D0%25BD%25D0%25BE%25D0%25B5%2B%25D0%25B2%25D0%25B8%25D0%25B4%25D0%25B5%25D0%25BE%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt="На Cossa.ru уже несколько раз публиковались мысли участников рынка о нехватке кадров на рынке digital-маркетинга Подробнее: http://cossa.ru/articles/234/2495/"  title="На Cossa.ru уже несколько раз публиковались мысли участников рынка о нехватке кадров на рынке digital-маркетинга Подробнее: http://cossa.ru/articles/234/2495/" src="/upload/rk/c26/virus.jpg" width="197" height="120" border="0" /></span><span class="heading">Научитесь делать вирусное видео</span></a>
+        <div class="clear"></div>
+      </div>
+      <div class="items_block"> <a href="/bitrix/rk.php?id=147&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B147%5D+%5BTEASER%5D+%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E+%D1%81+%D1%82%D0%BE%D0%BF-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%D0%BC%D0%B8+digital+%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%5BTAGS%5D%3D%25D0%2598%25D0%25BD%25D0%25B4%25D0%25B5%25D0%25BA%25D1%2581%2520%25D0%25B2%25D0%25BB%25D0%25B8%25D1%258F%25D0%25BD%25D0%25B8%25D1%258F%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580%26set_filter%3DY"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/4d8/inter.jpg" width="197" height="120" border="0" /></span><span class="heading">Интервью с топ-менеджерами digital агентств</span></a> <a href="/bitrix/rk.php?id=148&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B148%5D+%5BTEASER%5D+%D0%9A%D0%B0%D0%BA+%D0%BC%D0%B5%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F+%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C+%D0%BF%D0%BE%D0%B4+%D0%B2%D0%BE%D0%B7%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D0%B5%D0%BC+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0%3F&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%5BTAGS%5D%3D%25D0%259D%25D0%25BE%25D0%25B2%25D0%25B0%25D1%258F%2520%25D1%2581%25D1%2580%25D0%25B5%25D0%25B4%25D0%25B0%2520%25D0%25B6%25D0%25B8%25D0%25B7%25D0%25BD%25D0%25B8%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580%26set_filter%3DY"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/a72/webch.jpg" width="197" height="120" border="0" /></span><span class="heading">Как меняется жизнь под воздействием интернета?</span></a> <a href="/bitrix/rk.php?id=149&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B149%5D+%5BTEASER%5D+%D0%A7%D1%82%D0%BE+%D1%82%D0%B0%D0%BA%D0%BE%D0%B5+%D1%80%D0%B5%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%B8%D0%BD%D0%B3+%D0%B8+%D1%81+%D1%87%D0%B5%D0%BC+%D0%B5%D0%B3%D0%BE+%D0%B5%D0%B4%D1%8F%D1%82%3F&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D1%2580%25D0%25B5%25D1%2582%25D0%25B0%25D1%2580%25D0%25B3%25D0%25B5%25D1%2582%25D0%25B8%25D0%25BD%25D0%25B3%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/32e/retarget.jpg" width="197" height="120" border="0" /></span><span class="heading">Что такое ретаргетинг и с чем его едят?</span></a> <a href="/bitrix/rk.php?id=150&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B150%5D+%5BTEASER%5D+%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%8B%D0%B5+%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D1%8B%3A+%D0%BA%D0%B0%D0%BA+%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C+%D0%B8%D1%85+%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%255BTAGS%255D%3D%25D0%25B1%25D0%25B0%25D0%25BD%25D0%25BD%25D0%25B5%25D1%2580%26set_filter%3DY%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/90c/clicks.jpg" width="197" height="120" border="0" /></span><span class="heading">Рекламные баннеры: как использовать их эффективно</span></a> <a href="/bitrix/rk.php?id=151&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B151%5D+%5BTEASER%5D+%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0%3A+%D0%BA%D0%B0%D0%BA+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F+%D0%BF%D0%BE%D0%B4%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD+%D0%B8+%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%B0%D0%B5%D1%82+%D0%BB%D1%8E%D0%B4%D1%8F%D0%BC&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%5BTAGS%5D%3D%25D0%25A1%25D0%25BE%25D1%2586%25D0%25B8%25D0%25B0%25D0%25BB%25D1%258C%25D0%25BD%25D0%25B0%25D1%258F%2520%25D1%2580%25D0%25B5%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25BC%25D0%25B0%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580%26set_filter%3DY"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/416/rus.jpg" width="197" height="120" border="0" /></span><span class="heading">Социальная реклама: как Россия поднимается с колен и помогает людям</span></a>
+        <div class="clear"></div>
+      </div>
+      <div class="items_block"> <a href="/bitrix/rk.php?id=121&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B121%5D+%5BTEASER%5D+Google+Plus+%D0%BC%D0%BE%D0%B6%D0%B5%D1%82+%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F234%2F10391%2F"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/119/goglp.jpg" width="197" height="120" border="0" /></span><span class="heading">Google Plus может изменить интернет</span></a> <a href="/bitrix/rk.php?id=122&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B122%5D+%5BTEASER%5D+%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8+%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%D0%BE%D0%B2+%D0%B2+%D0%BD%D0%B8%D1%88%D0%B5%D0%B2%D1%8B%D1%85+%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D1%8F%D1%85&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F12451%2F"><span class='img'><img class='img_align' alt="Появляется все больше нишевых сайтов, которые не хуже, а иногда даже лучше могут справиться с задачами."  title="Появляется все больше нишевых сайтов, которые не хуже, а иногда даже лучше могут справиться с задачами." src="/upload/rk/d0a/brend.jpg" width="197" height="120" border="0" /></span><span class="heading">Возможности брендов в нишевых социальных сетях</span></a> <a href="/bitrix/rk.php?id=124&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B124%5D+%5BTEASER%5D+%D0%9B%D1%83%D1%87%D1%88%D0%B8%D0%B5+%D0%B7%D0%B0%D1%80%D1%83%D0%B1%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5+digital-%D0%B1%D0%BB%D0%BE%D0%B3%D0%B8&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F14924%2F"><span class='img'><img class='img_align' alt="Один из самых простых способов оставаться в курсе происходящего в любой сфере — читать тематические блоги специалистов отрасли"  title="Один из самых простых способов оставаться в курсе происходящего в любой сфере — читать тематические блоги специалистов отрасли" src="/upload/rk/04e/digi.jpg" width="197" height="120" border="0" /></span><span class="heading">Лучшие зарубежные digital-блоги</span></a> <a href="/bitrix/rk.php?id=125&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B125%5D+%5BTEASER%5D+%D0%98%D0%B4%D0%B5%D0%B8+%D0%B4%D0%BB%D1%8F+%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B0%D0%BF%D0%BE%D0%B2+%D0%B1%D1%83%D0%B4%D1%83%D1%89%D0%B5%D0%B3%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F234%2F15014%2F"><span class='img'><img class='img_align' alt="В этом материале Дмитрий Соловьев делится своими мыслями о том, какие сервисы могут быть востребованы в ближайшем будущем."  title="В этом материале Дмитрий Соловьев делится своими мыслями о том, какие сервисы могут быть востребованы в ближайшем будущем." src="/upload/rk/f07/idea.jpg" width="197" height="120" border="0" /></span><span class="heading">Идеи для стартапов будущего</span></a> <a href="/bitrix/rk.php?id=131&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B131%5D+%5BTEASER%5D+%D0%98%D0%9A%D0%A0%D0%B0.+%D0%9A%D0%B0%D0%BC%D0%BF%D1%83%D1%81+%D0%91%D0%B0%D1%80%D1%81%D0%B5%D0%BB%D0%BE%D0%BD%D0%B0&amp;goto=http%3A%2F%2Fcossa.ru%2Fevents%2F0%2F18380%2F"><span class='img'><img class='img_align' alt="Кампус предоставит возможность вырваться за пределы местного digital-рынка и на протяжении 10 дней поработать с иностранными специалистами, испанскими студентами и делать концепцию продвижения мирового масштаба"  title="Кампус предоставит возможность вырваться за пределы местного digital-рынка и на протяжении 10 дней поработать с иностранными специалистами, испанскими студентами и делать концепцию продвижения мирового масштаба" src="/upload/rk/b0a/ikra.jpg" width="197" height="120" border="0" /></span><span class="heading">ИКРа. Кампус Барселона</span></a>
+        <div class="clear"></div>
+      </div>
+      <div class="items_block"> <a href="/bitrix/rk.php?id=141&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B141%5D+%5BTEASER%5D+%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B9+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B+%D0%B2+Gmail&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F16848%2F"><span class='img'><img class='img_align' alt="В этом материале Cossa.ru познакомит вас с двумя сервисами, которые призваны помочь тем, кто хочет работать с письмами эффективнее"  title="В этом материале Cossa.ru познакомит вас с двумя сервисами, которые призваны помочь тем, кто хочет работать с письмами эффективнее" src="/upload/rk/3bf/mail_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">Инструменты для эффективной работы в Gmail</span></a> <a href="/bitrix/rk.php?id=142&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B142%5D+%5BTEASER%5D+6+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BE%D0%B2+%D0%BE+%D1%82%D0%BE%D0%BC%2C+%D0%BA%D0%B0%D0%BA+%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F+%D0%B2+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B5+%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F16957%2F"><span class='img'><img class='img_align' alt="На основании поведения человека сегодня можно делать прогнозы о том, каким будет наше будущее."  title="На основании поведения человека сегодня можно делать прогнозы о том, каким будет наше будущее." src="/upload/rk/e17/inter_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">6 советов о том, как проводить время в интернете продуктивно</span></a> <a href="/bitrix/rk.php?id=143&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B143%5D+%5BTEASER%5D+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B5+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0+%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D0%B5%D0%B9&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F149%2F17590%2F"><span class='img'><img class='img_align' alt="Cossa.ru предлагает вашему вниманию подборку российских систем, осуществляющих подобный мониторинг"  title="Cossa.ru предлагает вашему вниманию подборку российских систем, осуществляющих подобный мониторинг" src="/upload/rk/193/you_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">Российские системы мониторинга социальных сетей</span></a> <a href="/bitrix/rk.php?id=144&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B144%5D+%5BTEASER%5D+User+experience+%D0%BA%D0%B0%D0%BA+%D0%BD%D0%BE%D0%B2%D0%B0%D1%8F+%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F234%2F16817%2F"><span class='img'><img class='img_align' alt="Само понимание того, что стратегия должна строиться вокруг потребителя и его эмоций, переживаний, ожиданий и т.д., с одной стороны, вроде очевидно, но, с другой стороны, минимально применяемо на практике"  title="Само понимание того, что стратегия должна строиться вокруг потребителя и его эмоций, переживаний, ожиданий и т.д., с одной стороны, вроде очевидно, но, с другой стороны, минимально применяемо на практике" src="/upload/rk/818/ux_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">User experience как новая специализация</span></a> <a href="/bitrix/rk.php?id=145&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B145%5D+%5BTEASER%5D+%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%BE%D1%82%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BF%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3%D0%B0+%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F149%2F17650%2F"><span class='img'><img class='img_align' alt="Мы подготовили отдельную подборку бесплатных сервисов отложенного постинга для этой социальной сети"  title="Мы подготовили отдельную подборку бесплатных сервисов отложенного постинга для этой социальной сети" src="/upload/rk/3d6/note_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">Системы отложенного постинга ВКонтакте</span></a>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="context_hints">
+      <script type="text/javascript">var topHintsInterval = 7000;</script>
+      <div class="nav"> <a title="Назад" class="backward" href="#"></a> <a title="Вперед" class="forward" href="#"></a> </div>
+      <ul>
+        <li class="active"><span class="heading">Внимание:</span> Чтобы публиковать статьи и комментарии <a href="/registration/">зарегистрируйтесь на сайте</a>.</li>
+        <li><span class="heading">Совет:</span> <a href="/registration/">Зарегистрируйтесь на сайте</a> и вы сможете оценивать статьи и комментарии.</li>
+        <li><span class="heading">Совет:</span> <a href="/registration/">Зарегистрируйтесь на сайте</a> чтобы подписаться на дайджест лучших материалов сайта.</li>
+        <li><span class="heading">Внимание:</span> Чтобы встретиться и пообщаться лично с авторами Cossa, <a href="/events/">посетите мероприятия</a>, которые мы рекомендуем.</li>
+        <li><span class="heading">Внимание:</span> Чтобы встретиться и пообщаться лично с авторами Cossa, <a href="/events/">посетите мероприятия</a>, которые мы рекомендуем.</li>
+        <li><span class="heading">Внимание:</span> У нас пока немного <a href="/vacancies/">вакансий</a>, но все они очень интересные.</li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div id="top_banner">
+      <div class="empty" id="top_banner"></div>
+    </div>
+  </div>
+</div>
+<!--<div id="content" class="page">-->
+<div id="top_navigation">
+  <div id="top_navigation_fixed">
+    <div class="page">
+      <div id="logo"> <span><img width="126" height="39" alt="Cossa.ru" src="/images/cossa_logo.gif" /></span> </div>
+      <div id="top_menu"> <span class="sep"></span> <a class="item articles" href="/articles/">Статьи</a> <span class="sep"></span> <a class="item news" href="/news/">Новости</a> <span class="sep"></span> <a class="item events" href="/events/">События</a> <span class="sep"></span> <a class="item vacancies" href="/vacancies/">Вакансии</a> <span class="sep"></span> </div>
+      <div id="top_menu_more">
+        <div class="relative">
+          <ul>
+            <li><a href="/ratings/">Рейтинги</a></li>
+            <li><a href="/education/">Обучение</a></li>
+            <li><a href="/vocabulary/">Словарь</a></li>
+          </ul>
+          <a href="#" class="visible"></a> </div>
+      </div>
+      <div class="clear"> </div>
+      <div id="submenu_panel" class="page">
+        <div id="submenu"> <a href="/?sort=new" class="item">Свежие</a> <a href="/?sort=popular" class="item">Популярные</a> <a href="/?sort=comment" class="item">Комментируемые</a> <a href="/?sort=rating" class="item">Лучшие</a> </div>
+        <div id="top_search">
+          <script src="/bitrix/components/cossa/search.title/templates/.default/script.js?1330544410" type="text/javascript"></script>
+          <div id="top_search_width">
+            <form action="/search/index.php">
+              <div class="form_field">
+                <input id="title-search-input" class="text" type="text" name="q" value="" autocomplete="off"/>
+                <input name="s" type="hidden" value="Поиск" />
+                <input name="spell" type="hidden" value="1" />
+                <div class="search_button">
+                  <button title="Найти" type="submit"></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <script type="text/javascript">
+var jsControl = new JCTitleSearchFixed({
+	//'WAIT_IMAGE': '/bitrix/themes/.default/images/wait.gif',
+	'AJAX_PAGE' : '/',
+	'CONTAINER_ID': 'top_search_width',
+	'INPUT_ID': 'title-search-input',
+	'MIN_QUERY_LEN': 2
+});
+
+
+function JCTitleSearchFixed(arParams) {
+	var _this = this;
+	
+	JCTitleSearch.apply(this, arguments)
+	
+	var jsControlShowResultParent = this.ShowResult;
+	
+	this.ShowResult = function(result) {
+		jsControlShowResultParent(result);
+		
+		if($("#top_navigation").hasClass("fixed")) {
+			_this.RESULT.topData = null;
+			_this.onFixed();
+		}
+	}
+	
+	this.onFixed = function(scrolled) {
+		$(_this.RESULT)
+			.addClass("title-search-result-fixed")
+			.css({top: document.getElementById("title-search-input").getBoundingClientRect().top + $("#title-search-input").outerHeight() + "px"});
+	};
+	
+	this.onAbsolute = function() {
+		if(_this.RESULT.topData == null) {
+			_this.RESULT.topData = $("#title-search-input").offset().top + $("#title-search-input").outerHeight() + "px";
+		}
+		
+		$(_this.RESULT)
+			.removeClass("title-search-result-fixed")
+			.css({top: _this.RESULT.topData});
+	};
+}
+
+</script>
+        </div>
+        <div class="clear"> </div>
+      </div>
+    </div>
+  </div>
+  <div id="top_navigation_spacer"> </div>
+</div>
+<div id="content" class="page">
+  <div id="index_content" class="main_section">
+    <div class="articles_list">
+      <div class="item" id="bx_2479606846_20354" data-section-id="152">
+        <h2> <span class="h"> <a href="/articles/152/20354/">Как iPhone изменил мир за 5 лет</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=20354"></a> </h2>
+        <!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20354/" data-text="Как iPhone изменил мир за 5 лет" data-img="http://cossa.ru/upload/iblock/3a9/teaser_305.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+        <div class="image"><a href="/articles/152/20354/"><img class="img_align" src="/upload/iblock/3a9/teaser_305.jpg" width="305" height="184" alt="Как iPhone изменил мир за 5 лет" title="Как iPhone изменил мир за 5 лет" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/152/">Тренды</a>
+            <p>Пять лет назад компания Apple представила первый iPhone. Пожалуй, в&nbsp;истории не&nbsp;было второго примера, когда продукт становился столь успешным за&nbsp;очень короткий срок.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=2121">Антон Запускалов</a>,</span> <span class="occupation">и.о. главного котика</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a> <br/>
+            <span class="date">19 июля 2012, 13:20</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2479606846_20286" data-section-id="152">
+        <h2> <span class="h"> <a href="/articles/152/20286/">Что такое чурналистика?</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=20286"></a> </h2>
+        <!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20286/" data-text="Что такое чурналистика?" data-img="http://cossa.ru/upload/iblock/fc6/teaser-305.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+        <div class="image"><a href="/articles/152/20286/"><img class="img_align" src="/upload/iblock/fc6/teaser-305.jpg" width="305" height="184" alt="Что такое чурналистика?" title="Что такое чурналистика?" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/152/">Тренды</a>
+            <p>Как часто, читая статьи в&nbsp;различных изданиях, посещает мысль о&nbsp;том, что это &mdash; плохо переработанный <nobr>пресс-релиз</nobr>? Следя за&nbsp;потоками информации, встречаешь похожие друг на&nbsp;друга новости, в&nbsp;которых фразы повторяются один в&nbsp;один, а&nbsp;голос издания почти не&nbsp;слышен. У&nbsp;этого нового типа &laquo;журналистики&raquo; есть название&nbsp;— чурналистика.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=3525">Илона Суворова</a>,</span> <span class="occupation">котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a> <br/>
+            <span class="date">18 июля 2012, 16:15</span> <span class="rating up">+9</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2479606846_20238" data-section-id="152">
+        <h2> <span class="h"> <a href="/articles/152/20238/">Memejacking: использование мемов для достижения маркетинговых задач</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=20238"></a> </h2>
+		<!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20238/" data-text="Memejacking: использование мемов для достижения маркетинговых задач" data-img="http://cossa.ru/upload/iblock/283/teaser_305.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+		
+        <div class="image"><a href="/articles/152/20238/"><img class="img_align" src="/upload/iblock/283/teaser_305.jpg" width="305" height="184" alt="Memejacking: использование мемов для достижения маркетинговых задач" title="Memejacking: использование мемов для достижения маркетинговых задач" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/152/">Тренды</a>
+            <p>Сегодня <nobr>интернет-мемы</nobr>&nbsp;&mdash; один из&nbsp;самых популярных видов социального контента. Они забавные, не&nbsp;лишены смысла и&nbsp;отлично подходят для распространения в&nbsp;сети. &laquo;Угон&raquo; популярных мемов для достижения маркетинговых целей&nbsp;— memejacking&nbsp;— неплохой способ создания интересного контента, которым в&nbsp;последнее время все чаще пользуются западные бренды.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=3525">Илона Суворова</a>,</span> <span class="occupation">котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a> <br/>
+            <span class="date">18 июля 2012, 12:45</span> <a class="comments" href="/articles/152/20238/#00"><span>5</span></a> <span class="rating up">+3</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    ﻿
+    <div class="news_list">
+      <h3 class="block_header"><a href="/news/">Новости</a></h3>
+      <div class="items_list">
+        <div class="item" id="bx_2479606846_20179">
+          <div class="image"><a href="/news/244/20179/"><img class="img_align" src="/upload/iblock/b3a/ivi_158.jpg" width="158" height="95" alt="Ivi.ru запускает рекламные блоки" title="Ivi.ru запускает рекламные блоки" /></a></div>
+          <h4><a href="/news/244/20179/">Ivi.ru запускает рекламные блоки</a></h4>
+          <div class="info_bar"> <span class="date">17 июля 2012, 18:10</span> <a class="comments" href="/news/244/20179/#00"><span>5</span></a> </div>
+        </div>
+        <div class="item" id="bx_2479606846_20148">
+          <div class="image"><a href="/news/244/20148/"><img class="img_align" src="/upload/iblock/4e0/teaser_158.jpg" width="158" height="95" alt="Facebook запустил Timeline для страниц компаний в мобильной версии" title="Facebook запустил Timeline для страниц компаний в мобильной версии" /></a></div>
+          <h4><a href="/news/244/20148/">Facebook запустил Timeline для страниц компаний в мобильной версии</a></h4>
+          <div class="info_bar"> <span class="date">17 июля 2012, 14:40</span> </div>
+        </div>
+        <div class="item" id="bx_2479606846_19991">
+          <div class="image"><a href="/news/247/19991/"><img class="img_align" src="/upload/iblock/337/teaser_158.jpg" width="158" height="95" alt="AdCenter запускает сервис по медиапланированию кампаний во ВКонтакте" title="AdCenter запускает сервис по медиапланированию кампаний во ВКонтакте" /></a></div>
+          <h4><a href="/news/247/19991/">AdCenter запускает сервис по медиапланированию кампаний во ВКонтакте</a></h4>
+          <div class="info_bar"> <span class="date">13 июля 2012, 18:45</span> <a class="comments" href="/news/247/19991/#00"><span>1</span></a> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="articles_list">
+      <div class="item" id="bx_2479606846_20075" data-section-id="211">
+        <h2> <a class="b-article-theme-label" href="/thematics/The_Pitch/">The Pitch.</a> <span class="h"> <a href="/articles/211/20075/">Стефан Веннинг — Executive Producer в The Mill’s London Studio</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=20075"></a> </h2>
+		<!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/211/20075/" data-text="Стефан Веннинг — Executive Producer в The Mill’s London Studio" data-img="http://cossa.ru/upload/iblock/da3/teaser_305.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+        <div class="image"><a href="/articles/211/20075/"><img class="img_align" src="/upload/iblock/da3/teaser_305.jpg" width="305" height="184" alt="Стефан Веннинг — Executive Producer в The Mill’s London Studio" title="Стефан Веннинг — Executive Producer в The Mill’s London Studio" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/211/">Интервью</a>
+            <p>The Pitch&nbsp;&mdash; совместный проект <nobr>digital-агентства</nobr> Pichesky и&nbsp;Cossa.ru, который ставит себе целью выяснить, кто, как и&nbsp;зачем делает все, чтобы реклама с&nbsp;каждым днем так искусно становилась частью нас. В&nbsp;этом выпуске на&nbsp;вопросы отвечает Executive Producer в&nbsp;The Mill&rsquo;s&nbsp;London Studio.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=1315">Редакция</a>,</span> <span class="occupation">котоферма</span> <br/>
+            <span class="date">16 июля 2012, 17:25</span> <a class="comments" href="/articles/211/20075/#00"><span>2</span></a> <span class="rating up">+10</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2479606846_19980" data-section-id="211">
+        <h2> <span class="h"> <a href="/articles/211/19980/">Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=19980"></a> </h2>
+		<!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/211/19980/" data-text="Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»" data-img="http://cossa.ru/upload/iblock/a91/lktme.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+        <div class="image"><a href="/articles/211/19980/"><img class="img_align" src="/upload/iblock/a91/lktme.jpg" width="305" height="184" alt="Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»" title="Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/211/">Интервью</a>
+            <p>Екатерина Базилевская, коммерческий директор Look At&nbsp;Media (ИД, в который входят проекты Look At Me, The Village, FurFur, Look At Me.tv), о&nbsp;том, что может предложить площадка бренду, и&nbsp;почему не&nbsp;бывает стандартных проектов.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=35">Настя Черникова</a>,</span> <span class="occupation">главный котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a> <br/>
+            <span class="date">16 июля 2012, 10:00</span> <a class="comments" href="/articles/211/19980/#00"><span>6</span></a> <span class="rating up">+18</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2479606846_19976" data-section-id="216">
+        <h2> <span class="h"> <a href="/articles/216/19976/">Автостопом до Гаваны: День 13. Полет нормальный</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=19976"></a> </h2>
+		<!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/216/19976/" data-text="Автостопом до Гаваны: День 13. Полет нормальный" data-img="http://cossa.ru/upload/iblock/7a6/viva.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+		
+        <div class="image"><a href="/articles/216/19976/"><img class="img_align" src="/upload/iblock/7a6/viva.jpg" width="305" height="184" alt="Автостопом до Гаваны: День 13. Полет нормальный" title="Автостопом до Гаваны: День 13. Полет нормальный" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/216/">Кейсы</a>
+            <p>18 июня бренд Havana club Russia и&nbsp;креативное агентство Red Keds запустили проект &laquo;Автостопом до&nbsp;Гаваны&raquo;&nbsp;&mdash; интерактивное реалити-шоу, в&nbsp;рамках которого шесть путешественников должны добраться из&nbsp;Москвы до&nbsp;Гаваны автостопом и&nbsp;снимать каждый свой день на&nbsp;видео. Креативный директор проекта Евгений Стройнов рассказал Cossa.ru, в&nbsp;чем его особенность, и&nbsp;с&nbsp;какими сложностями столкнулась команда Red Keds в&nbsp;ходе подготовки.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=1315">Редакция</a>,</span> <span class="occupation">котоферма</span> <br/>
+            <span class="date">13 июля 2012, 15:30</span> <a class="comments" href="/articles/216/19976/#00"><span>8</span></a> <span class="rating up">+14</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2479606846_19955" data-section-id="234">
+        <h2> <span class="h"> <a href="/articles/234/19955/">Адаптивный сайт — очередной тренд или новые возможности для бизнеса?</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=19955"></a> </h2>
+		<!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/234/19955/" data-text="Адаптивный сайт — очередной тренд или новые возможности для бизнеса?" data-img="http://cossa.ru/upload/iblock/b0f/teaser_305.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+		
+        <div class="image"><a href="/articles/234/19955/"><img class="img_align" src="/upload/iblock/b0f/teaser_305.jpg" width="305" height="184" alt="Адаптивный сайт — очередной тренд или новые возможности для бизнеса?" title="Адаптивный сайт — очередной тренд или новые возможности для бизнеса?" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/234/">Мнения</a> В&nbsp;России мобильным интернетом пользуются уже около трети населения, и ни&nbsp;для кого не&nbsp;секрет, что <nobr>веб-сайт</nobr> должен быть одинаково доступен пользователям любых устройств: мобильных телефонов, смартфонов, планшетов и&nbsp;мониторов с&nbsp;высоким и&nbsp;средним разрешением экрана. На&nbsp;данный момент большинство разработчиков предлагают создание дополнительной мобильной версии сайта. Однако с&nbsp;каждым днем новых девайсов становится все больше, и&nbsp;версии сайтов приходится постоянно дорабатывать, теряя при этом время, деньги и&nbsp;посетителей. </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=5599">AGIMA Агентство интернет-маркетинга</a>,</span> в <a class="company" href="/search/?q=AGIMA">AGIMA</a> <br/>
+            <span class="date">13 июля 2012, 11:10</span> <a class="comments" href="/articles/234/19955/#00"><span>3</span></a> <span class="rating up">+10</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    ﻿
+    <div class="vacancy_list">
+      <div class="item no_image" id="bx_2479606846_20272">
+        <div class="text">
+          <h2><a href="/vacancies/20272/">Junior Digital Manager</a></h2>
+          <div class="info"> <a href="/search/?q=Nestle">Nestle</a>,																										Москва </div>
+          <div class="intro"> Nestle ищет человека с навыками управления проектами, знанием инструментов digital маркетинга для управления активностями бренда Nescafe Dolce Gusto в интернете. </div>
+          <div class="buttons"> <a title="Откликнуться на вакансию" class="button reply" href="/vacancies/20272/?respond=y"></a> <a title="Еще предложения" class="button more" href="/vacancies/"></a> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="articles_list">
+      <div class="item" id="bx_2479606846_19906" data-section-id="152">
+        <h2> <span class="h"> <a href="/articles/152/19906/">Twitter: как оценить эффективность работы на платформе</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=19906"></a> </h2>
+		<!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/19906/" data-text="Twitter: как оценить эффективность работы на платформе" data-img="http://cossa.ru/upload/iblock/5d2/teaser_305.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+		
+        <div class="image"><a href="/articles/152/19906/"><img class="img_align" src="/upload/iblock/5d2/teaser_305.jpg" width="305" height="184" alt="Twitter: как оценить эффективность работы на платформе" title="Twitter: как оценить эффективность работы на платформе" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/152/">Тренды</a>
+            <p>Маркетологи сталкиваются с&nbsp;трудностями оценки того, насколько эффективно они тратят свои усилия на&nbsp;платформе Twitter. Представляем вашему вниманию отрывок из&nbsp;книги &laquo;Как привлечь покупателей с&nbsp;помощью Twitter&raquo; («How to&nbsp;Attract Customers with Twitter»), которая полностью доступна для бесплатной загрузки по&nbsp;<a href="http://www.hubspot.com/free-ebook-how-to-attract-customers-with-twitter/" target="_blank" ><u>ссылке</u></a>.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=3525">Илона Суворова</a>,</span> <span class="occupation">котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a> <br/>
+            <span class="date">12 июля 2012, 15:15</span> <a class="comments" href="/articles/152/19906/#00"><span>2</span></a> <span class="rating up">+7</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2479606846_19853" data-section-id="234">
+        <h2> <span class="h"> <a href="/articles/234/19853/">Услуги веб-аналитики: клиент и агентство — тонкости взаимодействия</a> </span> <a title="Добавить в закладки" class="fav add_fav" href="/?subscribe=19853"></a> </h2>
+		<!--Кнопки соцсетей-->
+        <div class="like_buttons">
+			<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/234/19853/" data-text="Услуги веб-аналитики: клиент и агентство — тонкости взаимодействия" data-img="http://cossa.ru/upload/iblock/417/teaser21342248968_1342072871.jpg"></div>
+			<div class="line-block"></div>
+			<div class="side-block"></div>
+        </div>
+        <!--Кнопки соцсетей-->
+		
+        <div class="image"><a href="/articles/234/19853/"><img class="img_align" src="/upload/iblock/417/teaser21342248968_1342072871.jpg" width="305" height="184" alt="Услуги веб-аналитики: клиент и агентство — тонкости взаимодействия" title="Услуги веб-аналитики: клиент и агентство — тонкости взаимодействия" /></a></div>
+        <div class="text">
+          <div class="intro"> <a class="label" href="/articles/234/">Мнения</a>
+            <p>По&nbsp;мере того, как клиенты все больше хотят знать, насколько&nbsp;же эффективно они тратят свои рекламные бюджеты, и&nbsp;как получить максимум от&nbsp;рекламы и&nbsp;сайта, системы <nobr>веб-аналитики</nobr> становятся более востребованными. В&nbsp;то&nbsp;же время появляются и&nbsp;некоторые заблуждения вместе с&nbsp;не&nbsp;совсем обоснованными ожиданиями.</p>
+          </div>
+          <div class="info_bar"> <span class="author"><a href="/profile/?ID=5885">ADLABS</a>,</span> <br/>
+            <span class="date">12 июля 2012, 12:20</span> <span class="rating up">+6</span> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="right_section">
+    <div id="sand_box">
+      <h3 class="block_header"><a href="/articles/155/">Песочница</a></h3>
+      <div class="item" id="bx_2298705538_20308">
+        <div class="image"><a href="/articles/155/20308/"><img class="img_align" src="/upload/iblock/9d4/big_528092_360620667345094_1835166411_n1343331980_1342619547.jpg" width="120" alt="Я ухожу из клиентского бизнеса" title="Я ухожу из клиентского бизнеса" /></a></div>
+        <div class="text">
+          <h4><a href="/articles/155/20308/">Я ухожу из клиентского бизнеса</a></h4>
+          <div class="info_bar"> <a class="comments" href="/articles/155/20308/#00">8</a> </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2298705538_20236">
+        <div class="image"><a href="/articles/155/20236/"><img class="img_align" src="/upload/iblock/f02/big_1343027590_1342599994.jpg_644.jpg" width="120" alt="Как собрать людей на вебинар?" title="Как собрать людей на вебинар?" /></a></div>
+        <div class="text">
+          <h4><a href="/articles/155/20236/">Как собрать людей на вебинар?</a></h4>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2298705538_20226">
+        <div class="image"><a href="/articles/155/20226/"><img class="img_align" src="/upload/iblock/682/big_dolls1343369239_1342593794.png" width="120" alt="«Куклы» и «Мятежницы» или как далеко ушел прогрессивный маркетинг" title="«Куклы» и «Мятежницы» или как далеко ушел прогрессивный маркетинг" /></a></div>
+        <div class="text">
+          <h4><a href="/articles/155/20226/">«Куклы» и «Мятежницы» или как далеко ушел прогрессивный маркетинг</a></h4>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="closest_events">
+      <h3 class="block_header"><a href="/events/">Ближайшие события</a></h3>
+      <div class="item" id="bx_2298705538_19507">
+        <div class="date">
+          <div class="num">19</div>
+          <div class="month">Июля</div>
+        </div>
+        <div class="text">
+          <h4><a href="/events/239/19507/">Семинар «Новые тренды в маркетинге»</a></h4>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2298705538_20005">
+        <div class="date">
+          <div class="num">19</div>
+          <div class="month">Июля</div>
+        </div>
+        <div class="text">
+          <h4><a href="/events/238/20005/">Вебинар «Имидж банка в социальных сетях. Как превратить присутствие в успех?» </a></h4>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="item" id="bx_2298705538_19081">
+        <div class="date">
+          <div class="num">19</div>
+          <div class="month">Июля</div>
+        </div>
+        <div class="text">
+          <h4><a href="/events/239/19081/">Вебинар «Успешный сайт глазами клиента: современные тренды и перспективы»</a></h4>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="banner">
+      <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcossa.ru&amp;width=266&amp;colorscheme=light&amp;show_faces=true&amp;border_color=E9E9E9&amp;stream=false&amp;header=false&amp;height=180" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:266px; height:180px;" allowTransparency="true"></iframe>
+    </div>
+    <div class="banner">
+      <!-- VK Widget -->
+      <div id="vk_groups"></div>
+      <script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 0, width: "266"}, 19720218);
+</script>
+    </div>
+    <div class="border_radius banner" id="id456">
+      <div class="top">
+        <div class="tl"></div>
+        <div class="tr"></div>
+        <h6>Реклама</h6>
+      </div>
+      <div class="center">
+        <script type='text/javascript'>//<![CDATA[
+
+    var rnd = Math.floor(Math.random()*99999999999);
+
+    document.write("<iframe src='http://server.adeasy.ru/servead/request/875");
+
+    document.write("?cb=");
+
+    document.write(rnd+"'");
+
+    document.write(" width='240' height='400' frameborder='0' scrolling='no'></iframe>");
+
+//]]></script>
+      </div>
+      <div class="bottom">
+        <div class="bl"></div>
+        <div class="br"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <img src="http://cossa.ru/bitrix/spread.php?s=QklUUklYX1NNX0dVRVNUX0lEATEyMjg4MDUBMTM3Mzc5NTM2NwEvAQECQklUUklYX1NNX0xBU1RfVklTSVQBMTkuMDcuMjAxMiAxMzo0OToyNwExMzczNzk1MzY3AS8BAQI%3D&amp;k=a151ee44ea1ee2795a2835b9262877c8" alt="" style="width:0px; height:0px; position:absolute; left:-1px; top:-1px;" /> </div>
+<div id="footer">
+  <div class="page">
+    <div class="columns">
+      <div class="column description"> <img width="75" height="23" class="logo" alt="Cossa" src="/images/footer_logo.gif">
+        <p>Cossa.ru — информационный портал о маркетинге и коммуникациях в
+          цифровой среде. Новые инструменты продвижения и оптимизация работы.
+          Различные формы взаимодействия (SMM, вирусные видео, QR-коды,
+          мобильный маркетинг)  и аналитика (ROI, KPI, CPA, lead generation).
+          Мы храним ценный опыт ошибок и успехов, которым делятся представители
+          брендов и рекламных агентств, на своих страницах.</p>
+      </div>
+      <div class="column about">
+        <h4><a href="">Компания</a></h4>
+        <ul>
+          <li><a href="/about/">О проекте</a></li>
+          <li><a href="/contacts/">Контакты</a></li>
+          <li><a href="/adv/">Реклама на сайте</a></li>
+          <li><a href="/holders/">Правообладателям</a></li>
+          <li><a href="/rules/">Правила</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4><a href="/articles/">Статьи</a></h4>
+        <ul>
+          <li><a href="/articles/234/">Мнение</a></li>
+          <li><a href="/articles/216/">Кейсы</a></li>
+          <li><a href="/articles/152/">Тренды</a></li>
+          <li><a href="/articles/149/">Исследования</a></li>
+          <li><a href="/articles/211/">Интервью</a></li>
+          <li><a href="/articles/230/">Репортаж</a></li>
+          <li><a href="/articles/155/">Песочница</a></li>
+        </ul>
+      </div>
+      <div class="column subscribe">
+        <h4><a href="">Подписывайтесь</a></h4>
+        <ul>
+          <li class="rss"><a href="/rss/">RSS</a></li>
+          <li class="fb"><a href="http://www.facebook.com/cossa.ru">Facebook</a></li>
+          <li class="twitter"><a href="https://twitter.com/#!/cossa_ru">Тwitter</a></li>
+          <li class="vk"><a href="http://vk.com/cossa">Вконтакте</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="partners">
+      <h3 class="block_header">Партнеры</h3>
+      <a class="item" href=""><img width="65" height="65" alt="Red Keds" src="/images/partners/red_keds.jpg"></a> </div>
+    <div id="copyright"> Cossa.ru &copy;  2010−2012 <span class="middot"></span> <a href="mailto:42@cossa.ru">42@cossa.ru</a> <span class="middot"></span><a href="mailto:chernikova@cossa.ru">chernikova@cossa.ru</a> </div>
+  </div>
+</div>
+<!--</div>
+	</div>
+	<div id="copyright">Cossa &copy; 2011 <span class="middot">&middot;</span> <a href="mailto:42@cossa.ru">42@cossa.ru</a></div>-->
+</div>
+<div id="login_popup">
+  <div class="close"><a title="Закрыть" href="">Закрыть</a></div>
+  <div class="body">
+    <h4>Вход на cossa.ru</h4>
+    <div class="decor">
+      <div></div>
+    </div>
+    <div class="form">
+      <div class="column1">
+        <form method="post" target="_top" action="/?login=yes">
+          <input type="hidden" name="backurl" value="/" />
+          <input type="hidden" name="AUTH_FORM" value="Y" />
+          <input type="hidden" name="TYPE" value="AUTH" />
+          <div class="form_field"> <a href="/registration/" rel="nofollow">Регистрация</a>
+            <h5>Логин<span class="no_text">?</span></h5>
+            <input class="text" type="text" name="USER_LOGIN" value="admin" />
+          </div>
+          <div class="form_field">
+            <h5>Пароль<span class="no_text">?</span></h5>
+            <input class="text" type="password" name="USER_PASSWORD" />
+            <div class="anchor"> <a href="/auth/?forgot_password=yes&amp;backurl=%2F" rel="nofollow">Забыли свой пароль?</a> </div>
+          </div>
+          <!--<input type="submit" name="Login" value="Войти" />-->
+          <div class="submit">
+            <input type="submit" class="submit" value="Войти">
+          </div>
+          <label class="checkbox remember">
+          <input type="checkbox" id="USER_REMEMBER_frm" name="USER_REMEMBER" value="Y" />
+          <span>Запомнить меня</span> </label>
+        </form>
+      </div>
+      <div class="column2">
+        <h5>Уже есть аккаунт?<br>
+          Выбирай любой вариант входа:</h5>
+        <form method="post" name="bx_auth_services" target="_top" action="/?login=yes">
+          <a onclick="BX.util.popup('https://www.facebook.com/dialog/oauth?client_id=264684433573256&redirect_uri=http://www.cossa.ru/?auth_service_id=Facebook&scope=email&display=popup', 580, 400)" href="javascript:void(0)"><img src="/images/icons/facebook.gif" title="Facebook" alt="Facebook" /></a> <a onclick="BX.util.popup('/?auth_service_id=Twitter', 800, 450)" href="javascript:void(0)"><img src="/images/icons/twitter.gif" title="Twitter" alt="Twitter" /></a> <a onclick="VK.Auth.login(BxVKAuthInfo);" href="javascript:void(0)"><img src="/images/icons/vkontakte.gif" title="Vkontakte" alt="Vkontakte" /></a>
+          <input type="hidden" name="auth_service_id" value="" />
+        </form>
+        <p>Используйте свой аккаунт в социальной сети Facebook или Twitter,
+          чтобы пользоваться сайтом</p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="remind">
+    <div>Не забудьте написать email на странице своего профиля для управления рассылкой</div>
+  </div>
+</div>
+<!--<div id="top_search_width"></div>-->
+<!-- Yandex.Metrika -->
+<div style="display:none;">
+  <script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter575397 = new Ya.Metrika(575397);
+             yaCounter575397.clickmap(true);
+             yaCounter575397.trackLinks(true);
+        
+        } catch(e) {}
+    });
+})(window, 'yandex_metrika_callbacks');
+</script>
+</div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript>
+<div style="position:absolute"><img src="//mc.yandex.ru/watch/575397" alt="" /></div>
+</noscript>
+<!-- /Yandex.Metrika -->
+<!--Openstat-->
+<span id="openstat2189004"></span>
+<script type="text/javascript">
+var openstat = { counter: 2189004, next: openstat, track_links: "all" };
+(function(d, t, p) {
+var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+})(document, "script", document.location.protocol);
+</script>
+<!--/Openstat-->
+<script type="text/javascript" charset="UTF-8" src="http://surfingbird.ru/share/share.min.js"></script>
+<div id="vk_like_20551_line" style="width: 100px; height: 100px; background: red;"></div>
+<script type="text/javascript">
+document.getElementById("vk_like_20551_line").onclick = function() {
+	VK.Widgets.Like("vk_like_20551_line", {
+		type: "mini",
+		pageUrl: "http://cossa.ru/articles/152/20406/"
+	});
+};
+</script>
+</body>
+</html>

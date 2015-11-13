@@ -1,0 +1,40 @@
+<style>
+.file_input {
+	margin-bottom:5px;
+	display:block;}
+</style>
+<script type="text/javascript">
+function insertFile(input) {
+	var td = input.parentNode;
+	var flag = false;
+	for(var i=0; i<td.childNodes.length; i++) {
+		if(td.childNodes[i].value == "") {flag = true;}
+	}
+	if(!flag) {
+		var newInput = document.createElement("INPUT");
+		newInput.setAttribute("name", "file[]");
+		newInput.setAttribute("size", "20");
+		newInput.setAttribute("type", "file");
+		newInput.className = "file_input";
+		newInput.onchange = function() {insertFile(this)};
+		td.appendChild(newInput);
+	}
+}
+</script>
+<form id="redactorInsertImageGalleryForm" method="post" action="" enctype="multipart/form-data">
+<table class="redactor_ruler">
+	<tr>
+		<td>
+			<input name="file[]" size="20" type="file" class="file_input" onchange="insertFile(this)" />
+			<input name="file[]" size="20" type="file" class="file_input" onchange="insertFile(this)" />
+			<input name="file[]" size="20" type="file" class="file_input" onchange="insertFile(this)" />
+		</td>
+	</tr>
+</table>
+
+
+<p>
+<input type="button" name="upload" id="redactorUploadBtn" value="%RLANG.insert%" />&nbsp;&nbsp;
+<input type="button" name="" onclick="redactorActive.modalClose();" value="%RLANG.cancel%"  />
+</p>
+</form>

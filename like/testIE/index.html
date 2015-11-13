@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="Cossa" />
+<meta name="description" content="1С-Битрикс: Управление сайтом" />
+<link href="/bitrix/js/main/core/css/core.css?1320226399" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/reklam.teaser.list/templates/.default/style.css?1330545145" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/advise.list/templates/.default/style.css?1326974403" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/cossa/components/bitrix/menu/left.menu.new/style.css?1330534890" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/search.title/templates/.default/style.css?1330544410" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/catalog.filter/templates/.default/style.css?1319095643" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/articles.list/templates/articles.likes/style.css?1343126514" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/last.sandbox/templates/.default/style.css?1330535232" type="text/css" rel="stylesheet" />
+<link href="/bitrix/components/cossa/last.sandbox/templates/events/style.css?1330535235" type="text/css" rel="stylesheet" />
+<link href="/bitrix/js/socialservices/css/ss.css?1313082139" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/cossa/styles.css?1340202275" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/cossa/template_styles.css?1317199120" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/bitrix/js/main/core/core.js?1320226403"></script>
+<script type="text/javascript">BX.message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI','COOKIE_PREFIX':'BITRIX_SM','bitrix_sessid':'51b88dbf4d89b52d7006e38288499ac7','JS_CORE_LOADING':'Загрузка...','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с'})</script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_ajax.js?1320226403"></script>
+<script type="text/javascript" src="/bitrix/js/main/session.js?1313082139"></script>
+<script type="text/javascript">
+bxSession.Expand(1440, '51b88dbf4d89b52d7006e38288499ac7', false, 'e4caed83af4c37de29337dd4173f555b');
+</script>
+<link rel="alternate" type="application/rss+xml" title="/php/test/news.phprss/" href="/php/test/news.phprss/" />
+
+<script type="text/javascript" src="http://vkontakte.ru/js/api/openapi.js"></script>
+<script type="text/javascript">
+BX.ready(function(){VK.init({apiId: '2672095'});});
+
+function BxVKAuthInfo(response) 
+{
+	var url_err = '/php/test/news.php?auth_service_id=VKontakte&auth_service_error=1';
+	if(response.session) 
+	{
+		var url_post = '/php/test/news.php?login=yes';
+		var url_ok = '/php/test/news.php';
+		var data = {
+			"auth_service_id": "VKontakte",
+			"vk_session": response.session
+		};
+		BX.ajax.post(url_post, data, function(res){window.location = (res == "OK"? url_ok : url_err);});
+	} 
+	else 
+	{
+		window.location = url_err;
+	}
+}
+</script>
+
+<script type="text/javascript" src="/bitrix/components/cossa/search.title/script.js?1330544407"></script>
+<script type="text/javascript" src="/bitrix/js/socialservices/ss.js?1313082139"></script>
+<title>Статьи на Cossa.ru</title>
+<!--[if lte IE 7]>
+<link href="/css/ie6.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?34"></script>
+<script type="text/javascript">VK.init({apiId: 2472453, onlyWidgets: true});</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+<script src="/js/jscript.js?1343073600" type="text/javascript"></script>
+<!-- Google Analytics Social Button Tracking -->
+<script src="http://analytics-api-samples.googlecode.com/svn/trunk/src/tracking/javascript/v5/social/ga_social_tracking.js"></script>
+<script type="text/javascript">
+_ga.trackVkontakte = function(opt_pageUrl, opt_trackerName, opt_targetUrl) {
+	try {
+		if (VK && VK.Observer && VK.Observer.subscribe) {
+			if(window.console) {
+				console.log("observer");
+			}
+			VK.Observer.subscribe('widgets.like.liked', function() {
+				_gaq.push(_ga.getSocialActionTrackers_('vkontakte', 'like', opt_targetUrl, opt_pageUrl));
+			});
+			VK.Observer.subscribe('widgets.like.unliked', function() {
+				_gaq.push(_ga.getSocialActionTrackers_('vkontakte', 'unlike', opt_targetUrl, opt_pageUrl));
+			});
+		}
+	} catch (e) {}
+};
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2910684-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=238031246215307";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+window.fbAsyncInit = function() {
+	FB.init({appId: '164838206912600', status: true, cookie: true, xfbml: true});
+	_ga.trackFacebook();
+};
+
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0];
+	
+	if(!d.getElementById(id)){
+		js=d.createElement(s);
+		js.id=id;
+		js.src="//platform.twitter.com/widgets.js";
+		js.onload = _ga.trackTwitter;
+		fjs.parentNode.insertBefore(js,fjs);
+	}
+}(document,"script","twitter-wjs");
+
+
+</script>
+
+	<div id="login_menu">
+		<div class="page">
+			<div class="item"><a id="login_link" href="#">Вход</a></div>
+			<div class="item"><a href="/registration/?backurl=/php/test/news.php">Зарегистрироваться</a></div>
+		</div>
+	</div>
+<div id="head"><div class="page">
+	<div id="top_gallery">
+<script type="text/javascript">var topTeaserInterval = 10000;</script>
+			<div class="items_block">
+																					<a href="/bitrix/rk.php?id=116&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B116%5D+%5BTEASER%5D++%D0%91%D0%BE%D1%82%D1%8B+%D0%B2+%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D1%8F%D1%85+&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D0%25B1%25D0%25BE%25D1%2582%25D1%258B%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/32f/bot.jpg" width="197" height="120" border="0" /></span><span class="heading"> Боты в социальных сетях </span></a>																																<a href="/bitrix/rk.php?id=117&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B117%5D+%5BTEASER%5D+%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0+%D0%B2+Facebook&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D1%2580%25D0%25B5%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25BC%25D0%25B0%2B%25D0%25B2%2BFacebook%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/dc8/adsfb.jpg" width="197" height="120" border="0" /></span><span class="heading">Реклама в Facebook</span></a>																																<a href="/bitrix/rk.php?id=119&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B119%5D+%5BTEASER%5D+%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%BE%D1%80%D0%B0%D1%81%D1%82%D1%83%D1%89%D0%B8%D0%B9+Pinterest&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3DPinterest%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/82f/pin.jpg" width="197" height="120" border="0" /></span><span class="heading">Быстрорастущий Pinterest</span></a>																																<a href="/bitrix/rk.php?id=120&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B120%5D+%5BTEASER%5D+%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0+%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D1%2580%25D0%25B5%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25BC%25D0%25B0%2B%25D0%25B2%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D0%25B0%25D0%25BA%25D1%2582%25D0%25B5%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/624/vk.jpg" width="197" height="120" border="0" /></span><span class="heading">Реклама ВКонтакте</span></a>																																<a href="/bitrix/rk.php?id=135&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B135%5D+%5BTEASER%5D+%D0%9D%D0%B0%D1%83%D1%87%D0%B8%D1%82%D0%B5%D1%81%D1%8C+%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C+%D0%B2%D0%B8%D1%80%D1%83%D1%81%D0%BD%D0%BE%D0%B5+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D0%2592%25D0%25B8%25D1%2580%25D1%2583%25D1%2581%25D0%25BD%25D0%25BE%25D0%25B5%2B%25D0%25B2%25D0%25B8%25D0%25B4%25D0%25B5%25D0%25BE%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt="На Cossa.ru уже несколько раз публиковались мысли участников рынка о нехватке кадров на рынке digital-маркетинга Подробнее: http://cossa.ru/articles/234/2495/"  title="На Cossa.ru уже несколько раз публиковались мысли участников рынка о нехватке кадров на рынке digital-маркетинга Подробнее: http://cossa.ru/articles/234/2495/" src="/upload/rk/c26/virus.jpg" width="197" height="120" border="0" /></span><span class="heading">Научитесь делать вирусное видео</span></a>																		<div class="clear"></div>
+		</div>
+				<div class="items_block">
+																					<a href="/bitrix/rk.php?id=147&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B147%5D+%5BTEASER%5D+%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E+%D1%81+%D1%82%D0%BE%D0%BF-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%D0%BC%D0%B8+digital+%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%5BTAGS%5D%3D%25D0%2598%25D0%25BD%25D0%25B4%25D0%25B5%25D0%25BA%25D1%2581%2520%25D0%25B2%25D0%25BB%25D0%25B8%25D1%258F%25D0%25BD%25D0%25B8%25D1%258F%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580%26set_filter%3DY"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/4d8/inter.jpg" width="197" height="120" border="0" /></span><span class="heading">Интервью с топ-менеджерами digital агентств</span></a>																																<a href="/bitrix/rk.php?id=148&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B148%5D+%5BTEASER%5D+%D0%9A%D0%B0%D0%BA+%D0%BC%D0%B5%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F+%D0%B6%D0%B8%D0%B7%D0%BD%D1%8C+%D0%BF%D0%BE%D0%B4+%D0%B2%D0%BE%D0%B7%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D0%B5%D0%BC+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B0%3F&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%5BTAGS%5D%3D%25D0%259D%25D0%25BE%25D0%25B2%25D0%25B0%25D1%258F%2520%25D1%2581%25D1%2580%25D0%25B5%25D0%25B4%25D0%25B0%2520%25D0%25B6%25D0%25B8%25D0%25B7%25D0%25BD%25D0%25B8%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580%26set_filter%3DY"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/a72/webch.jpg" width="197" height="120" border="0" /></span><span class="heading">Как меняется жизнь под воздействием интернета?</span></a>																																<a href="/bitrix/rk.php?id=149&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B149%5D+%5BTEASER%5D+%D0%A7%D1%82%D0%BE+%D1%82%D0%B0%D0%BA%D0%BE%D0%B5+%D1%80%D0%B5%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%B8%D0%BD%D0%B3+%D0%B8+%D1%81+%D1%87%D0%B5%D0%BC+%D0%B5%D0%B3%D0%BE+%D0%B5%D0%B4%D1%8F%D1%82%3F&amp;goto=http%3A%2F%2Fcossa.ru%2Fsearch%2Findex.php%3Fq%3D%25D1%2580%25D0%25B5%25D1%2582%25D0%25B0%25D1%2580%25D0%25B3%25D0%25B5%25D1%2582%25D0%25B8%25D0%25BD%25D0%25B3%26s%3D%25D0%259F%25D0%25BE%25D0%25B8%25D1%2581%25D0%25BA%26spell%3D1"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/32e/retarget.jpg" width="197" height="120" border="0" /></span><span class="heading">Что такое ретаргетинг и с чем его едят?</span></a>																																<a href="/bitrix/rk.php?id=150&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B150%5D+%5BTEASER%5D+%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%8B%D0%B5+%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80%D1%8B%3A+%D0%BA%D0%B0%D0%BA+%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C+%D0%B8%D1%85+%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%255BTAGS%255D%3D%25D0%25B1%25D0%25B0%25D0%25BD%25D0%25BD%25D0%25B5%25D1%2580%26set_filter%3DY%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/90c/clicks.jpg" width="197" height="120" border="0" /></span><span class="heading">Рекламные баннеры: как использовать их эффективно</span></a>																																<a href="/bitrix/rk.php?id=151&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B151%5D+%5BTEASER%5D+%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0%3A+%D0%BA%D0%B0%D0%BA+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F+%D0%BF%D0%BE%D0%B4%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D1%82%D1%81%D1%8F+%D1%81+%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD+%D0%B8+%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%B0%D0%B5%D1%82+%D0%BB%D1%8E%D0%B4%D1%8F%D0%BC&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F%3FarrFilter_ff%5BTAGS%5D%3D%25D0%25A1%25D0%25BE%25D1%2586%25D0%25B8%25D0%25B0%25D0%25BB%25D1%258C%25D0%25BD%25D0%25B0%25D1%258F%2520%25D1%2580%25D0%25B5%25D0%25BA%25D0%25BB%25D0%25B0%25D0%25BC%25D0%25B0%26set_filter%3D%25D0%25A4%25D0%25B8%25D0%25BB%25D1%258C%25D1%2582%25D1%2580%26set_filter%3DY"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/416/rus.jpg" width="197" height="120" border="0" /></span><span class="heading">Социальная реклама: как Россия поднимается с колен и помогает людям</span></a>																		<div class="clear"></div>
+		</div>
+				<div class="items_block">
+																					<a href="/bitrix/rk.php?id=121&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B121%5D+%5BTEASER%5D+Google+Plus+%D0%BC%D0%BE%D0%B6%D0%B5%D1%82+%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F234%2F10391%2F"><span class='img'><img class='img_align' alt=""  title="" src="/upload/rk/119/goglp.jpg" width="197" height="120" border="0" /></span><span class="heading">Google Plus может изменить интернет</span></a>																																<a href="/bitrix/rk.php?id=122&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B122%5D+%5BTEASER%5D+%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8+%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%D0%BE%D0%B2+%D0%B2+%D0%BD%D0%B8%D1%88%D0%B5%D0%B2%D1%8B%D1%85+%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D1%8F%D1%85&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F12451%2F"><span class='img'><img class='img_align' alt="Появляется все больше нишевых сайтов, которые не хуже, а иногда даже лучше могут справиться с задачами."  title="Появляется все больше нишевых сайтов, которые не хуже, а иногда даже лучше могут справиться с задачами." src="/upload/rk/d0a/brend.jpg" width="197" height="120" border="0" /></span><span class="heading">Возможности брендов в нишевых социальных сетях</span></a>																																<a href="/bitrix/rk.php?id=124&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B124%5D+%5BTEASER%5D+%D0%9B%D1%83%D1%87%D1%88%D0%B8%D0%B5+%D0%B7%D0%B0%D1%80%D1%83%D0%B1%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5+digital-%D0%B1%D0%BB%D0%BE%D0%B3%D0%B8&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F14924%2F"><span class='img'><img class='img_align' alt="Один из самых простых способов оставаться в курсе происходящего в любой сфере — читать тематические блоги специалистов отрасли"  title="Один из самых простых способов оставаться в курсе происходящего в любой сфере — читать тематические блоги специалистов отрасли" src="/upload/rk/04e/digi.jpg" width="197" height="120" border="0" /></span><span class="heading">Лучшие зарубежные digital-блоги</span></a>																																<a href="/bitrix/rk.php?id=125&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B125%5D+%5BTEASER%5D+%D0%98%D0%B4%D0%B5%D0%B8+%D0%B4%D0%BB%D1%8F+%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B0%D0%BF%D0%BE%D0%B2+%D0%B1%D1%83%D0%B4%D1%83%D1%89%D0%B5%D0%B3%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F234%2F15014%2F"><span class='img'><img class='img_align' alt="В этом материале Дмитрий Соловьев делится своими мыслями о том, какие сервисы могут быть востребованы в ближайшем будущем."  title="В этом материале Дмитрий Соловьев делится своими мыслями о том, какие сервисы могут быть востребованы в ближайшем будущем." src="/upload/rk/f07/idea.jpg" width="197" height="120" border="0" /></span><span class="heading">Идеи для стартапов будущего</span></a>																																<a href="/bitrix/rk.php?id=131&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B131%5D+%5BTEASER%5D+%D0%98%D0%9A%D0%A0%D0%B0.+%D0%9A%D0%B0%D0%BC%D0%BF%D1%83%D1%81+%D0%91%D0%B0%D1%80%D1%81%D0%B5%D0%BB%D0%BE%D0%BD%D0%B0&amp;goto=http%3A%2F%2Fcossa.ru%2Fevents%2F0%2F18380%2F"><span class='img'><img class='img_align' alt="Кампус предоставит возможность вырваться за пределы местного digital-рынка и на протяжении 10 дней поработать с иностранными специалистами, испанскими студентами и делать концепцию продвижения мирового масштаба"  title="Кампус предоставит возможность вырваться за пределы местного digital-рынка и на протяжении 10 дней поработать с иностранными специалистами, испанскими студентами и делать концепцию продвижения мирового масштаба" src="/upload/rk/b0a/ikra.jpg" width="197" height="120" border="0" /></span><span class="heading">ИКРа. Кампус Барселона</span></a>																		<div class="clear"></div>
+		</div>
+				<div class="items_block">
+																					<a href="/bitrix/rk.php?id=141&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B141%5D+%5BTEASER%5D+%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B+%D0%B4%D0%BB%D1%8F+%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B9+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B+%D0%B2+Gmail&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F16848%2F"><span class='img'><img class='img_align' alt="В этом материале Cossa.ru познакомит вас с двумя сервисами, которые призваны помочь тем, кто хочет работать с письмами эффективнее"  title="В этом материале Cossa.ru познакомит вас с двумя сервисами, которые призваны помочь тем, кто хочет работать с письмами эффективнее" src="/upload/rk/3bf/mail_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">Инструменты для эффективной работы в Gmail</span></a>																																<a href="/bitrix/rk.php?id=142&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B142%5D+%5BTEASER%5D+6+%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BE%D0%B2+%D0%BE+%D1%82%D0%BE%D0%BC%2C+%D0%BA%D0%B0%D0%BA+%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C+%D0%B2%D1%80%D0%B5%D0%BC%D1%8F+%D0%B2+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B5+%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F152%2F16957%2F"><span class='img'><img class='img_align' alt="На основании поведения человека сегодня можно делать прогнозы о том, каким будет наше будущее."  title="На основании поведения человека сегодня можно делать прогнозы о том, каким будет наше будущее." src="/upload/rk/e17/inter_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">6 советов о том, как проводить время в интернете продуктивно</span></a>																																<a href="/bitrix/rk.php?id=143&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B143%5D+%5BTEASER%5D+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B5+%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%D0%B0+%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85+%D1%81%D0%B5%D1%82%D0%B5%D0%B9&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F149%2F17590%2F"><span class='img'><img class='img_align' alt="Cossa.ru предлагает вашему вниманию подборку российских систем, осуществляющих подобный мониторинг"  title="Cossa.ru предлагает вашему вниманию подборку российских систем, осуществляющих подобный мониторинг" src="/upload/rk/193/you_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">Российские системы мониторинга социальных сетей</span></a>																																<a href="/bitrix/rk.php?id=144&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B144%5D+%5BTEASER%5D+User+experience+%D0%BA%D0%B0%D0%BA+%D0%BD%D0%BE%D0%B2%D0%B0%D1%8F+%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F234%2F16817%2F"><span class='img'><img class='img_align' alt="Само понимание того, что стратегия должна строиться вокруг потребителя и его эмоций, переживаний, ожиданий и т.д., с одной стороны, вроде очевидно, но, с другой стороны, минимально применяемо на практике"  title="Само понимание того, что стратегия должна строиться вокруг потребителя и его эмоций, переживаний, ожиданий и т.д., с одной стороны, вроде очевидно, но, с другой стороны, минимально применяемо на практике" src="/upload/rk/818/ux_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">User experience как новая специализация</span></a>																																<a href="/bitrix/rk.php?id=145&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B145%5D+%5BTEASER%5D+%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%BE%D1%82%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE+%D0%BF%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3%D0%B0+%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5&amp;goto=http%3A%2F%2Fcossa.ru%2Farticles%2F149%2F17650%2F"><span class='img'><img class='img_align' alt="Мы подготовили отдельную подборку бесплатных сервисов отложенного постинга для этой социальной сети"  title="Мы подготовили отдельную подборку бесплатных сервисов отложенного постинга для этой социальной сети" src="/upload/rk/3d6/note_resize.jpg" width="197" height="120" border="0" /></span><span class="heading">Системы отложенного постинга ВКонтакте</span></a>																		<div class="clear"></div>
+		</div>
+	</div>	<div id="context_hints">
+	<script type="text/javascript">var topHintsInterval = 7000;</script>			<div class="nav">
+			<a title="Назад" class="backward" href="#"></a>
+			<a title="Вперед" class="forward" href="#"></a>
+		</div>
+		<ul>
+					<li class="active"><span class="heading">Внимание:</span> Чтобы публиковать статьи и комментарии <a href="/registration/">зарегистрируйтесь на сайте</a>.</li>
+					<li><span class="heading">Совет:</span> <a href="/registration/">Зарегистрируйтесь на сайте</a> и вы сможете оценивать статьи и комментарии.</li>
+					<li><span class="heading">Совет:</span> <a href="/registration/">Зарегистрируйтесь на сайте</a> чтобы подписаться на дайджест лучших материалов сайта.</li>
+					<li><span class="heading">Внимание:</span> Чтобы встретиться и пообщаться лично с авторами Cossa, <a href="/events/">посетите мероприятия</a>, которые мы рекомендуем.</li>
+					<li><span class="heading">Внимание:</span> Чтобы встретиться и пообщаться лично с авторами Cossa, <a href="/events/">посетите мероприятия</a>, которые мы рекомендуем.</li>
+					<li><span class="heading">Внимание:</span> У нас пока немного <a href="/vacancies/">вакансий</a>, но все они очень интересные.</li>
+			</ul>
+	<div class="clear"></div>
+</div>
+	<div id="top_banner">
+			<div class="empty" id="top_banner"></div>
+	</div>	
+</div></div>
+<!--<div id="content" class="page">-->
+<link href="/like/styles.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/like/jscript.js"></script>
+<div id="top_navigation">
+	<div id="top_navigation_fixed">
+		<div class="page">
+			<div id="logo">
+												<a href="/"><img width="126" height="39" alt="Cossa.ru" src="/images/cossa_logo.gif" /></a>
+							</div>
+			<div id="top_menu">
+<span class="sep"></span>
+									<a class="item articles" href="/articles/">Статьи</a>
+				<span class="sep"></span>																		<a class="item news" href="/news/">Новости</a>
+				<span class="sep"></span>																		<a class="item events" href="/events/">События</a>
+				<span class="sep"></span>																		<a class="item vacancies" href="/vacancies/">Вакансии</a>
+				<span class="sep"></span>										</div>
+			<div id="top_menu_more">
+				<div class="relative">
+					<ul>
+													<li><a href="/ratings/">Рейтинги</a></li>
+																<li><a href="/education/">Обучение</a></li>
+																<li><a href="/vocabulary/">Словарь</a></li>
+											</ul>
+			<a href="#" class="visible"></a>
+		</div>
+	</div>
+			<div class="clear">
+			</div>
+			<div id="submenu_panel" class="page">
+				<div id="submenu">
+											?		<a href="/articles/149/" class="item">Исследования</a>
+			<a href="/articles/152/" class="item">Тренды</a>
+			<a href="/articles/155/" class="item">Песочница</a>
+			<a href="/articles/211/" class="item">Интервью</a>
+			<a href="/articles/216/" class="item">Кейсы</a>
+			<a href="/articles/230/" class="item">Репортажи</a>
+			<a href="/articles/234/" class="item">Мнения</a>
+			<a href="/articles/248/" class="item">Дайджесты</a>
+										</div>
+				<div id="top_search">
+					<script src="/bitrix/components/cossa/search.title/templates/.default/script.js?1330544410" type="text/javascript"></script><div id="top_search_width">
+	<form action="/search/index.php">
+		<div class="form_field">
+			<input id="title-search-input" class="text" type="text" name="q" value="" autocomplete="off"/>
+			<input name="s" type="hidden" value="Поиск" />
+			<input name="spell" type="hidden" value="1" />
+			<div class="search_button"><button title="Найти" type="submit"></button></div>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+var jsControl = new JCTitleSearchFixed({
+	//'WAIT_IMAGE': '/bitrix/themes/.default/images/wait.gif',
+	'AJAX_PAGE' : '/php/test/news.php',
+	'CONTAINER_ID': 'top_search_width',
+	'INPUT_ID': 'title-search-input',
+	'MIN_QUERY_LEN': 2
+});
+
+
+function JCTitleSearchFixed(arParams) {
+	var _this = this;
+	
+	JCTitleSearch.apply(this, arguments)
+	
+	var jsControlShowResultParent = this.ShowResult;
+	
+	this.ShowResult = function(result) {
+		jsControlShowResultParent(result);
+		
+		if($("#top_navigation").hasClass("fixed")) {
+			_this.RESULT.topData = null;
+			_this.onFixed();
+		}
+	}
+	
+	this.onFixed = function(scrolled) {
+		$(_this.RESULT)
+			.addClass("title-search-result-fixed")
+			.css({top: document.getElementById("title-search-input").getBoundingClientRect().top + $("#title-search-input").outerHeight() + "px"});
+	};
+	
+	this.onAbsolute = function() {
+		if(_this.RESULT.topData == null) {
+			_this.RESULT.topData = $("#title-search-input").offset().top + $("#title-search-input").outerHeight() + "px";
+		}
+		
+		$(_this.RESULT)
+			.removeClass("title-search-result-fixed")
+			.css({top: _this.RESULT.topData});
+	};
+}
+
+</script>
+				</div>
+				<div class="clear">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="top_navigation_spacer">
+	</div>
+</div>
+<div id="content" class="page">
+	<div class="main_section">
+<div id="articles_list">
+<div class="filter">
+<script src="/bitrix/components/cossa/catalog.filter/templates/.default/script.js?1319094365" type="text/javascript"></script><form name="arrFilter_form" action="/php/test/news.php" method="get">
+										<div class="select"><div class="input placeholder"><span class="text">Автор</span><span class="pointer"></span></div><div class="ul"><ul><li class="first"><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1641&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Andrei Kamarouski</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2121&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/38c/18c4ba887dae388d66668e8428baf3e8_250599_2043687574474_1312894992_2411635_3719163_n.jpg" /><span class="name">Антон Запускалов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4862&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/a6c/cf3176b881899ef38c58f4baef276e11_name.jpg" /><span class="name">Evgeniy Fadeev</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=483&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/7a0/user.jpg" /><span class="name">targence</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4934&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/0a3/02b7835893c2bc93c8de2d622fc3f166_qhiypdodbv empdwuetfarjwculflsp.JPG" /><span class="name">Мария Терентьева</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4392&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/60e/7dc3f88e2337650a728d5c2ca781463c_33500100.png" /><span class="name">My Asterisk</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2587&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">nikita</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1315&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/e0c/set - hgennhlcln.jpg" /><span class="name">Редакция</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3525&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/1f9/18d5a1feb8560454f6ab5a1dab37d54b_x_05d9333a.jpg" /><span class="name">Илона Суворова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3933&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/414/2f6c6a5ae458a0d0f56a202b97f0a593_logo.jpg" /><span class="name">Бизнес 2.0</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=27&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/df4/blohin.jpg" /><span class="name">Александр Блохин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1880&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/3a0/e0ab89be938ae93a2497fae24d46a404_260684_100001039690947_120870456_n.jpg" /><span class="name">Екатерина Девяткина</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2145&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Кира Жесткова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4507&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/0f5/ccb29cfd0a13d89f5d665013d3ad1802_foto_1000_1000.jpg" /><span class="name">Дамир Халилов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=122&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/9ac/Belousov.jpg" /><span class="name">Николай Белоусов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1378&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Ирина Батькова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5868&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">umisoft</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2567&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Anna Daviy</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1371&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/2ca/wp-rulogo.jpg" /><span class="name">peacekeeper</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3001&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c06/34a828c4ee27694f5f3700440de48d49_moqkcuntvmulba.jpg" /><span class="name">Наталия Курбатова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3230&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/5f6/d10fe8451e8a80a3f96e018ec46d4cee_IMG_0318.jpg" /><span class="name">Ваня Хомич</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2906&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/d0d/49356e659cc0fa90342001301042b5bf_41395_740896169_8268_n.jpg" /><span class="name">Стас Рудый</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2433&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Игорь Малинин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3473&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/00b/877c4631ca6f9dfa55fb79dc7e7ae3e4_K.jpg" /><span class="name">Kompot online</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1543&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/b3f/275151_100000558750252_2563147_n.jpg" /><span class="name">Александр Зиновьев</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2159&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">patison</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2441&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/34e/bc77672334391a6234406a69fadef93c_a_1350923f.jpg" /><span class="name">Михаил Бланк</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2142&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/2c3/73ad9ba1a0cf336bf27e32c9eb4e8cf2_haupkjst_qyrwkirg.jpg" /><span class="name">Икра Икра</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=35&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/fbb/chernikova.jpg" /><span class="name">Настя Черникова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=91&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/01b/duck digital duck.png" /><span class="name">Митя  Воскресенский</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1427&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/1c3/53b93e8b0a1a513e310e29ac81a7a71d_oxte.jpg" /><span class="name">Кирилл Коробкин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4377&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/fad/c982c7ff420d6eb0109c16ecb0bee6cb_ava.png" /><span class="name">Сергей Сергеевич</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2391&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Dasha Efimova</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2393&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/a6a/0101c82b6b930422dd94cd130aa263e9_me.jpg" /><span class="name">Даша Ефимова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4247&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/312/6cb893128e0a7e9e99e0622de7c6cb0a_274129_100001479166185_133377_n.jpg" /><span class="name">Alexey Efimov</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=110&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c05/161188_1215728864_4614691_n.jpg" /><span class="name">Rostislav  Orlov</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=635&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/951/user.jpg" /><span class="name">mmm-2006</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5674&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/f74/54052ad18f9142a209c5b798c88f516f_x_1a865d4b.jpg" /><span class="name">Даша Васнецова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5339&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Наталья Черешнева</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3077&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Valerii Iakovenko</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4354&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/e6c/196b128f0eab06bb540b18788af1b57f_3127623149_22225b4b40_z.jpg" /><span class="name">Julie Delvaux</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3059&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">G2 Russia</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5183&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/20c/0cb730716e1d7a546ebc6330c76fa703_logo.jpg" /><span class="name">Леонид Коломийцев</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4207&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Наталья Козлова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2564&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/2b4/89a9450bbb6930b74baa197d5bd453e3_snetworkava.jpg" /><span class="name">Агентство "Социальные Сети"</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5904&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">alina_lead</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5635&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">katrink</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=486&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/629/user.jpg" /><span class="name">andrey.buzina</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4409&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">cauac</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=307&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/12c/vit.jpg" /><span class="name">Виталик Быков</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=214&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c2a/user_1.jpg" /><span class="name">Olya  Starchenko</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=255&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/a7b/komarouski.jpg" /><span class="name">Андрей Комаровский</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4736&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Сергей Аникин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=875&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/00a/leto_1.jpg" /><span class="name">leto</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4816&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/f5c/6d46e2a40af6abb0048170b4e95a9734_zbnjgnyjqbwh gsuiuwrbpoel 2012-05-05 jz 18.33.43.png" /><span class="name">Роксана Бушкова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1975&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/106/df5168a2ec7243fe57f5653608ee7f79_logo.jpg" /><span class="name">Марьяна Пилипенко</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1654&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/64f/1db9431238b879f4346f3124ebdc4b25_avatar_reasonably_small.jpg" /><span class="name">Дмитрий Зоркин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5768&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">MediaGuru_agency</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5599&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/8ef/59bd584728bca90d7e5af78ba0f2f411_agima_logo copy_min.jpg" /><span class="name">AGIMA Агентство интернет-маркетинга</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=983&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/156/P070911_20.09_a02u.jpg" /><span class="name">Алексей  Ландырев</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3742&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">rnb</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1899&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/cb7/a71104914e0ff4301ac804614d357a18_john.png" /><span class="name">Евгений Васюк</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2236&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Pumpizer</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3068&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Valery T</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1788&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/25e/hwpg fgkaovhg.jpg" /><span class="name">Виктория Фастовец</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3362&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/63a/c09bc6281f1b295a667366451a569c52_dkomarkova.jpg" /><span class="name">Дарья Комарькова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2947&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Netpeak_ua</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4316&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/6ce/ae74fa84d01cae42a625560468c1ada6_scan 8.jpg" /><span class="name">Павел Сасин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=184&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/040/a_71d626ad.jpg" /><span class="name">Александр  Зиновьев</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5243&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/ad7/5f0f063e59a64a121b9069fe777b028d_dlgmzv.jpg" /><span class="name">Yuriy Kireenko</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1902&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c3c/fc49bcf9f9e302ecf09712f30a07c820_40049_426373603517_569143517_4641874_4840637_n.jpg" /><span class="name">Павел Гительман</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3751&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Роман Афанасьев</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4353&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">FastForward</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3527&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/e95/8275c7ca7a0f52f771248473f2d84c3f_y_81275a03.jpg" /><span class="name">Владимир Стеценко</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5347&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/196/531736416113853982028aaee91829a2_itmozg.png" /><span class="name">ITmozg .ru</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4272&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/7ac/e2caa830be11e29071757eed7e2a308e_z_edacbe5e.jpg" /><span class="name">Евгений Кулябин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1616&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/bd6/images s38x.jpg" /><span class="name">Иван Напин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3692&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/fc5/06848018a80876b5f5f75ecde40042a6_Screen Shot 2012-03-14 at 6.46.43 PM.png" /><span class="name">Михаил Любич</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2106&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/5f9/955b7c2eaed0c73a126f1a86fd54aabf_lisa.jpg" /><span class="name">Виктория Ашихмина</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1925&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/6fb/ee2c90e55d170d0485320ef84562ad54_head1.jpg" /><span class="name">Ruben Babaev</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1651&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Ilya Kopan</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3930&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c8f/7b95476538fe2cba191bf58d7c0d3b6a_x_343befaa.jpg" /><span class="name">Дмитрий Николюк</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=692&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/24a/ilyapetrov2.jpeg" /><span class="name">Илья Петров</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1697&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Татьяна Ружич</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=192&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/32f/rox.jpg" /><span class="name">Roksana  Bushkova</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3252&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/f36/cd545298ceea0c017339a291aff012c3_buro_logo.jpg" /><span class="name">Бюро Пирогова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1662&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Nikolai Fedyainin</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3063&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/1aa/8bb31b8f24958029d0f4c4f41ab497ae_logo.jpg" /><span class="name">Digitall HR</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2544&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Алексей Писаревский</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2058&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Stas Khudiakov</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3986&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/b1d/b8f51325a3c04212ef7b5d940dd724f4_z_a64cf230.jpg" /><span class="name">Лилия Сивакова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1883&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Mishlaev Vitaliy</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4712&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/dea/c5ce82420f9dbad98855095107c489d4_ava.jpg" /><span class="name">Александр Лашков</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=906&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Мария Фальчикова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5583&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">e-generator</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3858&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/df4/78cee50ea34f200845eaca52734006ec_1298102938012938.jpg" /><span class="name">Мария  Терещенко </span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4446&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Стас Томашенко</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1965&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Дмитрий Баканович</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4913&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/797/51f0cd88979611c1da6afd1cf75330ed_FxCam_1311424255184.jpg" /><span class="name">Sergey Slavinsky</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3181&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/e42/fbf0105be378561c9273aa72d5251fd9_168789_188648231163647_100000554130408_600465_1510731_n.jpg" /><span class="name">Петр Смирнов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1136&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/092/tmwqnzcxckdruafqrruggpfllhjgkwke.png" /><span class="name">brandmobile</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4126&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/8fc/10a3e4b01f3fc47d88c67579390d506e_308954_2201176422322_1034642502_32056702_248770285_n.jpg" /><span class="name">Николай Связной</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=391&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/431/user.jpg" /><span class="name">Mikhail  Geisherik</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4390&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Elena_loyaltyplant</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1177&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/9b3/5e475fdf6df0a5b06bad508739aafa8e_dm_80_80.jpg" /><span class="name">Дмитрий Гончаренко</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2271&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/e87/e9296213e91c606334d529b31e117b87_11.png" /><span class="name">Олег  Митин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2277&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Ekaterina</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2530&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/73c/190019b6dd115ccd28f718feff7119bb_photo.jpg" /><span class="name">Вадим Греков</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1915&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Олег Чулаков</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4578&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Дмитрий Филатов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5048&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Алексей  Лазутин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1294&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">mgtoha</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3606&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/7c3/f85db0c8728ae494538476b203890012_PanarinV.jpg" /><span class="name">Виталий Панарин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2325&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/d16/e8db15debafcb26298b6d6f30659f162_IMG_8594crop.jpg" /><span class="name">Ульяна Шаргаева</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4299&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Дина Натура</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4571&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c74/f97439c435a1e9ee0d389fd790bf0c21_ElenaLutsenko.jpg" /><span class="name">Елена Луценко</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5352&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/825/a4d88aba445fd14f947cc64e4ba4fff7_300396_161081283979824_100002338612303_323382_1879766681_n.jpg" /><span class="name">Olga Merzlyakova</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3725&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Мама Ненаглядная</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2023&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Pupynin</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4615&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/5f8/fde36c7369f50a0fc18f425c3ab8c151_mfutianuvf.jpg" /><span class="name">Олеся Бомаш</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1412&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Татьяна Козовая</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4218&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">leni</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3997&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/72d/6741af876bf138a32ee7d78748dfb7d3_zephyr.jpg" /><span class="name">Дмитрий Федорович</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1239&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/68a/semga.jpg" /><span class="name">Рекламная Машинка Зигнера</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5220&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/2e5/58a984f80e8a2c70f8c1e2878240e22c_DSC00344.JPG" /><span class="name">Степан Вяльцев</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5644&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Руслан Шарапов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2076&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/356/948961d81c3f0c6989661c74c26e6aab_Z.jpg" /><span class="name">Виктор Фомин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=6014&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/40e/aca994ab0c23dd9ebf97189db3392570_avatar150.png" /><span class="name">Павел Калугин</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5303&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c45/5791f497fcf43b006a99d738de04a5d9_plenka.jpg" /><span class="name">Alexey Elfimov</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4400&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/074/79a3b2764637e2d213d413eb6c6a52c9_z_163859a0.jpg" /><span class="name">Глеб Чудецкий</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4563&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/366/d435ac200137c8eba801daa968616712_article_image-image-article.048b3161-59a1-4404-a4d2-cd52bce3f17c.jpg" /><span class="name">Александр Тарасов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1208&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Мария Терехова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2235&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/75b/b9871c4365978649180da92195ce5ff5_KarpovKS.jpg" /><span class="name">Константин Карпов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2523&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/5a1/65c45cddd43c885307c28544ca70c1d1_ava_n.jpg" /><span class="name">Сергей Беганский</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4424&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/dec/a32dcba7e7ca8e4925f99ee2da0a357f_Logo.jpg" /><span class="name">Василий Новиков</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4160&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">socialmagic</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1209&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">lemonjoe0</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1097&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Mc_Laude</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5090&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/90d/fca13e5aa4ab108559a093f60ebddf1a_DSC_0637.JPG" /><span class="name">Вадим Роговский</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5337&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/2b8/c03e2ecf3fc787b6b31014663df23a0c_xn.jpg" /><span class="name">Татьяна Костенкова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5399&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Наталия  Соловьёва</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=6079&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/320/a9bbd9ef8e4d1f4887781ff114ed2325_z_afc89917.jpg" /><span class="name">Albertina  Whiteblue</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5185&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/4b1/3a2a817517143ce727bccaed3a0f6253_z_5ab093f5.jpg" /><span class="name">Людмила Блохина</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5608&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/fcf/5ec24aac8fdf480465f8c4141fb768d9_sobikspit1.jpg" /><span class="name">Александр Дэкс</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5885&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">ADLABS</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4698&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/c3f/9a844b762f2a9822ac645a89f97b4465_576158_10150684600759071_607824070_9251839_1005716775_n.jpg" /><span class="name">Олеся Кулик</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=4975&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/d0d/5869aa847de4d821a7e8b32b622fc7ca_160xb160 cfcpkmqsedyl soklowiaqn.jpg" /><span class="name">Артем Ельцов</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=2381&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">Vasily Lebedev</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3012&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/501/6f3fe27eba632ef2af8060adecf9fe65_nieiyrvysnricr1.png" /><span class="name">Елена Привалова</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=3032&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/636/fc149024b7a313c11defe66daf330be0_avatarS.jpg" /><span class="name">Ульяна Зверева</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=1598&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/560/101-180x150.jpg" /><span class="name">Alexandr Bakeev</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=5460&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/feb/228b208bd1bd1888eaa7984faac0006d__MG_9745.JPG" /><span class="name">Никита Кисляков</span></a></li><li><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=6106&set_filter=Y"><img width="25" height="25" alt="" src="/upload/main/94c/9872752e79fcb8048695e7017e021f78_556000_499361173423183_929479647_n.jpg" /><span class="name">Светлана Иванникова</span></a></li><li class="last"><a href="?set_filter=Фильтровать&arrFilter_ff[CREATED_USER_NAME]=6045&set_filter=Y"><img width="25" height="25" alt="" src="/images/male.jpg" /><span class="name">anonimus</span></a></li></ul></div></div>											<script type="text/javascript" src="/bitrix/js/main/cphttprequest.js?1319023981"></script><div class="text"><div class="form_field"><div class="icon"><div></div></div><div class="reset"><a href="?del_filter=Сбросить&amp;set_filter=Y">Сбросить</a></div><input autocomplete="off" id="input" name="arrFilter_ff[TAGS]" type="text" class="text" placeholder="Фильтр по тегам" value="" onfocus="window.oObject[this.id] = new JsTc(this, ['s1']);" /></div></div>				<input type="hidden" name="set_filter" value="Y" />
+	<div class="buttons">
+		<input type="submit" name="set_filter" value="Фильтр" />
+	</div>
+	<div class="clear"></div>
+</form>
+
+
+</div>
+?<div class="items_block">
+				<div class="item first" id="bx_2502990680_20707" data-section-id="234">
+												<h2>
+												<span class="h">
+							<a href="/articles/234/20707/">Это будущее, детка: новые специальности в digital</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20707"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/234/20707/" data-text="Это будущее, детка: новые специальности в digital" data-img="http://www.cossa.ru"></div>
+				<div class="line-block">
+				<style>
+#tw_div {
+	width: 100px;
+	height: 100px;
+	background: pink;
+}
+</style>
+
+<iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?count=horizontal" style="width:100px; height:20px;"></iframe>
+
+<div id="tw_div"></div>
+<script type="text/javascript">
+document.getElementById("tw_div").onclick = function() {
+	document.getElementById("tw_div").innerHTML = '<iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?count=horizontal" style="width:100px; height:20px;"></iframe>';
+};
+</script>
+				</div>
+
+				<div class="side-block"></div>
+			</div>
+					
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/234/20707/"><img class="img_align" src="/upload/iblock/fb3/big_teaser1343246364_1343119065.jpg" width="644" alt="Это будущее, детка: новые специальности в digital" title="Это будущее, детка: новые специальности в digital" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/234/">Мнения</a>					
+<p>Мы&nbsp;живем в&nbsp;интересное время&nbsp;&mdash; мир на&nbsp;наших глазах меняется чертовски быстро. И&nbsp;в&nbsp;контексте бурного развития техники и&nbsp;технологий уже не&nbsp;кажутся странными и&nbsp;смешными сообщения о&nbsp;том, что, к&nbsp;примеру, один известный бизнесмен от&nbsp;интернета инвестирует в&nbsp;робототехнику. Коммерческий интерес к&nbsp;новым технологиям и&nbsp;инновациям рождает спрос на&nbsp;новых профессионалов, и, похоже, будущее нашей истории не&nbsp;в&nbsp;последнюю очередь будет зависеть от&nbsp;того, что изобретут парни в&nbsp;белых халатах <nobr>где-нибудь</nobr> в&nbsp;Бангалоре или Токио.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=6106">Светлана Иванникова</a>,</span>				<span class="occupation">CEO</span> в <a class="company" href="/search/?q="Рыба Тут" | Social media marketing agency">"Рыба Тут" | Social media marketing agency</a>				<br/><span class="date">24 июля 2012, 12:40</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/234/20707/#00"><span>5</span></a>				<span class="rating up">+8</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=Будущее&set_filter=Фильтр&set_filter=Y">Будущее</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= digital-специалисты&set_filter=Фильтр&set_filter=Y"> digital-специалисты</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Trendwatcher&set_filter=Фильтр&set_filter=Y"> Trendwatcher</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= SMM monitoring&set_filter=Фильтр&set_filter=Y"> SMM monitoring</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Data scientist&set_filter=Фильтр&set_filter=Y"> Data scientist</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= UX-специалист&set_filter=Фильтр&set_filter=Y"> UX-специалист</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= augmented reality&set_filter=Фильтр&set_filter=Y"> augmented reality</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20643" data-section-id="152">
+												<h2>
+												<span class="h">
+							<a href="/articles/152/20643/">Короткая речь о будущем интерактивного дизайна</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20643"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20643/" data-text="Короткая речь о будущем интерактивного дизайна" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/152/20643/"><img class="img_align" src="/upload/iblock/8d4/Victor-Bret_teaser.jpg" width="644" alt="Короткая речь о будущем интерактивного дизайна" title="Короткая речь о будущем интерактивного дизайна" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/152/">Тренды</a>					<p>Cossa.ru предлагает вашему вниманию перевод текста Брета Виктора (Bret Victor) о&nbsp;будущем интерактивного дизайна. Брет Виктор&nbsp;&mdash; дизайнер и&nbsp;инженер, автор изначальных концепций пользовательского интерфейса iPod Nano, iPad и&nbsp;нескольких экспериментальных гаджетов. Виктором были созданы более 70 концепций переустройства интерфейсов: почты, редактирования видео, диалогов, обучающих программ. Ряд функций в&nbsp;Mac OS&nbsp;X&nbsp;Lion также были придуманы им.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=2121">Антон Запускалов</a>,</span>				<span class="occupation">и.о. главного котика</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a>				<br/><span class="date">23 июля 2012, 14:30</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/152/20643/#00"><span>4</span></a>				<span class="rating up">+1</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=Интерактивный дизайн&set_filter=Фильтр&set_filter=Y">Интерактивный дизайн</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Брет Виктор&set_filter=Фильтр&set_filter=Y"> Брет Виктор</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= iPod Nano&set_filter=Фильтр&set_filter=Y"> iPod Nano</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= iPad&set_filter=Фильтр&set_filter=Y"> iPad</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= инструменты будущего&set_filter=Фильтр&set_filter=Y"> инструменты будущего</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20585" data-section-id="234">
+												<h2>
+												<span class="h">
+							<a href="/articles/234/20585/">Перспективы развития рынка медийной рекламы</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20585"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/234/20585/" data-text="Перспективы развития рынка медийной рекламы" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/234/20585/"><img class="img_align" src="/upload/iblock/ff5/teaserr.jpg" width="644" alt="Перспективы развития рынка медийной рекламы" title="Перспективы развития рынка медийной рекламы" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/234/">Мнения</a>					<p>В 2011 году 10 крупнейших рекламодателей Рунета потратили на&nbsp;медийную рекламу около 4&nbsp;млрд.&nbsp;руб. Доля пользователей мобильного интернета продолжает увеличиваться. Как будет изменяться формат медийной рекламы в будущем?</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=1915">Олег Чулаков</a>,</span>				<span class="occupation">Арт-директор</span> в <a class="company" href="/search/?q=Студия Олега Чулакова">Студия Олега Чулакова</a>				<br/><span class="date">23 июля 2012, 11:20</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/234/20585/#00"><span>3</span></a>				<span class="rating up">+6</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=Медийная реклама&set_filter=Фильтр&set_filter=Y">Медийная реклама</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= рунет&set_filter=Фильтр&set_filter=Y"> рунет</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= АКАР&set_filter=Фильтр&set_filter=Y"> АКАР</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= мобильные устройства&set_filter=Фильтр&set_filter=Y"> мобильные устройства</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= пользователи&set_filter=Фильтр&set_filter=Y"> пользователи</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20551" data-section-id="149">
+												<h2>
+												<span class="h">
+							<a href="/articles/149/20551/">TNS: мобильный фокус</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20551"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/149/20551/" data-text="TNS: мобильный фокус" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/149/20551/"><img class="img_align" src="/upload/iblock/549/banner-mobile-marketing.jpg" width="644" alt="TNS: мобильный фокус" title="TNS: мобильный фокус" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/149/">Исследования</a>					
+<p>Исследовательская компания TNS подготовила анализ рынка мобильного интернета, в&nbsp;котором собраны основные факты и&nbsp;тенденции, касающиеся современного российского опыта.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=3525">Илона Суворова</a>,</span>				<span class="occupation">котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a>				<br/><span class="date">20 июля 2012, 14:10</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/149/20551/#00"><span>4</span></a>				<span class="rating up">+8</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=TNS&set_filter=Фильтр&set_filter=Y">TNS</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= рынок мобильного интернета&set_filter=Фильтр&set_filter=Y"> рынок мобильного интернета</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= исследование&set_filter=Фильтр&set_filter=Y"> исследование</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= пользователи&set_filter=Фильтр&set_filter=Y"> пользователи</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= смартфон&set_filter=Фильтр&set_filter=Y"> смартфон</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= touch-screen&set_filter=Фильтр&set_filter=Y"> touch-screen</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= мобильное устройство&set_filter=Фильтр&set_filter=Y"> мобильное устройство</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= 3G&set_filter=Фильтр&set_filter=Y"> 3G</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= GPRS&set_filter=Фильтр&set_filter=Y"> GPRS</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Wi-Fi&set_filter=Фильтр&set_filter=Y"> Wi-Fi</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= браузер&set_filter=Фильтр&set_filter=Y"> браузер</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= приложение&set_filter=Фильтр&set_filter=Y"> приложение</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= ВКонтакте&set_filter=Фильтр&set_filter=Y"> ВКонтакте</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Яндекс&set_filter=Фильтр&set_filter=Y"> Яндекс</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= социальные сети&set_filter=Фильтр&set_filter=Y"> социальные сети</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20406" data-section-id="152">
+												<h2>
+												<span class="h">
+							<a href="/articles/152/20406/">Телевизоры нового поколения </a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20406"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20406/" data-text="Телевизоры нового поколения " data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/152/20406/"><img class="img_align" src="/upload/iblock/8c0/teaser_644.jpg" width="644" alt="Телевизоры нового поколения " title="Телевизоры нового поколения " /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/152/">Тренды</a>					
+<p>По&nbsp;мере того как каналов коммуникации становится все больше, конкуренция между ними становится все сильнее. Если еще пару лет назад ТВ-индустрия могла не&nbsp;обращать внимание на&nbsp;то, что происходит в&nbsp;сети, то&nbsp;уже сейчас <a href="http://cossa.ru/news/247/17514/" target="_blank" ><u>крупнейшие российские порталы</u></a> могут сравняться по&nbsp;охвату с&nbsp;ведущими федеральными каналами.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=1315">Редакция</a>,</span>				<span class="occupation">котоферма</span>				<br/><span class="date">19 июля 2012, 19:40</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/152/20406/#00"><span>2</span></a>				<span class="rating up">+6</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=Телевизор&set_filter=Фильтр&set_filter=Y">Телевизор</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= ТВ-индустрия&set_filter=Фильтр&set_filter=Y"> ТВ-индустрия</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= ТВ-рынок&set_filter=Фильтр&set_filter=Y"> ТВ-рынок</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Samsung&set_filter=Фильтр&set_filter=Y"> Samsung</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Panasonic&set_filter=Фильтр&set_filter=Y"> Panasonic</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Sony&set_filter=Фильтр&set_filter=Y"> Sony</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= LG&set_filter=Фильтр&set_filter=Y"> LG</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= LED&set_filter=Фильтр&set_filter=Y"> LED</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= 3D&set_filter=Фильтр&set_filter=Y"> 3D</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Smart TV&set_filter=Фильтр&set_filter=Y"> Smart TV</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Николай Белоусов&set_filter=Фильтр&set_filter=Y"> Николай Белоусов</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20354" data-section-id="152">
+												<h2>
+												<span class="h">
+							<a href="/articles/152/20354/">Как iPhone изменил мир за 5 лет</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20354"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20354/" data-text="Как iPhone изменил мир за 5 лет" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/152/20354/"><img class="img_align" src="/upload/iblock/2c8/iPhone-anniversary.jpg" width="644" alt="Как iPhone изменил мир за 5 лет" title="Как iPhone изменил мир за 5 лет" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/152/">Тренды</a>					
+<p>Пять лет назад компания Apple представила первый iPhone. Пожалуй, в&nbsp;истории не&nbsp;было второго примера, когда продукт становился столь успешным за&nbsp;очень короткий срок.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=2121">Антон Запускалов</a>,</span>				<span class="occupation">и.о. главного котика</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a>				<br/><span class="date">19 июля 2012, 13:20</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/152/20354/#00"><span>11</span></a>				<span class="rating up">+2</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=iPhone&set_filter=Фильтр&set_filter=Y">iPhone</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Apple&set_filter=Фильтр&set_filter=Y"> Apple</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Microsoft&set_filter=Фильтр&set_filter=Y"> Microsoft</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Google&set_filter=Фильтр&set_filter=Y"> Google</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Walmart&set_filter=Фильтр&set_filter=Y"> Walmart</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Exxon-Mobile&set_filter=Фильтр&set_filter=Y"> Exxon-Mobile</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Palm&set_filter=Фильтр&set_filter=Y"> Palm</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Nokia&set_filter=Фильтр&set_filter=Y"> Nokia</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Researchin Motion&set_filter=Фильтр&set_filter=Y"> Researchin Motion</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Blackberry&set_filter=Фильтр&set_filter=Y"> Blackberry</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= мобильные устройства&set_filter=Фильтр&set_filter=Y"> мобильные устройства</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Стив Джобс&set_filter=Фильтр&set_filter=Y"> Стив Джобс</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= AppStore&set_filter=Фильтр&set_filter=Y"> AppStore</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= приложение&set_filter=Фильтр&set_filter=Y"> приложение</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Instagram&set_filter=Фильтр&set_filter=Y"> Instagram</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Angry Birds&set_filter=Фильтр&set_filter=Y"> Angry Birds</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Samsung Galaxy S3&set_filter=Фильтр&set_filter=Y"> Samsung Galaxy S3</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= iPhone 5&set_filter=Фильтр&set_filter=Y"> iPhone 5</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= in-cell&set_filter=Фильтр&set_filter=Y"> in-cell</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20286" data-section-id="152">
+												<h2>
+												<span class="h">
+							<a href="/articles/152/20286/">Что такое чурналистика?</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20286"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20286/" data-text="Что такое чурналистика?" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/152/20286/"><img class="img_align" src="/upload/iblock/db1/Churnalism_teaser.jpg" width="644" alt="Что такое чурналистика?" title="Что такое чурналистика?" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/152/">Тренды</a>					
+<p>Как часто, читая статьи в&nbsp;различных изданиях, посещает мысль о&nbsp;том, что это &mdash; плохо переработанный <nobr>пресс-релиз</nobr>? Следя за&nbsp;потоками информации, встречаешь похожие друг на&nbsp;друга новости, в&nbsp;которых фразы повторяются один в&nbsp;один, а&nbsp;голос издания почти не&nbsp;слышен. У&nbsp;этого нового типа &laquo;журналистики&raquo; есть название&nbsp;— чурналистика.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=3525">Илона Суворова</a>,</span>				<span class="occupation">котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a>				<br/><span class="date">18 июля 2012, 16:15</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/152/20286/#00"><span>2</span></a>				<span class="rating up">+11</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=Чурналистика&set_filter=Фильтр&set_filter=Y">Чурналистика</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Васим Закир&set_filter=Фильтр&set_filter=Y"> Васим Закир</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= статьи&set_filter=Фильтр&set_filter=Y"> статьи</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= контент&set_filter=Фильтр&set_filter=Y"> контент</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= журналист&set_filter=Фильтр&set_filter=Y"> журналист</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= пиарщик&set_filter=Фильтр&set_filter=Y"> пиарщик</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Ник Дэвис&set_filter=Фильтр&set_filter=Y"> Ник Дэвис</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= churnalism.com&set_filter=Фильтр&set_filter=Y"> churnalism.com</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Иван Засурский&set_filter=Фильтр&set_filter=Y"> Иван Засурский</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20238" data-section-id="152">
+												<h2>
+												<span class="h">
+							<a href="/articles/152/20238/">Memejacking: использование мемов для достижения маркетинговых задач</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20238"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/152/20238/" data-text="Memejacking: использование мемов для достижения маркетинговых задач" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/152/20238/"><img class="img_align" src="/upload/iblock/897/Memejacking_teaser.jpg" width="644" alt="Memejacking: использование мемов для достижения маркетинговых задач" title="Memejacking: использование мемов для достижения маркетинговых задач" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/152/">Тренды</a>					
+<p>Сегодня <nobr>интернет-мемы</nobr>&nbsp;&mdash; один из&nbsp;самых популярных видов социального контента. Они забавные, не&nbsp;лишены смысла и&nbsp;отлично подходят для распространения в&nbsp;сети. &laquo;Угон&raquo; популярных мемов для достижения маркетинговых целей&nbsp;— memejacking&nbsp;— неплохой способ создания интересного контента, которым в&nbsp;последнее время все чаще пользуются западные бренды.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=3525">Илона Суворова</a>,</span>				<span class="occupation">котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a>				<br/><span class="date">18 июля 2012, 12:45</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/152/20238/#00"><span>6</span></a>				<span class="rating up">+6</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=Memejacking&set_filter=Фильтр&set_filter=Y">Memejacking</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= контент&set_filter=Фильтр&set_filter=Y"> контент</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= мем&set_filter=Фильтр&set_filter=Y"> мем</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Facebook&set_filter=Фильтр&set_filter=Y"> Facebook</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= HubSpot&set_filter=Фильтр&set_filter=Y"> HubSpot</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Twitter&set_filter=Фильтр&set_filter=Y"> Twitter</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Pinterest&set_filter=Фильтр&set_filter=Y"> Pinterest</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_20075" data-section-id="211">
+												<h2>
+						<a class="b-article-theme-label" href="/thematics/The_Pitch/">The Pitch.</a>						<span class="h">
+							<a href="/articles/211/20075/">Стефан Веннинг — Executive Producer в The Mill’s London Studio</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=20075"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/211/20075/" data-text="Стефан Веннинг — Executive Producer в The Mill’s London Studio" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/211/20075/"><img class="img_align" src="/upload/iblock/4fe/Stephen-Venning.jpg" width="644" alt="Стефан Веннинг — Executive Producer в The Mill’s London Studio" title="Стефан Веннинг — Executive Producer в The Mill’s London Studio" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/211/">Интервью</a>					 
+<p>The Pitch&nbsp;&mdash; совместный проект <nobr>digital-агентства</nobr> Pichesky и&nbsp;Cossa.ru, который ставит себе целью выяснить, кто, как и&nbsp;зачем делает все, чтобы реклама с&nbsp;каждым днем так искусно становилась частью нас. В&nbsp;этом выпуске на&nbsp;вопросы отвечает Executive Producer в&nbsp;The Mill&rsquo;s&nbsp;London Studio.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=1315">Редакция</a>,</span>				<span class="occupation">котоферма</span>				<br/><span class="date">16 июля 2012, 17:25</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/211/20075/#00"><span>2</span></a>				<span class="rating up">+10</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=The Pitch&set_filter=Фильтр&set_filter=Y">The Pitch</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Стефан Веннинг&set_filter=Фильтр&set_filter=Y"> Стефан Веннинг</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= The Mill&set_filter=Фильтр&set_filter=Y"> The Mill</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= видеоролики&set_filter=Фильтр&set_filter=Y"> видеоролики</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= визуальные эффекты&set_filter=Фильтр&set_filter=Y"> визуальные эффекты</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= VPX&set_filter=Фильтр&set_filter=Y"> VPX</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= проект&set_filter=Фильтр&set_filter=Y"> проект</a>																																																												</div>
+								</div>
+					<div class="item" id="bx_2502990680_19980" data-section-id="211">
+												<h2>
+												<span class="h">
+							<a href="/articles/211/19980/">Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»</a>
+						</span>
+													<a title="Добавить в закладки" class="fav add_fav" href="/php/test/news.php?subscribe=19980"></a>
+											</h2>
+										<!--Кнопки соцсетей-->
+			<div class="like_buttons">
+				<div class="like_buttons_data" data-url="http://www.cossa.ru/articles/211/19980/" data-text="Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»" data-img="http://www.cossa.ru"></div>
+				<div class="line-block"></div>
+				<div class="side-block"></div>
+			</div>		
+			<!--Кнопки соцсетей-->
+												<div class="image"><a href="/articles/211/19980/"><img class="img_align" src="/upload/iblock/aad/lktme.jpg" width="644" alt="Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»" title="Екатерина Базилевская: «Важно сделать так, чтобы как можно больше людей были вовлечены в идею»" /></a></div>
+														<div class="text">
+					<a class="label" href="/articles/211/">Интервью</a>					
+<p>Екатерина Базилевская, коммерческий директор Look At&nbsp;Media (ИД, в который входят проекты Look At Me, The Village, FurFur, Look At Me.tv), о&nbsp;том, что может предложить площадка бренду, и&nbsp;почему не&nbsp;бывает стандартных проектов.</p>
+ 				</div>	
+						<div class="info_bar">
+				<span class="author"><a href="/profile/?ID=35">Настя Черникова</a>,</span>				<span class="occupation">главный котик</span> в <a class="company" href="/search/?q=Cossa.ru">Cossa.ru</a>				<br/><span class="date">16 июля 2012, 10:00</span>				<a class="hide_tags" href="#">Показать тэги</a>				<a class="comments" href="/articles/211/19980/#00"><span>6</span></a>				<span class="rating up">+18</span>			</div>
+							<div class="tags hidden_tags">
+																																					<a href="/articles/?arrFilter_ff[TAGS]=Look At Me&set_filter=Фильтр&set_filter=Y">Look At Me</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Екатерина Базилевская&set_filter=Фильтр&set_filter=Y"> Екатерина Базилевская</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= брендированный контент&set_filter=Фильтр&set_filter=Y"> брендированный контент</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= 10 новых музыкантов&set_filter=Фильтр&set_filter=Y"> 10 новых музыкантов</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= группа «Труд»&set_filter=Фильтр&set_filter=Y"> группа «Труд»</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Каннский фестиваль&set_filter=Фильтр&set_filter=Y"> Каннский фестиваль</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Parking Douche&set_filter=Фильтр&set_filter=Y"> Parking Douche</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= велопробег&set_filter=Фильтр&set_filter=Y"> велопробег</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Hopes and Fears&set_filter=Фильтр&set_filter=Y"> Hopes and Fears</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= баннеры&set_filter=Фильтр&set_filter=Y"> баннеры</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Volkswagen&set_filter=Фильтр&set_filter=Y"> Volkswagen</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Grey Goose&set_filter=Фильтр&set_filter=Y"> Grey Goose</a>, 																	<a href="/articles/?arrFilter_ff[TAGS]= Стрелка&set_filter=Фильтр&set_filter=Y"> Стрелка</a>																																																												</div>
+								</div>
+	</div>
+	</div>
+</div>
+<div class="right_section">
+<div id="sand_box">
+<h3 class="block_header"><a href="/articles/155/">Песочница</a></h3>
+		<div class="item" id="bx_2298705538_20735">
+									<div class="image"><a href="/articles/155/20735/"><img class="img_align" src="/upload/iblock/84f/big_maori11343526240_1343126110.jpg" width="120" alt="Как создать свою команду мечты. Руководство к действию" title="Как создать свою команду мечты. Руководство к действию" /></a></div>
+							<div class="text">
+							<h4><a href="/articles/155/20735/">Как создать свою команду мечты. Руководство к действию</a></h4>
+								</div>
+		<div class="clear"></div>
+	</div>
+		<div class="item" id="bx_2298705538_20723">
+									<div class="image"><a href="/articles/155/20723/"><img class="img_align" src="/upload/iblock/639/big_intech-logo1343824688_1343122849.jpg" width="120" alt="ТОП-10 RBT за июнь 2012 года по версии INTECH" title="ТОП-10 RBT за июнь 2012 года по версии INTECH" /></a></div>
+							<div class="text">
+							<h4><a href="/articles/155/20723/">ТОП-10 RBT за июнь 2012 года по версии INTECH</a></h4>
+								</div>
+		<div class="clear"></div>
+	</div>
+		<div class="item" id="bx_2298705538_20634">
+									<div class="image"><a href="/articles/155/20634/"><img class="img_align" src="/upload/iblock/f5d/big_11343620570_1343033155_644.jpg" width="120" alt="Как правильно вести корпоративный блог на ХабраХабре" title="Как правильно вести корпоративный блог на ХабраХабре" /></a></div>
+							<div class="text">
+							<h4><a href="/articles/155/20634/">Как правильно вести корпоративный блог на ХабраХабре</a></h4>
+										<div class="info_bar">
+					<a class="comments" href="/articles/155/20634/#00">3</a>
+				</div>
+					</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div id="closest_events">
+	<h3 class="block_header"><a href="/events/">Ближайшие события</a></h3>
+		<div class="item" id="bx_2298705538_19793">
+		<div class="date">
+						<div class="num">25</div>
+			<div class="month">Июля</div>
+		</div>
+		<div class="text">		
+										<h4><a href="/events/238/19793/">Статистика по медийной кампании: чего не видят счетчики?</a></h4>
+					</div>
+		<div class="clear"></div>
+	</div>
+		<div class="item" id="bx_2298705538_20695">
+		<div class="date">
+						<div class="num">26</div>
+			<div class="month">Июля</div>
+		</div>
+		<div class="text">		
+										<h4><a href="/events/239/20695/">Кейс-конференция «Как мы добываем клиентов»</a></h4>
+					</div>
+		<div class="clear"></div>
+	</div>
+		<div class="item" id="bx_2298705538_20244">
+		<div class="date">
+						<div class="num">26</div>
+			<div class="month">Июля</div>
+		</div>
+		<div class="text">		
+										<h4><a href="/events/239/20244/">Бизнес-завтрак «В яблочко! Возможности таргетированной рекламы в социальных сетях» </a></h4>
+					</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="banner">
+<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fcossa.ru&amp;width=266&amp;colorscheme=light&amp;show_faces=true&amp;border_color=E9E9E9&amp;stream=false&amp;header=false&amp;height=180" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:266px; height:180px;" allowTransparency="true"></iframe>
+</div>
+<div class="banner">
+<!-- VK Widget -->
+<div id="vk_groups"></div>
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 0, width: "266"}, 19720218);
+</script>
+</div>
+<div class="border_radius banner" id="id456">
+	<div class="top"><div class="tl"></div><div class="tr"></div><h6>Реклама</h6></div>
+	<div class="center">
+		<script type='text/javascript'>//<![CDATA[
+
+    var rnd = Math.floor(Math.random()*99999999999);
+
+    document.write("<iframe src='http://server.adeasy.ru/servead/request/875");
+
+    document.write("?cb=");
+
+    document.write(rnd+"'");
+
+    document.write(" width='240' height='400' frameborder='0' scrolling='no'></iframe>");
+
+//]]></script>	</div>
+	<div class="bottom"><div class="bl"></div><div class="br"></div></div>
+</div></div>
+<div class="clear"></div><img src="http://cossa.ru/bitrix/spread.php?s=QklUUklYX1NNX0dVRVNUX0lEATEyNTE4MTQBMTM3NDIzNDA3MAEvAQECQklUUklYX1NNX0xBU1RfVklTSVQBMjQuMDcuMjAxMiAxNTo0MToxMAExMzc0MjM0MDcwAS8BAQI%3D&amp;k=cb59eec4aef53f1a175417adbfccda34" alt="" style="width:0px; height:0px; position:absolute; left:-1px; top:-1px;" />
+						</div>
+			            <div id="footer">
+	<div class="page">
+		<div class="columns">
+			<div class="column description">
+				<img width="75" height="23" class="logo" alt="Cossa" src="/images/footer_logo.gif">
+				<p>Cossa.ru — информационный портал о маркетинге и коммуникациях в
+цифровой среде. Новые инструменты продвижения и оптимизация работы.
+Различные формы взаимодействия (SMM, вирусные видео, QR-коды,
+мобильный маркетинг)  и аналитика (ROI, KPI, CPA, lead generation).
+Мы храним ценный опыт ошибок и успехов, которым делятся представители
+брендов и рекламных агентств, на своих страницах.</p>
+			</div>
+			<div class="column about">
+				<h4><a href="">Компания</a></h4>
+				<ul>
+					<li><a href="/about/">О проекте</a></li>
+					<li><a href="/contacts/">Контакты</a></li>
+					<li><a href="/adv/">Реклама на сайте</a></li>
+					<li><a href="/holders/">Правообладателям</a></li>
+					<li><a href="/rules/">Правила</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h4><a href="/articles/">Статьи</a></h4>
+				<ul>
+					<li><a href="/articles/234/">Мнение</a></li>
+					<li><a href="/articles/216/">Кейсы</a></li>
+					<li><a href="/articles/152/">Тренды</a></li>
+					<li><a href="/articles/149/">Исследования</a></li>
+					<li><a href="/articles/211/">Интервью</a></li>
+					<li><a href="/articles/230/">Репортаж</a></li>
+					<li><a href="/articles/155/">Песочница</a></li>
+				</ul>
+			</div>
+			<div class="column subscribe">
+				<h4><a href="">Подписывайтесь</a></h4>
+				<ul>
+					<li class="rss"><a href="/rss/">RSS</a></li>
+					<li class="fb"><a href="http://www.facebook.com/cossa.ru">Facebook</a></li>
+					<li class="twitter"><a href="https://twitter.com/#!/cossa_ru">Тwitter</a></li>
+					<li class="vk"><a href="http://vk.com/cossa">Вконтакте</a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="partners">
+			<h3 class="block_header">Партнеры</h3>
+			<a class="item" href=""><img width="65" height="65" alt="Red Keds" src="/images/partners/red_keds.jpg"></a>
+		</div>
+		<div id="copyright">
+			Cossa.ru &copy;  2010?2012 <span class="middot"></span> <a href="mailto:42@cossa.ru">42@cossa.ru</a> <span class="middot"></span><a href="mailto:chernikova@cossa.ru">chernikova@cossa.ru</a> 
+		</div>
+	</div>
+</div>		<!--</div>
+	</div>
+	<div id="copyright">Cossa &copy; 2011 <span class="middot">&middot;</span> <a href="mailto:42@cossa.ru">42@cossa.ru</a></div>-->
+</div>
+
+
+<div id="login_popup">
+<div class="close"><a title="Закрыть" href="">Закрыть</a></div>
+<div class="body">
+<h4>Вход на cossa.ru</h4>
+<div class="decor"><div></div></div>
+<div class="form">
+<div class="column1">
+<form method="post" target="_top" action="/php/test/news.php?login=yes">
+	<input type="hidden" name="backurl" value="/php/test/news.php" />
+	<input type="hidden" name="AUTH_FORM" value="Y" />
+	<input type="hidden" name="TYPE" value="AUTH" />
+	<div class="form_field">
+		<a href="/registration/" rel="nofollow">Регистрация</a>
+		<h5>Логин<span class="no_text">?</span></h5>
+		<input class="text" type="text" name="USER_LOGIN" value="admin" />
+	</div>
+	<div class="form_field">
+		<h5>Пароль<span class="no_text">?</span></h5>
+		<input class="text" type="password" name="USER_PASSWORD" />
+		<div class="anchor">
+			<a href="/auth/?forgot_password=yes&amp;backurl=%2Fphp%2Ftest%2Fnews.php" rel="nofollow">Забыли свой пароль?</a>
+		</div>
+	</div>
+	<!--<input type="submit" name="Login" value="Войти" />-->
+	<div class="submit"><input type="submit" class="submit" value="Войти"></div>
+			<label class="checkbox remember">
+			<input type="checkbox" id="USER_REMEMBER_frm" name="USER_REMEMBER" value="Y" />
+			<span>Запомнить меня</span>
+		</label>
+	</form>
+</div>
+<div class="column2">
+<h5>Уже есть аккаунт?<br>Выбирай любой вариант входа:</h5>
+<form method="post" name="bx_auth_services" target="_top" action="/php/test/news.php?login=yes">
+<a onclick="BX.util.popup('https://www.facebook.com/dialog/oauth?client_id=264684433573256&redirect_uri=http://www.cossa.ru/php/test/news.php?auth_service_id=Facebook&scope=email&display=popup', 580, 400)" href="javascript:void(0)"><img src="/images/icons/facebook.gif" title="Facebook" alt="Facebook" /></a> 
+<a onclick="BX.util.popup('/php/test/news.php?auth_service_id=Twitter', 800, 450)" href="javascript:void(0)"><img src="/images/icons/twitter.gif" title="Twitter" alt="Twitter" /></a> 
+<a onclick="VK.Auth.login(BxVKAuthInfo);" href="javascript:void(0)"><img src="/images/icons/vkontakte.gif" title="Vkontakte" alt="Vkontakte" /></a>
+	<input type="hidden" name="auth_service_id" value="" />
+</form>
+<p>Используйте свой аккаунт в социальной сети Facebook или Twitter,
+	чтобы пользоваться сайтом</p></div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="remind">
+		<div>Не забудьте написать email на странице своего профиля для управления рассылкой</div>
+	</div>
+</div>
+<!--<div id="top_search_width"></div>-->
+<!-- Yandex.Metrika -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter575397 = new Ya.Metrika(575397);
+             yaCounter575397.clickmap(true);
+             yaCounter575397.trackLinks(true);
+        
+        } catch(e) {}
+    });
+})(window, 'yandex_metrika_callbacks');
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div style="position:absolute"><img src="//mc.yandex.ru/watch/575397" alt="" /></div></noscript>
+<!-- /Yandex.Metrika -->
+<!--Openstat-->
+<span id="openstat2189004"></span>
+<script type="text/javascript">
+var openstat = { counter: 2189004, next: openstat, track_links: "all" };
+(function(d, t, p) {
+var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+})(document, "script", document.location.protocol);
+</script>
+<!--/Openstat-->
+<script type="text/javascript" charset="UTF-8" src="http://surfingbird.ru/share/share.min.js"></script>
+</body>
+</html>

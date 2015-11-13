@@ -1,0 +1,27 @@
+<form id="redactorInsertImageGalleryForm" method="post" action="" enctype="multipart/form-data">
+<div id="redactor_gallery_edit_new">
+	<div class="item"><input name="file[]" size="20" value="" type="file" /> <label title="Альтернативный текст">Alt: <input type="text" value="" class="text" /> <a href="#">Удалить</a></label></div>
+	<div class="item"><input name="file[]" size="20" value="" type="file" /> <label title="Альтернативный текст">Alt: <input type="text" value="" class="text" /> <a href="#">Удалить</a></label></div>
+	<div class="item"><input name="file[]" size="20" value="" type="file" /> <label title="Альтернативный текст">Alt: <input type="text" value="" class="text" /> <a href="#">Удалить</a></label></div>
+</div>
+<div id="redactor_gallery_edit_authors"><label>Авторы: <input type="text" value="" class="text" /></label></div>
+
+<p>
+<input type="button" name="upload" id="redactorUploadBtn" value="%RLANG.insert%" />&nbsp;&nbsp;
+<input type="button" name="" onclick="redactorActive.modalClose();" value="%RLANG.cancel%"  />
+</p>
+</form>
+<script type="text/javascript">
+$("#redactor_gallery_edit_new")
+	.delegate(":file", "change", function() {
+		$(this).closest("div.item").addClass("changed");
+		var flag = false;
+		$("#redactor_gallery_edit_new :file").each(function() {
+			if($(this).val()=="") {flag = true;}
+		});
+		if(!flag) {
+			var $div = $('<div class="item">').html('<input name="file[]" size="20" value="" type="file" /> <label title="Альтернативный текст">Alt: <input type="text" value="" class="text" /> <a href="#">Удалить<\/a><\/label>');
+			$("#redactor_gallery_edit_new").append($div);
+		}
+	});
+</script>

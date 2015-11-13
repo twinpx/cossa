@@ -1,0 +1,70 @@
+<!--#set var="page" value="registration" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section" class="registration">
+						<h1>Регистрация</h1>
+						<div id="alternative_login">
+							<div class="decor"><div></div></div>
+							<div class="form">
+								<h5>Уже есть аккаунт?<br />Выбирай любой вариант входа:</h5>
+								<a href=""><img src="/images/icons/facebook.gif" width="93" height="28" title="Facebook" alt="Facebook" /></a>
+								<a href=""><img src="/images/icons/twitter.gif" width="87" height="28" title="Twitter" alt="Twitter" /></a>
+								<a href=""><img src="/images/icons/vkontakte.gif" width="91" height="28" title="Вконтакте" alt="Вконтакте" /></a>
+								<p>Используйте свой аккаунт в социальной сети Facebook или Twitter,
+					чтобы пользоваться сайтом</p>
+							</div>
+						</div>
+						<form action="" method="get" enctype="multipart/form-data">
+							<div class="error_message">
+								<div class="pointer"><div></div></div>
+								<p>Неверный логин и пароль.</p>
+								<p>Почтовый адрес уже существует.</p>
+								<p>Эти надписи не настоящие, а только для примера.</p>
+							</div>
+							<div class="form_field">
+								<label>Логин <span class="no_text">?</span></label>
+								<input type="text" name="name" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<div class="note"><div>Не менее 6 символов</div></div>
+								<label>Пароль <span class="no_text">?</span></label>
+								<input type="password" name="password" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<label>Подтверждение пароля <span class="no_text">?</span></label>
+								<input type="password" name="password_confirm" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<label>Email адрес <span class="no_text">?</span></label>
+								<input type="text" name="email" class="text" value="" />
+							</div>
+							<div class="form_field checkbox">
+								<div class="note"><div>Настройки рассылки вы всегда сможете изменить в настройках своего профиля</div></div>
+								<label><input type="checkbox" name="email" value="" /> <span>Подписаться на рассылку</span></label>
+							</div>
+							<div class="form_field captcha">
+								<label>Код на картинке <span class="no_text">?</span></label>
+								<img src="/upload/captcha.gif" width="180" height="40" alt="" /><a href="" id="change_captcha">Обновить код</a>
+								<input type="text" name="phone" value="" class="text" />
+							</div>
+							<div class="form_field checkbox conditions">
+								<label><input type="checkbox" name="conditions" /> <span>Я прочитал и согласен с <a href="">правилами</a> Cossa</span></label>
+							</div>
+							<div class="button"><input type="submit" value="Зарегистрироваться" class="submit" /></div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

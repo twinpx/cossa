@@ -1,0 +1,77 @@
+.b-slogan {
+	color: #bbbbbb;
+	font-size: 9pt;
+	padding: 7px 0 0 35px;
+	background: url(../images/slogan-icon.gif) no-repeat 0 0;
+	height: 38px;
+	float: right;
+	line-height: 1.2;
+	margin-top: 15px;
+	margin-bottom: -5px;
+}
+
+.b-top-banner {
+	margin-top: 3px;
+	display: block;
+}
+
+#submenu_panel {
+	border-top: 1px solid #4b97c3;
+	background-color: #1e7db4;
+	margin-top: 0;
+	padding-top: 5px;
+}
+
+#submenu {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#submenu .item {
+	display: inline-block;
+	vertical-align: middle;
+}
+.b-submenu-logo {
+	position: relative;
+}
+.b-submenu-logo__link {
+	position: absolute;
+	top: -28px;
+	right: 0;
+}
+#submenu .current {
+	background: #000;
+	padding: 2px 8px 5px;
+	color: #d7d7d7;
+	font-weight: normal;
+}
+
+#articles_list .items_block {
+	margin-top: 0;
+}
+#articles_list .item {
+	border-top: none;
+	padding-top: 0;
+}
+#articles_list .item .image {
+	float: left;
+	width: 644px;
+	margin-right: 40px;
+}
+#articles_list .item .content {
+	float: left;
+	width: 286px;
+	margin-top: 7px;
+}
+
+.like_buttons .side-block {
+	padding-bottom: 43px;
+	background: url(../images/like-buttons-vert.gif) no-repeat center bottom;
+}
+
+#top_navigation.fixed .b-slogan,
+#top_navigation.fixed .b-top-banner {
+    display: none;
+}
+#top_navigation.fixed #submenu_panel {
+    margin-top: 20px;
+}

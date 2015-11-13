@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Подгрузка like buttons</title>
+<style>
+#div {
+	width: 100px;
+	height: 100px;
+	background: pink;
+}
+#vk_like {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+</style>
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?50"></script>
+
+<script type="text/javascript">
+  VK.init({apiId: 2472453, onlyWidgets: true});
+</script>
+</head>
+
+<body>
+
+
+<div id="vk_like"></div>
+<script type="text/javascript">
+
+document.getElementById("vk_like").onclick = function() {
+	VK.Widgets.Like("vk_like", {
+		type: "button",
+		pageUrl: "http://cossa.ru/articles/152/20406/"
+	});
+};
+</script>
+</body>
+</html>

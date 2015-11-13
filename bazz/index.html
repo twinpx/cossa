@@ -1,0 +1,44 @@
+<!--#set var="page" value="articles_item" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Bazz</title>
+<script src="/js/editor/js/redactor/redactor.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/js/editor/js/redactor/css/redactor.css" />
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+				
+					<div id="bazz">
+						<div id="comment_form" class="comment_form__type_bazz not_authorized">
+							<form action="" method="post">
+								<div class="form_field">
+									<div class="note"><div>Микроблог — это возможность поделиться короткой мыслью о digital индустрии с участниками рынка.<br /><br />Публикуйте удивительные ссылки, свежие данные, делитесь картинками и видео, комментируйте ответы других digital маркетологов</div></div>
+									<textarea name="comment" cols="50" rows="10"></textarea>
+									<input type="hidden" name="parentId" value="">
+									<input type="hidden" name="recipe" value="1532">
+									<!--<div class="error_message">&mdash; универсальное сообщение об "ошибке"!</div>-->
+									<div class="button"><input type="submit" value="Опубликовать" class="submit b-button-submit__type_public" /></div>
+									<div class="clear"></div>
+								</div>
+							</form>
+						</div>
+						
+						<div class="main_section">
+							<!--#include virtual="/blocks/bazz_comments_block.html"-->
+						</div>
+						<div class="clear"></div>
+						
+					</div>
+					
+				</div>
+		<!--#include virtual="/blocks/pager.html"-->
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

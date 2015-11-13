@@ -1,0 +1,110 @@
+<!--#set var="page" value="create_article" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<script src="/js/editor/js/redactor/redactor.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {$("#textarea_editor1").redactor({toolbar:"cossa"});});
+</script>
+<link rel="stylesheet" type="text/css" href="/js/editor/js/redactor/css/redactor.css" />
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section">
+						<h1>Создание статьи</h1>
+						<form action="" method="get" enctype="multipart/form-data">
+							<div class="form_field">
+								<h5>Рубрика <span class="no_text">?</span></h5>
+								<select name="section">
+									<option value="case">Кейсы</option>
+									<option value="case2">Кейсы2</option>
+									<option value="case3">Кейсы3</option>
+									<option value="case4">Кейсы4</option>
+								</select>
+							</div>
+							<div class="form_field">
+								<h5>Заголовок <span class="no_text">?</span></h5>
+								<div class="note"><div>Заголовок не должен превышать 100 символов. </div></div>
+								<input type="text" name="heading" class="text" value="" />
+							</div>
+							<script type="text/javascript">var teaserMaxWidth = 644, teaserMaxHeight = 390;</script>
+							<div class="form_field teaser_img">
+								<h5>Тизер <span class="no_text">?</span></h5>
+								<div class="note"><div>Красивые, яркие картинки помогут сделать ваш пост заметным и привлекательным.</div></div>
+								<div class="empty image"><div><p>Заливайте изображение любых пропорций,<br />но не превышающее 1 MB</p></div></div>
+								<div class="preview image"><img src="/upload/gallery/3.jpg" width="500" height="100" alt="" /></div>
+								<div class="file"><input type="file" name="teaser_img" /></div>
+								
+								<div id="file-uploader"><div class="qq-uploader"><div class="apply"></div><div class="qq-upload-drop-area" style="display: none;"><span>Drop files here to upload</span></div>
+								<div class="qq-upload-button qq-upload-button-hover" style="position: relative; overflow: hidden; direction: ltr;">Upload a file<input type="file" name="file" style="position: absolute; right: 0pt; top: 0pt; font-family: Arial; font-size: 118px; margin: 0pt; padding: 0pt; cursor: pointer; opacity: 0;"></div><ul class="qq-upload-list"></ul></div></div>
+								<div class="teaser_inside"><label class="checkbox"><input type="checkbox" name="tease" /> <span>Оставить тизер в новости</span></label></div>
+							</div>
+							<div class="form_field intro">
+								<h5>Описание <span class="no_text">?</span></h5>
+								<div class="note"><div>Описание не должно превышать 200 символов. Кратким и содержательным описанием, вы сможете привлечь больше читателей.</div></div>
+								<textarea name="intro" cols="80" rows="5" data-counter="200"></textarea>
+								<div class="form_field__counter">0</div>
+							</div>
+							<div class="form_field entry">
+								<h5>Текст поста <span class="no_text">?</span></h5>
+								<textarea name="entry" cols="80" rows="20" id="textarea_editor1">
+									<span class="photo_block">
+										<img src="../../upload/gallery/1.jpg" width="50" height="50" alt="Цветок" />
+										<img src="../../upload/gallery/2.jpg" width="50" height="50" alt="Дюны" />
+										<img src="../../upload/gallery/3.jpg" width="50" height="50" alt="Куст" />
+										<span class="authors">Авторы: James Jean, renealmanza.ru, Red Keds</span>
+									</span><p></p></textarea>
+								<div class="draft_note">Черновик автоматически сохранён в 11:13:58 PM</div>
+							</div>
+							<div class="form_field">
+								<h5>Теги <span class="no_text">?</span></h5>
+								<div class="form_field__tabs">
+									<span class="form_field__tabs__item form_field__tabs__active" data-tab-name="tags-group-1"><span class="form_field__tabs__link">Разное</span>,</span>
+									<span class="form_field__tabs__item" data-tab-name="tags-group-2"><span class="form_field__tabs__link">страны и города</span>,</span>
+									<span class="form_field__tabs__item" data-tab-name="tags-group-3"><span class="form_field__tabs__link">индустрия</span>,</span>
+									<span class="form_field__tabs__item" data-tab-name="tags-group-4"><span class="form_field__tabs__link">бренды</span>,</span>
+									<span class="form_field__tabs__item" data-tab-name="tags-group-5"><span class="form_field__tabs__link">агентства</span>,</span>
+									<span class="form_field__tabs__item" data-tab-name="tags-group-6"><span class="form_field__tabs__link">площадки</span>,</span>
+									<span class="form_field__tabs__item" data-tab-name="tags-group-7"><span class="form_field__tabs__link">люди</span></span>
+								</div>
+								<div class="note"><div>Теги заполняются так: маркетинг, Гарри Поттер, менеджер и т.д.</div></div>
+								<div class="form_field__tabs__fields">
+									<input type="text" name="tags[]" class="text form_field__tabs__input form_field__tabs__input_active" value="" data-counter="255" maxlength="255" data-tab-field="tags-group-1" />
+									<input type="text" name="tags[]" class="text form_field__tabs__input" value="" data-counter="255" maxlength="255" data-tab-field="tags-group-2" />
+									<input type="text" name="tags[]" class="text form_field__tabs__input" value="" data-counter="255" maxlength="255" data-tab-field="tags-group-3" />
+									<input type="text" name="tags[]"  class="text form_field__tabs__input" value="" data-counter="255" maxlength="255" data-tab-field="tags-group-4" />
+									<input type="text" name="tags[]" class="text form_field__tabs__input" value="" data-counter="255" maxlength="255" data-tab-field="tags-group-5" />
+									<input type="text" name="tags[]" class="text form_field__tabs__input" value="" data-counter="255" maxlength="255" data-tab-field="tags-group-6" />
+									<input type="text" name="tags[]" class="text form_field__tabs__input" value="" data-counter="255" maxlength="255" data-tab-field="tags-group-7" />
+								</div>
+								<div class="form_field__counter">0</div>
+							</div>
+							<div class="form_field multiple author_multiple">
+								<h5>Автор <span class="no_text">?</span></h5>
+								<div class="item"><input type="text" name="author[]" class="text" value="Анастасия Черникова" /></div>
+								<div class="item"><input type="text" name="author[]" class="text" value="Мария Волкова" /></div>
+							</div>
+							<div class="form_field multiple source_multiple">
+								<h5>Источник</h5>
+								<div class="item"><input type="text" name="source[]" class="text" value="http://" /></div>
+							</div>
+							<div class="buttons">
+								<div class="note"><div>Материал отправлен в редакцию</div></div>
+								<div class="submit"><input type="submit" value="Отправить" class="submit" /></div>
+								<div class="preview"><input type="submit" value="Просмотр" class="preview" /></div>
+								<div class="draft"><input type="submit" value="" class="draft" /></div>
+								<div class="clear"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

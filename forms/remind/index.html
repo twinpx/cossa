@@ -1,0 +1,32 @@
+<!--#set var="page" value="remind" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section" class="registration remind">
+						<h1>Восстановление пароля</h1>
+						<form action="success/" method="get" enctype="multipart/form-data">
+							<div class="form_field">
+								<label>Логин <span class="no_text">?</span></label>
+								<input type="text" name="name" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<label>Или email <span class="no_text">?</span></label>
+								<input type="text" name="email" class="text" value="" />
+							</div>
+							<div class="button"><input type="submit" value="Отправить" class="submit" /></div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

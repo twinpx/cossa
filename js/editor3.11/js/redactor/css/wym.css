@@ -1,0 +1,148 @@
+@font-face {
+	font-family:"SP serif"; /* Имя шрифта */
+	src: url(/fonts/pt_serif/PTF55F.ttf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/pt_serif/ie/ptf55f-webfont.eot); /* Путь к файлу со шрифтом */}
+@font-face {
+	font-family:"SP serif italic"; /* Имя шрифта */
+	src: url(/fonts/pt_serif/PTF56F.ttf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/pt_serif/ie/ptf56f-webfont.eot); /* Путь к файлу со шрифтом */}
+@font-face {
+	font-family:"SP serif bold"; /* Имя шрифта */
+	src: url(/fonts/pt_serif/PTF75F.ttf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/pt_serif/ie/ptf75f-webfont.eot); /* Путь к файлу со шрифтом */}
+@font-face {
+	font-family:"SP serif bold italic"; /* Имя шрифта */
+	src: url(/fonts/pt_serif/PTF76F.ttf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/pt_serif/ie/ptf76f-webfont.eot); /* Путь к файлу со шрифтом */}
+
+@font-face {
+	font-family:"Helios"; /* Имя шрифта */
+	src: url(/fonts/helios/Helios.otf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/helios/ie/helios-webfont.eot); /* Путь к файлу со шрифтом */}
+@font-face {
+	font-family:"Helios Bold"; /* Имя шрифта */
+	src: url(/fonts/helios/Helios-Bold.otf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/helios/ie/helios-bold-webfont.eot); /* Путь к файлу со шрифтом */}
+@font-face {
+	font-family:"Helios Bold Italic"; /* Имя шрифта */
+	src: url(/fonts/helios/Helios-Bold-Italic.otf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/helios/ie/helios-bold-italic-webfont.eot); /* Путь к файлу со шрифтом */}
+@font-face {
+	font-family:"Helios Italic"; /* Имя шрифта */
+	src: url(/fonts/helios/Helios-Italic.ttf); /* Путь к файлу со шрифтом */
+	//src: url(/fonts/helios/ie/helios-italic-webfont.eot); /* Путь к файлу со шрифтом */}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, textarea, input {
+margin: 0;
+padding: 0;}
+html {overflow-y:scroll;}
+body {
+	background-color:#ffffff;
+	font-family:"SP serif", "Times New Roman", Times, serif;
+	color:#000000;
+	font-size:11pt;
+	line-height:17pt;
+	padding: 5px 10px;
+	overflow-x: hidden;}
+p {margin:15px 0;}
+i, em {
+	font-family:"SP serif italic";
+	font-style:italic;}
+b, strong {
+	font-family:"SP serif bold";
+	font-weight:normal;}
+a {color:#000000;}
+a:hover {color:#5ca373;}
+ul, ol {margin:10px 0 10px 32px;}
+ul li {list-style-type:disk;}
+li {padding-bottom:5px;}
+iframe, object {
+	margin: 10px;
+}
+
+.photo_block {
+	display:block;
+	padding:10px;
+	background:#f5f5f5;}
+.photo_block img {width:50px; margin:0 1px 1px 0;}
+
+
+.img_left {
+	float: left;
+	margin-right: 10px; 
+	margin-bottom: 10px;
+}
+.img_right {
+	float: right;
+	margin-left: 10px; 
+	margin-bottom: 10px;
+}
+
+.redactor_video_box {
+	width: 300px;
+	height: 200px;
+	background: url(../i/video_box.png) center no-repeat #000 !important;	
+	margin: 10px;
+}
+.redactor_video_box object, .redactor_video_box embed, .redactor_video_box iframe {
+	display: none;
+}
+
+.redactor_file_link {
+	padding-left: 20px;
+}
+.redactor_file_ico_avi 	  { background: url(../i/fileicons/avi.png) no-repeat; }
+.redactor_file_ico_csv 	  { background: url(../i/fileicons/csv.png) no-repeat; }
+.redactor_file_ico_doc 	  { background: url(../i/fileicons/doc.png) no-repeat; }
+.redactor_file_ico_gif 	  { background: url(../i/fileicons/gif.png) no-repeat; }
+.redactor_file_ico_html   { background: url(../i/fileicons/html.png) no-repeat; }
+.redactor_file_ico_jpg 	  { background: url(../i/fileicons/jpg.png) no-repeat; }
+.redactor_file_ico_mov	  { background: url(../i/fileicons/mov.png) no-repeat; }
+.redactor_file_ico_other  { background: url(../i/fileicons/other.png) no-repeat; }
+.redactor_file_ico_pdf 	  { background: url(../i/fileicons/pdf.png) no-repeat; }
+.redactor_file_ico_png 	  { background: url(../i/fileicons/png.png) no-repeat; }
+.redactor_file_ico_ppt 	  { background: url(../i/fileicons/ppt.png) no-repeat; }
+.redactor_file_ico_rar 	  { background: url(../i/fileicons/rar.png) no-repeat; }
+.redactor_file_ico_rtf 	  { background: url(../i/fileicons/rtf.png) no-repeat; }
+.redactor_file_ico_txt 	  { background: url(../i/fileicons/txt.png) no-repeat; }
+.redactor_file_ico_xls 	  { background: url(../i/fileicons/xls.png) no-repeat; }
+.redactor_file_ico_zip 	  { background: url(../i/fileicons/zip.png) no-repeat; }
+
+h1, h2, h3, h4, h5, h6 {font-weight:normal;}
+h1 {
+	font-size:18pt;
+	line-height:20pt;
+	margin:0 0 20px 0;}
+h2 {
+	font-size:18pt;
+	line-height:18pt;
+	margin:35px 0 15px 0;}
+h3 {
+	font-size:14pt;
+	line-height:16pt;
+	margin:30px 0 15px 0;}
+h4 {
+	font-size:12pt;
+	font-weight:bold;
+	margin:25px 0 15px 0;}
+h5 {
+	font-size:10.5pt;
+	font-weight:bold;
+	margin:25px 0 15px 0;}
+h6 {
+	font-size:9pt;
+	font-weight:bold;
+	line-height:12pt;
+	margin:25px 0 15px 0;}
+hr {
+	margin:15px 0;
+	background:url(/images/decor/hr.gif) repeat-x 0 0;
+	height:2px;
+	border:none;}

@@ -1,0 +1,43 @@
+<!--#set var="page" value="create_article" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<script src="/js/editor/js/redactor/redactor.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/js/editor/js/redactor/css/redactor.css" />
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section" class="suggest_news">
+						<h1>Прислать сплетню</h1>
+						<form action="" method="get" enctype="multipart/form-data">
+							<div class="form_field">
+								<h5>Заголовок <span class="no_text">?</span></h5>
+								<div class="note"><div>Редакция рассмотрит вашу новость и на основании ее напишет материал или опубикует в исходном виде.</div></div>
+								<input type="text" name="heading" class="text" value="" />
+							</div>
+							<div class="form_field text">
+								<h5>Описание <span class="no_text">?</span></h5>
+								<textarea name="text" cols="80" rows="5"></textarea>
+							</div>
+							<div class="form_field">
+								<div class="note"><div>Если вы хотите анономно опубликовать информацию отметьте галочку.</div></div>
+								<label class="checkbox"><input type="checkbox" name="tease"> <span>Анонимно</span></label>
+							</div>
+							<div class="buttons">
+								<div class="submit"><input type="submit" value="Отправить" class="submit" /></div>
+								<div class="preview"><input type="submit" value="Просмотр" class="preview" /></div>
+								<div class="clear"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

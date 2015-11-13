@@ -1,0 +1,19 @@
+<!--#set var="page" value="create_event" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<link rel="stylesheet" type="text/css" href="/js/jquery.imgareaselect-0.9.8/css/imgareaselect-default.css" />
+<script src="/js/jquery.imgareaselect-0.9.8/js/jquery.imgareaselect.pack.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#image_crop").imgAreaSelect({x1: 120, y1: 90, x2: 280, y2: 210, aspectRatio:"2:3", handles: true});
+});
+</script>
+<title>Cossa</title>
+</head>
+
+<body>
+<div><img src="/upload/gallery/6.jpg" width="600" height="400" alt="" id="image_crop" /></div>
+</body>
+</html>

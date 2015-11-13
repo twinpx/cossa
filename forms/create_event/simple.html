@@ -1,0 +1,162 @@
+<!--#set var="page" value="create_event" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<script src="/js/editor/js/redactor/redactor.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/js/editor/js/redactor/css/redactor.css" />
+<script type="text/javascript">
+$(function(){
+	$("div.entry textarea").redactor({
+		toolbar:"cossa",
+		remove_classes:true/*,
+		autosave: '/save.php',
+		interval: 120*/
+	});
+});
+</script>
+<title>Cossa</title>
+</head>
+
+<body>
+						<form action="" method="get" enctype="multipart/form-data">
+							<div class="form_field">
+								<h5>Заголовок <span class="no_text">?</span></h5>
+								<div class="note"><div>Заголовок не должен превышать 100 символов. </div></div>
+								<input type="text" name="heading" class="text" value="" />
+							</div>
+							<div class="form_field teaser_img">
+								<h5>Тизер <span class="no_text">?</span></h5>
+								<div class="note"><div>Красивые, яркие картинки помогут сделать ваш пост заметным и привлекательным.</div></div>
+								<div class="empty"><div><p>Изображение не должно быть меньше чем 200 x 200 пикселей и не превышать 1 MB</p></div></div>
+								<div class="preview"><img src="/upload/gallery/3.jpg" width="200" height="200" alt="" /></div>
+								<div class="file"><input type="file" name="teaser_img" /></div>
+								<label class="checkbox"><input type="checkbox" name="tease" /> Оставить тизер в новости</label>
+							</div>
+							<div class="form_field date_field">
+								<h5>Начало <span class="no_text">?</span></h5>
+								<span class="date_field">
+									<select name="beginning_day" class="day">
+										<option>20</option>
+										<option>21</option>
+										<option>21</option>
+									</select>
+									<select name="beginning_month" class="month">
+										<option value="02">февраля</option>
+										<option value="06">июня</option>
+										<option value="07">июля</option>
+										<option value="08">августа</option>
+										<option value="09">сентябрь</option>
+										<option value="10">октябрь</option>
+									</select>
+									<select name="beginning_year" class="year">
+										<option>2011</option>
+										<option>2012</option>
+										<option>2013</option>
+									</select>
+								</span>
+								<span class="time">
+									<select name="beginning_hour" class="hour">
+										<option>08</option>
+										<option>12</option>
+										<option>13</option>
+									</select>
+									<span class="colon">:</span>
+									<select name="beginning_minutes" class="minutes">
+										<option>00</option>
+										<option>15</option>
+										<option>30</option>
+									</select>
+								</span>
+							</div>
+							<div class="form_field date_field">
+								<h5>Окончание <span class="no_text">?</span></h5>
+								<span class="date_field">
+									<select name="ending_day" class="day">
+										<option>20</option>
+										<option>21</option>
+										<option>21</option>
+									</select>
+									<select name="ending_month" class="month">
+										<option value="02">февраля</option>
+										<option value="06">июня</option>
+										<option value="07">июля</option>
+										<option value="08">августа</option>
+										<option value="09">сентябрь</option>
+										<option value="10">октябрь</option>
+									</select>
+									<select name="ending_year" class="year">
+										<option>2011</option>
+										<option>2012</option>
+										<option>2013</option>
+									</select>
+								</span>
+								<span class="time">
+									<select name="ending_hour" class="hour">
+										<option>18</option>
+										<option>19</option>
+										<option>20</option>
+									</select>
+									<span class="colon">:</span>
+									<select name="ending_minutes" class="minutes">
+										<option>00</option>
+										<option>15</option>
+										<option>30</option>
+									</select>
+								</span>
+							</div>
+							<div class="two">
+								<div class="form_field">
+									<h5>Город <span class="no_text">?</span></h5>
+									<input type="text" name="heading" class="text" value="" id="city_autocomplete" placeholder="Москва" />
+								</div>
+								<div class="form_field">
+									<h5>Место <span class="no_text">?</span></h5>
+									<input type="text" name="heading" class="text" value="" />
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="form_field">
+								<h5>Адрес <span class="no_text">?</span></h5>
+								<input type="text" name="address" class="text" value="" />
+							</div>
+							<div class="two">
+								<div class="form_field">
+									<h5>Сайт <span class="no_text">?</span></h5>
+									<input type="text" name="web" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<h5>Телефон <span class="no_text">?</span></h5>
+									<input type="text" name="phone" class="text" value="" />
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="form_field">
+								<h5>Организатор <span class="no_text">?</span></h5>
+								<input type="text" name="address" class="text" value="" id="organizer_autocomplete" />
+							</div>
+							<div class="form_field price">
+								<h5>Стоимость <span class="no_text">?</span></h5>
+								<input type="text" name="price" class="text" value="" />
+								<span class="currency">руб.</span>
+							</div>
+							<hr />
+							<div class="form_field entry">
+								<h5>Текст поста <span class="no_text">?</span></h5>
+								<textarea name="entry" cols="80" rows="20"></textarea>
+								<div class="draft_note">Черновик автоматически сохранён в 11:13:58 PM</div>
+							</div>
+							<div class="form_field">
+								<h5>Теги <span class="no_text">?</span></h5>
+								<div class="note"><div>Теги заполняются так: маркетинг, Гарри Поттер, менеджер и т.д.</div></div>
+								<input type="text" name="tags" class="text" value="" />
+							</div>
+							<div class="buttons">
+								<div class="note"><div>Материал отправлен в редакцию</div></div>
+								<div class="submit"><input type="submit" value="Отправить" class="submit" name="submit_button" /></div>
+								<div class="preview"><input type="submit" value="Просмотр" class="preview" /></div>
+								<div class="clear"></div>
+							</div>
+						</form>
+</body>
+</html>

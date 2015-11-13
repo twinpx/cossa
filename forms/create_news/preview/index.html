@@ -1,0 +1,80 @@
+<!--#set var="page" value="create_news" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section">
+						<h1>Создание новости</h1>
+						<div id="preview_section">
+							<h2>Предпросмотр</h2>
+							<div id="news_item">
+								<div class="intro">
+									<div class="info_bar">
+										<a href="" class="author">Василий Лебедев</a>
+										<span class="date">21 апреля, 16:00, <span class="view">605 просмотров</span></span>						
+									</div>
+									<h1>Какую рекламу предложит Facebook в будущем?</h1>
+									<div class="text">
+										<p>Все маркетологи примерно представляют, насколько влиятельной оказывается информация, которая распространяется самими пользователями через кнопки «поделиться».</p>
+									</div>
+									<div class="share">Вконтакте, Tweet, facebook like-buttons here</div>
+								</div>
+								<div class="separator"><span></span></div>
+								<div class="main">
+									<p>В целом, материалы, которыми делятся пользователи производят примерно 10% всего интернет-трафика и 31% переходов на сайты из внешних ресурсов. Поиск по-прежнему генерирует в два раза больше трафика.</p>
+									<div class="photo_block"><img src="/upload/gallery/6.jpg" width="580" height="340" alt="Средняя конверсия распространяемых материалов в клики в различных каналах." /></div>
+									<p>Исследование свидетельствует, что распространение информации от пользователя к пользователю не так вирусно, как считают многие маркетологи. Вполне вероятно, что друг пользователя, который получил ссылку, кликнет на нее, но когда эта ссылка уходит к тем, кто не состоит в кругу друзей первого пользователя, вероятность клика резко уменьшается.</p>
+									<p>Другой вывод — 80% людей делятся только определенной категорией ссылок и более 70% кликают только на одну из них: бизнес, политика или развлечения. Для брендов Facebook выглядит особенно привлекательной платформой, когда поделиться нужно развлекательным контентом или ссылками, связанными с покупкой чего-либо. Twitter будет полезен, когда речь заходит о бизнесе или здоровье.</p>
+								</div>
+							</div>
+						</div>
+						<form action="" method="get" enctype="multipart/form-data">
+							<div class="form_field">
+								<h5>Заголовок <span class="no_text">?</span></h5>
+								<div class="note"><div>Заголовок не должен превышать 100 символов. </div></div>
+								<input type="text" name="heading" class="text" value="" />
+							</div>
+							<div class="form_field teaser_img">
+								<h5>Тизер <span class="no_text">?</span></h5>
+								<div class="note"><div>Красивые, яркие картинки помогут сделать ваш пост заметным и привлекательным.</div></div>
+								<div class="empty"><div><p>Изображение не должно быть меньше чем 200 x 200 пикселей и не превышать 1 MB</p></div></div>
+								<div class="preview"><img src="/upload/gallery/3.jpg" width="200" height="200" alt="" /></div>
+								<div class="file"><input type="file" name="teaser_img" /></div>
+								<label class="checkbox"><input type="checkbox" name="tease" /> Оставить тизер в новости</label>
+							</div>
+							<div class="form_field intro">
+								<h5>Описание <span class="no_text">?</span></h5>
+								<div class="note"><div>Описание не должно превышать 500 символов. Кратким и содержательным описанием, вы сможете привлечь больше читателей.</div></div>
+								<textarea name="intro" cols="80" rows="5"></textarea>
+							</div>
+							<div class="form_field entry">
+								<h5>Текст поста <span class="no_text">?</span></h5>
+								<textarea name="entry" cols="80" rows="20"></textarea>
+								<div class="draft_note">Черновик автоматически сохранён в 11:13:58 PM</div>
+							</div>
+							<div class="form_field">
+								<h5>Теги <span class="no_text">?</span></h5>
+								<div class="note"><div>Теги заполняются так: маркетинг, Гарри Поттер, менеджер и т.д.</div></div>
+								<input type="text" name="tags" class="text" value="" />
+							</div>
+							<div class="buttons">
+								<div class="note"><div>Материал отправлен в редакцию</div></div>
+								<div class="submit"><input type="submit" value="Отправить" class="submit" /></div>
+								<div class="preview"><a href="preview/">Просмотр</a></div>
+								<div class="clear"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

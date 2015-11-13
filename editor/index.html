@@ -1,0 +1,1112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Untitled Document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var B_open = 0;
+var I_open = 0;
+var U_open = 0;
+var S_open = 0;
+var QUOTE_open = 0;
+var CODE_open = 0;
+var CUT_open = 0;
+var text_enter_url = "Введите полный адрес (URL)";
+var text_enter_url_name = "Введите название сайта";
+var text_enter_image = "Введите полный адрес (URL) изображения";
+var list_prompt = "Введите пункт списка. Нажмите 'Отмена' или оставьте пробел для завершения списка";
+var error_no_url = "Вы должны ввести адрес (URL)";
+var error_no_title = "Вы должны ввести название";
+
+var bbtags = new Array();
+
+var myAgent = navigator.userAgent.toLowerCase();
+var myVersion = parseInt(navigator.appVersion);
+
+var is_ie = ((myAgent.indexOf("msie") != -1) && (myAgent.indexOf("opera") == -1));
+
+if (!window.phpVars)  // For anonymus  users
+	window.phpVars = {};
+
+
+function quoteMessageEx(theAuthor, textMessage)
+{
+	var selection;
+	if (document.getSelection)
+	{
+		selection = document.getSelection();
+		selection = selection.replace(/\r\n\r\n/gi, "_newstringhere_");
+		selection = selection.replace(/\r\n/gi, " ");
+		selection = selection.replace(/ /gi, "");
+		selection = selection.replace(/_newstringhere_/gi, "\r\n\r\n");
+	}
+	else
+	{
+		selection = document.selection.createRange().text;
+	}
+	
+	if (selection == "")
+	{
+		selection = textMessage;
+	}
+
+	if (selection!="")
+	{
+		document.getElementById("MESSAGE").value += "[quote]"+theAuthor+":\n"+selection+"[/quote]\n";
+	}
+}
+
+function hideSmiles() 
+{
+	document.getElementById('smilesPanel').style.visibility = "hidden";
+}
+
+function Smiles()
+{
+	try
+	{
+		var obj = document.getElementById("FontColor");
+
+		res=GetRealPos(obj);
+	
+		var el = document.getElementById('smilesPanel');
+		el.style.left=res["left"] + 110+ "px";
+		el.style.top=res["top"] + "px";
+		el.style.visibility = "visible";
+	} catch(e){}
+}
+
+function emoticon(theSmilie)
+{
+	doInsert(" " + theSmilie + " ", "", false);
+}
+
+// Insert simple tags: B, I, U, CODE, QUOTE
+function simpletag(thetag)
+{
+	var tagOpen = eval(thetag + "_open");
+
+	if (tagOpen == 0)
+	{
+		if (doInsert("[" + thetag + "]", "[/" + thetag + "]", true))
+		{
+			eval(thetag + "_open = 1");
+			// Change the button status
+
+			pushstack(bbtags, thetag);
+			cstat();
+		}
+	}
+	else
+	{
+		// Find the last occurance of the opened tag
+		lastindex = 0;
+
+		for (i = 0 ; i < bbtags.length; i++ )
+		{
+			if ( bbtags[i] == thetag )
+			{
+				lastindex = i;
+			}
+		}
+
+		// Close all tags opened up to that tag was opened
+		while (bbtags[lastindex])
+		{
+			tagRemove = popstack(bbtags);
+			doInsert("[/" + tagRemove + "]", "", false);
+
+			// Change the button status
+			eval(tagRemove + "_open = 0");
+		}
+
+		cstat();
+	}
+}
+
+// Insert font tag
+function alterfont(theval, thetag)
+{
+	if (theval == 0)
+		return;
+
+	if (doInsert("[" + thetag + "=" + theval + "]", "[/" + thetag + "]", true))
+		pushstack(bbtags, thetag);
+
+	document.getElementById("select_font").selectedIndex = 0;
+	cstat();
+	document.getElementById("MESSAGE").focus();
+}
+
+// Insert url tag
+function tag_url()
+{
+	var textarea = document.getElementById("MESSAGE");
+	var currentScroll = textarea.scrollTop;
+
+	bTitleYes = false;
+	if (is_ie)
+	{
+		textarea.focus();
+		var sel = document.selection;
+		var rng = sel.createRange();
+		rng.colapse;
+		if ((sel.type == "Text" || sel.type == "None") && rng.text.length > 0)
+		{
+			bTitleYes = true;
+		}
+	}
+	else 
+	{
+		if(textarea.selectionEnd > textarea.selectionStart)
+			bTitleYes = true;
+	}
+
+	var enterURL = prompt(text_enter_url, "http://");
+
+	if(bTitleYes)
+	{
+		if(enterURL)
+		{
+			if(is_ie)
+				rng.text = '[URL='+enterURL+']'+rng.text+'[/URL]';
+			else
+				mozillaWr(textarea, '[URL='+enterURL+']', '[/URL]');
+		}
+		else
+		{
+			if(is_ie)
+				rng.text = '[URL]'+rng.text+'[/URL]';
+			else
+				mozillaWr(textarea, '[URL]', '[/URL]');
+		}
+	}
+	else
+	{
+		if (enterURL)
+		{
+			var enterTITLE = prompt(text_enter_url_name, "");
+			if (!enterTITLE)
+				enterTITLE=enterURL;	
+			doInsert("[URL="+enterURL+"]"+enterTITLE+"[/URL]", "", false);
+		}
+	}
+	
+	textarea.scrollTop = currentScroll;
+	textarea.focus();
+}
+
+// Insert image tag
+function tag_image()
+{
+	var textarea = document.getElementById("MESSAGE");
+	var currentScroll = textarea.scrollTop;
+	var enterURL = prompt(text_enter_image, "http://");
+
+	if (enterURL)
+	{
+	
+		try
+		{
+			var pMainObj = GLOBAL_pMainObj['POST_MESSAGE_HTML'];
+		}
+		catch(e)
+		{
+		}
+
+		if(pMainObj && document.getElementById('blg-text-html').checked)
+		{
+			pMainObj.insertHTML('<img src="'+enterURL+'" __bxsrc="'+enterURL+'" />');
+		}
+		else
+		{
+			doInsert("[IMG]"+enterURL+"[/IMG]", "", false);
+		}
+	}
+	textarea.scrollTop = currentScroll;
+	textarea.focus();
+}
+
+// Insert list tag
+function tag_list()
+{
+	var textarea = document.getElementById("MESSAGE");
+	var currentScroll = textarea.scrollTop;
+
+	var listvalue = "init";
+	var thelist = "[LIST]\n";
+
+	while ( (listvalue != "") && (listvalue != null) && (listvalue != " ")) 
+	{
+		listvalue = prompt(list_prompt, "");
+		if ( (listvalue != "") && (listvalue != null) && (listvalue != " ")) 
+		{
+			thelist = thelist+"[*]"+listvalue+"\n";
+		}
+	}
+
+	doInsert(thelist + "[/LIST]\n", "", false);
+	textarea.scrollTop = currentScroll;
+	textarea.focus();
+}
+
+// Close all tags
+function closeall()
+{
+	if (bbtags[0]) 
+	{
+		while (bbtags[0]) 
+		{
+			tagRemove = popstack(bbtags);
+			document.getElementById("MESSAGE").value += "[/" + tagRemove + "]";
+
+			if ( (tagRemove != 'FONT') && (tagRemove != 'SIZE') && (tagRemove != 'COLOR') )
+			{
+				eval(tagRemove + "_open = 0");
+			}
+		}
+	}
+
+	bbtags = new Array();
+	cstat();
+}
+
+// Stack functions
+function pushstack(thearray, newval)
+{
+	arraysize = stacksize(thearray);
+	thearray[arraysize] = newval;
+}
+
+function popstack(thearray)
+{
+	arraysize = stacksize(thearray);
+	theval = thearray[arraysize - 1];
+	delete thearray[arraysize - 1];
+	return theval;
+}
+
+function stacksize(thearray)
+{
+	for (i = 0 ; i < thearray.length; i++ )
+	{
+		if ( (thearray[i] == "") || (thearray[i] == null) || (thearray == 'undefined') ) 
+		{
+			return i;
+		}
+	}
+
+	return thearray.length;
+}
+
+// Show statistic
+function cstat()
+{
+	var c = stacksize(bbtags);
+
+	if ( (c < 1) || (c == null) )
+	{
+		c = 0;
+	}
+
+	if ( ! bbtags[0] )
+	{
+		c = 0;
+	}
+
+	if (c > 0)
+		document.getElementById("close_all").style.visibility="visible";
+	else
+		document.getElementById("close_all").style.visibility="hidden";
+	document.getElementById("MESSAGE").focus();
+}
+
+addEvent(document, "mousedown", function(e){hidePicker();});
+addEvent(document, "keypress", function(e){hidePicker();});
+addEvent(document, "mousedown", function(e){hideSmiles();});
+addEvent(document, "keypress", function(e){hideSmiles();});
+
+var elem_id=0;
+
+function addEvent(el, evname, func)
+{
+	if(el.attachEvent) // IE
+		el.attachEvent("on" + evname, func);
+	else if(el.addEventListener) // Gecko / W3C
+		el.addEventListener(evname, func, false);
+	else
+		el["on" + evname] = func;
+}
+
+function GetStyleValue(el, styleProp)
+{
+	if(el.currentStyle)
+		var res = el.currentStyle[styleProp];
+	else if(window.getComputedStyle)
+		var res = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+	return res;
+}
+	
+function GetRealPos(el)
+{
+	if(!el || !el.offsetParent)
+		return false;
+	var res=Array();
+	res["left"] = el.offsetLeft;
+	res["top"] = el.offsetTop;
+	var objParent = el.offsetParent;
+	while(objParent.tagName != "BODY")
+	{
+		if(GetStyleValue(objParent, 'position') == 'static')
+		{
+			res["left"] += objParent.offsetLeft;
+			res["top"] += objParent.offsetTop;
+		}
+		objParent = objParent.offsetParent;
+	}
+	res["right"]=res["left"] + el.offsetWidth;
+	res["bottom"]=res["top"] + el.offsetHeight;
+
+	return res;
+}
+
+function hidePicker() 
+{
+	document.getElementById('ColorPick').style.visibility = "hidden";
+}
+
+function ColorPicker()
+{
+	try
+	{
+		var obj = document.getElementById("FontColor");
+
+		res=GetRealPos(obj);
+	
+		document.getElementById('ColorPick').style.left=res["left"] + "px";
+		document.getElementById('ColorPick').style.top=res["top"] + 20 + "px";
+		document.getElementById('ColorPick').style.visibility = "visible";
+	} catch(e){}
+}
+
+
+function AddCategory()
+{
+	document.getElementById('category-new').style.display = "block";
+	document.getElementById('category-add').style.display = "none";
+		/*
+		if (res = prompt('Название тега',''))
+		{
+			var exOpt = false;
+			for(i=1; i<oSel.options.length; i++)
+			{
+				if(res == oSel.options[i].text)
+				{
+					var selectOpt = i;
+					exOpt = true;
+				}
+			}
+		
+			if(!exOpt)
+			{
+				var oOption = new Option(res,"ADD");
+				if (oSel.options[1].value != "ADD") 
+				{
+					oOption = oSel.insertBefore(oOption,oSel.options[1]);
+					oOption.value = "ADD";
+					oOption.innerText = res;
+				}
+				else
+					oSel.options[1] = oOption;
+				document.REPLIER.NEW_CATEGORY.value = res;
+			}
+			else
+				oSel.options[selectOpt].selected = true;
+		}
+		
+
+		if (oSel.options[1].value=="NEW")
+			oSel.options[0].selected = true;
+		else
+		{
+			if(exOpt)
+				oSel.options[selectOpt].selected = true;
+			else
+				oSel.options[1].selected = true;
+		}
+		*/
+}
+
+function show_special()
+{
+	o = document.getElementById('special_perms');
+	if (document.getElementById('blog_perms_1').checked==true)
+		o.style.display='block';
+	else
+		o.style.display='none';
+		
+}
+
+function mozillaWr(textarea, open, close)
+{
+	var selLength = textarea.textLength;
+	var selStart = textarea.selectionStart;
+	var selEnd = textarea.selectionEnd;
+	
+	if (selEnd == 1 || selEnd == 2)
+	selEnd = selLength;
+
+	var s1 = (textarea.value).substring(0,selStart);
+	var s2 = (textarea.value).substring(selStart, selEnd)
+	var s3 = (textarea.value).substring(selEnd, selLength);
+	textarea.value = s1 + open + s2 + close + s3;
+
+	textarea.selectionEnd = 0;
+	textarea.selectionStart = selEnd + open.length + close.length;
+	return;
+}
+
+function doInsert(ibTag, ibClsTag, isSingle, imgID)
+{
+	if(imgID > 0 && document.getElementById('blg-text-html'))
+	{
+		if( document.getElementById('blg-text-html').checked)
+		{
+			try
+			{
+				var pMainObj = GLOBAL_pMainObj['POST_MESSAGE_HTML'];
+			}
+			catch(e)
+			{
+			}
+
+			if(pMainObj)
+			{
+				var imageSrc = document.getElementById(imgID).src;
+				pMainObj.insertHTML('<img __bxtagname="blogImage" __bxcontainer="'+imgID+'" src="'+imageSrc+'" />');
+				return true;
+			}
+		}
+	}
+
+	var isClose = false;
+	var textarea = document.getElementById("MESSAGE");
+	var currentScroll = textarea.scrollTop;
+
+	if (isSingle)
+		isClose = true;
+	if (is_ie)
+	{
+		textarea.focus();
+		var sel = document.selection;
+		var rng = sel.createRange();
+		rng.colapse;
+		if ((sel.type == "Text" || sel.type == "None") && rng != null)
+		{
+			if (ibClsTag != "" && rng.text.length > 0)
+			{
+				ibTag += rng.text + ibClsTag;
+				isClose = false;
+			}
+
+			rng.text = ibTag;
+		}
+	}
+	else 
+	{
+		if (document.getElementById)
+		{
+			if (ibClsTag != "" && textarea.selectionEnd > textarea.selectionStart)
+			{
+				mozillaWr(textarea, ibTag, ibClsTag);
+				isClose = false;
+			}
+			else 
+				mozillaWr(textarea, ibTag, '');
+		}
+		else
+			textarea.value += ibTag;
+	}
+
+	textarea.scrollTop = currentScroll;
+	textarea.focus();
+	return isClose;
+}
+/*
+function quoteMessage()
+{
+	var selection;
+	if (window.getSelection)
+	{
+		selection = window.getSelection();
+	}
+	else
+	{
+		selection = document.selection.createRange().text;
+	}
+
+	if (selection=="")
+	{
+		simpletag("QUOTE");
+	}
+	else
+	{	
+		document.getElementById("MESSAGE").value += "[QUOTE]"+selection+"[/QUOTE]\n";
+	}
+		
+	document.getElementById("MESSAGE").focus();
+}
+*/
+function quoteMessage()
+{
+	var selection;
+	
+    if (window.getSelection && !window.opera)     
+		selection = window.getSelection(); // ff
+    else if (document.getSelection)             
+		selection = document.getSelection(); // opera
+    else if (document.selection)                 
+		selection = document.selection.createRange().text; // ie
+
+	if (selection=="")
+	{
+
+		simpletag("QUOTE");
+	}
+	else
+	{	
+		if (is_ie)
+		{
+			var sel = document.selection;
+			var rng = sel.createRange();
+			rng.colapse;
+			
+			postText = "[QUOTE]" + selection + "[/QUOTE]";
+
+			var sel = document.selection.createRange();
+			var selection_copy = sel.duplicate();
+			postText = postText.replace(/\r?\n/g, '\r\n'); 
+
+			if(sel.parentElement().name && sel.parentElement().name == "POST_MESSAGE")
+			{
+				sel.text = postText;
+				sel.setEndPoint('StartToStart', selection_copy); 
+				sel.setEndPoint('EndToEnd', selection_copy); 
+				sel.collapse(true);
+				postText = postText.replace(/\r\n/g, '1');
+				sel.moveEnd('character', postText.length);
+				sel.select();
+			}
+			else
+			{
+				document.getElementById("MESSAGE").value += postText;
+			}
+		}
+		else 
+		{
+			if (document.getElementById)
+			{
+				textarea = document.getElementById("MESSAGE");
+				if (textarea.selectionEnd > textarea.selectionStart)
+					mozillaWr(textarea, "[QUOTE]", "[/QUOTE]");
+				else 
+					mozillaWr(textarea, "[QUOTE]"+selection, '[/QUOTE]');
+			}
+		}
+
+	}
+		
+	document.getElementById("MESSAGE").focus();
+}
+
+function ShowImageUpload()
+{
+	win = window.open('/blogs/group/14/blog/edit/new/index.php?image_upload=Y&sessid=523f867218ee5b96edd696f98316b6f6',null,'height=150,width=400');
+}
+
+function AddCategoryToList()
+{
+	oSel = document.getElementById('CATEGORY_ID');
+	val = document.REPLIER.TAGS.value
+	if(val.length>0)
+	{
+		var exOpt = false;
+		for(i=1; i<oSel.options.length; i++)
+		{
+			if(val == oSel.options[i].text)
+			{
+				var selectOpt = i;
+				exOpt = true;
+			}
+		}
+		oSel.options[0].selected = false;
+		if(exOpt)
+		{
+			oSel.options[selectOpt].selected = true;
+		}
+		else
+		{
+			var oOption = new Option(val, "new_"+val);
+			oSel.options.add(oOption);
+			oSel.options[oOption.index].selected = true;
+		}
+	}
+	document.getElementById('category-new').style.display = "none";
+	document.getElementById('category-add').style.display = "block";
+	document.REPLIER.TAGS.value = "";
+}
+
+function BXBlogSetEditorContent()
+{
+	try
+	{
+		var pMainObj = GLOBAL_pMainObj['POST_MESSAGE_HTML'];
+	}
+	catch(e){}
+
+	if(pMainObj)
+	{
+		pMainObj.SetEditorContent(document.getElementById("MESSAGE").value);
+	}
+
+}
+
+function showEditField(type, change)
+{
+	var oDivIDHtml = document.getElementById("edit-post-html");
+	var oDivIDText = document.getElementById("edit-post-text");
+
+	if(type == "html")
+	{
+		var oDivIDFlag = document.getElementById("editor_loaded");
+		oDivIDText.style.display = "none";
+		if(oDivIDHtml)
+			oDivIDHtml.style.display = "block";
+			
+		if(oDivIDFlag.value == "N")
+		{
+			//load editor
+			jsAjaxUtil.InsertDataToNode("/blogs/group/14/blog/edit/new/index.php?load_editor=Y", oDivIDHtml, false);
+			oDivIDFlag.value = "Y";
+		}
+		else
+		{
+			if(change == "Y")
+			{
+				try
+				{
+					var pMainObj = GLOBAL_pMainObj['POST_MESSAGE_HTML'];
+				}
+				catch(e){}
+
+				if(pMainObj)
+				{
+					pMainObj.SetEditorContent(document.getElementById("MESSAGE").value);
+				}
+			}
+		}
+	}
+	else
+	{
+		if(oDivIDHtml)
+			oDivIDHtml.style.display = "none";
+		oDivIDText.style.display = "block";
+		if(change == "Y")
+		{
+			try
+			{
+				var pMainObj = GLOBAL_pMainObj['POST_MESSAGE_HTML'];
+			}
+			catch(e){}
+
+			if(pMainObj)
+			{
+				pMainObj.SaveContent()
+				document.getElementById("MESSAGE").value = pMainObj.GetContent();
+			}
+		}
+
+	}
+	return false;
+}
+
+blogVars = {'templatePath' : '/bitrix/components/bitrix/blog/templates/blog.post.edit/.default/'};
+
+function pJCFloatDiv() 
+{
+	var _this = this;
+	this.floatDiv = null;
+	this.x = this.y = 0;
+
+	this.Show = function(div, left, top, dxShadow, bSubstrate, bIframe)
+	{
+		dxShadow = 0;
+		var zIndex = parseInt(div.style.zIndex);
+		if(zIndex <= 0 || isNaN(zIndex))
+			zIndex = 100;
+		div.style.zIndex = zIndex;
+		div.style.left = left + "px";
+		div.style.top = top + "px";
+
+		if(jsUtils.IsIE() && bIframe != "N")
+		{
+			var frame = document.getElementById(div.id+"_frame");
+			if(!frame)
+			{
+				frame = document.createElement("IFRAME");
+				frame.src = "javascript:''";
+				frame.id = div.id+"_frame";
+				frame.style.position = 'absolute';
+				frame.style.zIndex = zIndex-1;
+				document.body.appendChild(frame);
+			}
+			frame.style.width = div.offsetWidth + "px";
+			frame.style.height = div.offsetHeight + "px";
+			frame.style.left = div.style.left;
+			frame.style.top = div.style.top;
+			frame.style.visibility = 'visible';
+		}
+
+		/*shadow*/			
+		if(dxShadow > 0)
+		{
+			var img = document.getElementById(div.id+'_shadow');
+			if(!img)
+			{
+				if(jsUtils.IsIE())
+				{
+		 			img = document.createElement("DIV");
+		 			img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+blogVars.templatePath+"images/shadow.png',sizingMethod='scale')";
+				}
+				else
+				{
+		 			img = document.createElement("IMG");
+					img.src = blogVars.templatePath + 'images/shadow.png';
+				}
+				img.id = div.id+'_shadow';
+				img.style.position = 'absolute';
+				img.style.zIndex = zIndex-2;
+				document.body.appendChild(img);
+			}
+			img.style.width = div.offsetWidth+'px';
+			img.style.height = div.offsetHeight+'px';
+			img.style.left = parseInt(div.style.left)+dxShadow+'px';
+			img.style.top = parseInt(div.style.top)+dxShadow+'px';
+			img.style.visibility = 'visible';
+		}
+		
+		if (bSubstrate != "N")
+		{
+			var substrate = document.getElementById("blog_substrate");
+			if(!substrate)
+			{
+				substrate = document.createElement("DIV");
+				substrate.id = 	"blog_substrate";
+				substrate.style.zIndex = zIndex-3;
+				substrate.style.position = 	'absolute';
+				substrate.style.display = 'none';
+				substrate.style.visibility = 'hidden';
+				substrate.style.background = 'white';
+				substrate.style.opacity = '0.5';
+				if (substrate.style.MozOpacity)
+					substrate.style.MozOpacity = '0.5';
+				else if (substrate.style.KhtmlOpacity)
+					substrate.style.KhtmlOpacity = '0.5';
+				if (jsUtils.IsIE())
+				{
+			 		substrate.style.filter += "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
+				}
+				document.body.appendChild(substrate);
+			}
+			substrate.style.display = 'block';
+			substrate.style.left = 0;
+			substrate.style.top = 0;
+			var WindowSize = jsUtils.GetWindowSize();
+			substrate.style.width = WindowSize["scrollWidth"] + "px";
+			substrate.style.height = WindowSize["scrollHeight"] + "px";
+			substrate.style.visibility = 'visible';
+		}
+
+		
+	}
+		
+	this.Close = function(div)
+	{
+		if(!div)
+			return;
+		var sh = document.getElementById(div.id+"_shadow");
+		if(sh)
+			sh.style.visibility = 'hidden';
+
+		var frame = document.getElementById(div.id+"_frame");
+		if(frame)
+			frame.style.visibility = 'hidden';
+			
+		var substrate = document.getElementById("blog_substrate");
+		if(substrate)
+		{
+			substrate.style.display = 'none';
+			substrate.style.visibility = 'hidden';
+		}
+	}
+		
+	this.AdjustShadow = function(div, dxShadow)
+	{
+		var sh = document.getElementById(div.id+"_shadow");
+		if(sh)
+		{
+			if(isNaN(dxShadow))
+				dxShadow = 5;
+
+			sh.style.width = div.offsetWidth+'px';
+			sh.style.height = div.offsetHeight+'px';
+			sh.style.left = parseInt(div.style.left)+dxShadow+'px';
+			sh.style.top = parseInt(div.style.top)+dxShadow+'px';
+		}
+
+		var frame = document.getElementById(div.id+"_frame");
+		if(frame)
+		{
+			frame.style.width = div.offsetWidth + "px";
+			frame.style.height = div.offsetHeight + "px";
+			frame.style.left = div.style.left;
+			frame.style.top = div.style.top;
+		}
+	}
+}
+var pjsFloatDiv = new pJCFloatDiv();
+
+/************************************************/
+
+function BlogPopupMenu()
+{
+	var _this = this;
+	this.active = null;
+	
+	this.PopupShow = function(div, pos)
+	{
+		this.PopupHide();
+		if(!div)
+			return;
+		if (typeof(pos) != "object")
+			pos = {};
+			
+		this.active = div.id;
+	    div.ondrag = jsUtils.False;
+		
+		jsUtils.addEvent(document, "keypress", _this.OnKeyPress);
+		
+		div.style.width = div.offsetWidth + 'px';
+		div.style.visibility = 'visible';
+		
+		var res = jsUtils.GetWindowSize();
+		pos['top'] = parseInt(res["scrollTop"] + res["innerHeight"]/2 - div.offsetHeight/2);
+		pos['left'] = parseInt(res["scrollLeft"] + res["innerWidth"]/2 - div.offsetWidth/2);
+		pjsFloatDiv.Show(div, pos["left"], pos["top"]);
+	}
+
+	this.PopupHide = function()
+	{
+		var div = document.getElementById(_this.active);
+		if(div)
+		{
+			pjsFloatDiv.Close(div);
+			div.parentNode.removeChild(div);
+		}
+
+		this.active = null;
+		jsUtils.removeEvent(document, "keypress", _this.OnKeyPress);
+	}
+
+	this.OnKeyPress = function(e)
+	{
+		if(!e) e = window.event
+		if(!e) return;
+		if(e.keyCode == 27)
+			_this.PopupHide();
+	},
+
+	this.IsVisible = function()
+	{
+		return (document.getElementById(this.active).style.visibility != 'hidden');
+	}
+}
+
+
+function insertVideo()
+{
+	var path = document.getElementById('videoPath').value;
+	var width = document.getElementById('videoWidth').value;
+	var height = document.getElementById('videoHeight').value;
+	if(path.length <= 0)
+	{
+		document.getElementById('error').innerHTML = '<div class="blog-errors">Укажите путь к видео</div>';
+		return false;
+	}
+	if(width.length <= 0)
+	{
+		document.getElementById('error').innerHTML = '<div class="blog-errors">Укажите ширину видео</div>';
+		return false;
+	}
+	if(height.length <= 0)
+	{
+		document.getElementById('error').innerHTML = '<div class="blog-errors">Укажите высоту видео</div>';
+		return false;
+	}
+	
+	BlogTool.PopupHide();
+	try
+	{
+		var pMainObj = GLOBAL_pMainObj['POST_MESSAGE_HTML'];
+	}
+	catch(e)
+	{
+	}
+
+	if(pMainObj && document.getElementById('blg-text-html').checked)
+	{
+		pMainObj.insertHTML('<img __bxtagname="blogVideo" src="/bitrix/images/1.gif" style="border: 1px solid rgb(182, 182, 184); background-color: rgb(226, 223, 218); background-image: url('+document.getElementById('videoImg').src+'); background-position: center center; background-repeat: no-repeat; width: '+width+'px; height: '+height+'px;" __bxcontainer="'+path+'" width="'+width+'" height="'+height+'" />');
+
+		var i = arVideo.length ++;
+		arVideo[i] = '[video width='+width+' height='+height+']'+path+'[/video]';
+		arVideoP[i] = path;
+		arVideoW[i] = width;
+		arVideoH[i] = height;
+	}
+	else
+	{
+		doInsert('[video width='+width+' height='+height+']'+path+'[/video]', '', false);
+	}
+}
+
+check_ctrl_enter = function(e)
+{
+	if(!e)
+		e = window.event;
+
+	if((e.keyCode == 13 || e.keyCode == 10) && e.ctrlKey)
+	{
+		document.REPLIER.submit();
+	}
+}
+
+BlogTool = new BlogPopupMenu();
+function ShowVideoInput()
+{
+
+	var data = '<div style="background-color:#FFF; border:1px solid #000; padding:5px;"><div id="error"></div><table width="0" cellpadding="5"><tr><tD>Путь к видео:</td><td><input type="text" name="videoPath" id="videoPath" value=""></td></tr><tr><tD>Ширина окна видео:</td><td><input type="text" name="videoWidth" id="videoWidth" value="400"></td></tr><tr><tD>Высота окна видео:</td><td><input type="text" name="videoHeight" id="videoHeight" value="300"></td></tr></table><div align="center"><input type="button" name="insertVideo" value="Вставить" onClick="insertVideo()">&nbsp;<input type="button" name="cancel" value="Отменить" onClick="BlogTool.PopupHide()"></div></div>';
+	var div = document.createElement("DIV");
+	div.id = "blog_video";
+	div.style.visible = 'hidden';
+	div.className = "blog-video-popup";
+	div.style.position = 'absolute';
+	div.innerHTML = data;
+	
+	var scripts = div.getElementsByTagName('script');
+	
+	for (var i = 0; i < scripts.length; i++)
+	{
+		var thisScript = scripts[i];
+		var text;
+		var sSrc = thisScript.src.replace(/http\:\/\/[^\/]+\//gi, '');
+		if (thisScript.src && sSrc != 'bitrix/js/main/utils.js' && sSrc != 'bitrix/js/main/admin_tools.js' &&
+			sSrc != '/bitrix/js/main/utils.js' && sSrc != '/bitrix/js/main/admin_tools.js') 
+		{
+			var newScript = document.createElement("script");
+			newScript.type = 'text/javascript';
+			newScript.src = thisScript.src;
+			document.body.appendChild(newScript);
+		}
+		else if (thisScript.text || thisScript.innerHTML) 
+		{
+			text = (thisScript.text ? thisScript.text : thisScript.innerHTML);
+			text = (""+text).replace(/^\s*<!\-\-/, '').replace(/\-\->\s*$/, '');
+			eval(text);
+		}
+	}
+	
+	data = data.replace(/\<script([^\>])*\>([^\<]*)\<\/script\>/gi, '');
+	div.innerHTML = data;
+	document.body.appendChild(div);
+	BlogTool.PopupShow(div);
+	document.getElementById('videoPath').focus();
+}
+</script>
+<div id="ColorPick" style="visibility:hidden;position:absolute;top:0;left:0 ">
+<table cellspacing="0" cellpadding="1" border="0" bgcolor="#666666">
+<tr>
+<td>
+<table cellspacing="1" cellpadding="0" border="0" bgcolor="#FFFFFF">
+<tr><td bgcolor="#FF0000" onmousedown="alterfont('#FF0000', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FFFF00" onmousedown="alterfont('#FFFF00', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00FF00" onmousedown="alterfont('#00FF00', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00FFFF" onmousedown="alterfont('#00FFFF', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#0000FF" onmousedown="alterfont('#0000FF', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FF00FF" onmousedown="alterfont('#FF00FF', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FFFFFF" onmousedown="alterfont('#FFFFFF', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#EBEBEB" onmousedown="alterfont('#EBEBEB', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#E1E1E1" onmousedown="alterfont('#E1E1E1', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#D7D7D7" onmousedown="alterfont('#D7D7D7', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#CCCCCC" onmousedown="alterfont('#CCCCCC', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#C2C2C2" onmousedown="alterfont('#C2C2C2', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#B7B7B7" onmousedown="alterfont('#B7B7B7', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#ACACAC" onmousedown="alterfont('#ACACAC', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#A0A0A0" onmousedown="alterfont('#A0A0A0', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#959595" onmousedown="alterfont('#959595', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td></tr><tr><td bgcolor="#EE1D24" onmousedown="alterfont('#EE1D24', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FFF100" onmousedown="alterfont('#FFF100', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00A650" onmousedown="alterfont('#00A650', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00AEEF" onmousedown="alterfont('#00AEEF', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#2F3192" onmousedown="alterfont('#2F3192', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#ED008C" onmousedown="alterfont('#ED008C', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#898989" onmousedown="alterfont('#898989', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7D7D7D" onmousedown="alterfont('#7D7D7D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#707070" onmousedown="alterfont('#707070', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#626262" onmousedown="alterfont('#626262', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#555" onmousedown="alterfont('#555', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#464646" onmousedown="alterfont('#464646', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#363636" onmousedown="alterfont('#363636', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#262626" onmousedown="alterfont('#262626', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#111" onmousedown="alterfont('#111', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#000000" onmousedown="alterfont('#000000', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td></tr><tr><td bgcolor="#F7977A" onmousedown="alterfont('#F7977A', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FBAD82" onmousedown="alterfont('#FBAD82', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FDC68C" onmousedown="alterfont('#FDC68C', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FFF799" onmousedown="alterfont('#FFF799', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#C6DF9C" onmousedown="alterfont('#C6DF9C', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#A4D49D" onmousedown="alterfont('#A4D49D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#81CA9D" onmousedown="alterfont('#81CA9D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7BCDC9" onmousedown="alterfont('#7BCDC9', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#6CCFF7" onmousedown="alterfont('#6CCFF7', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7CA6D8" onmousedown="alterfont('#7CA6D8', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#8293CA" onmousedown="alterfont('#8293CA', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#8881BE" onmousedown="alterfont('#8881BE', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#A286BD" onmousedown="alterfont('#A286BD', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#BC8CBF" onmousedown="alterfont('#BC8CBF', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#F49BC1" onmousedown="alterfont('#F49BC1', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#F5999D" onmousedown="alterfont('#F5999D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td></tr><tr><td bgcolor="#F16C4D" onmousedown="alterfont('#F16C4D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#F68E54" onmousedown="alterfont('#F68E54', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FBAF5A" onmousedown="alterfont('#FBAF5A', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FFF467" onmousedown="alterfont('#FFF467', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#ACD372" onmousedown="alterfont('#ACD372', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7DC473" onmousedown="alterfont('#7DC473', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#39B778" onmousedown="alterfont('#39B778', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#16BCB4" onmousedown="alterfont('#16BCB4', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00BFF3" onmousedown="alterfont('#00BFF3', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#438CCB" onmousedown="alterfont('#438CCB', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#5573B7" onmousedown="alterfont('#5573B7', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#5E5CA7" onmousedown="alterfont('#5E5CA7', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#855FA8" onmousedown="alterfont('#855FA8', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#A763A9" onmousedown="alterfont('#A763A9', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#EF6EA8" onmousedown="alterfont('#EF6EA8', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#F16D7E" onmousedown="alterfont('#F16D7E', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td></tr><tr><td bgcolor="#EE1D24" onmousedown="alterfont('#EE1D24', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#F16522" onmousedown="alterfont('#F16522', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#F7941D" onmousedown="alterfont('#F7941D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#FFF100" onmousedown="alterfont('#FFF100', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#8FC63D" onmousedown="alterfont('#8FC63D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#37B44A" onmousedown="alterfont('#37B44A', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00A650" onmousedown="alterfont('#00A650', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00A99E" onmousedown="alterfont('#00A99E', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00AEEF" onmousedown="alterfont('#00AEEF', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#0072BC" onmousedown="alterfont('#0072BC', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#0054A5" onmousedown="alterfont('#0054A5', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#2F3192" onmousedown="alterfont('#2F3192', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#652C91" onmousedown="alterfont('#652C91', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#91278F" onmousedown="alterfont('#91278F', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#ED008C" onmousedown="alterfont('#ED008C', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#EE105A" onmousedown="alterfont('#EE105A', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td></tr><tr><td bgcolor="#9D0A0F" onmousedown="alterfont('#9D0A0F', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#A1410D" onmousedown="alterfont('#A1410D', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#A36209" onmousedown="alterfont('#A36209', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#ABA000" onmousedown="alterfont('#ABA000', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#588528" onmousedown="alterfont('#588528', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#197B30" onmousedown="alterfont('#197B30', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#007236" onmousedown="alterfont('#007236', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#00736A" onmousedown="alterfont('#00736A', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#0076A4" onmousedown="alterfont('#0076A4', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#004A80" onmousedown="alterfont('#004A80', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#003370" onmousedown="alterfont('#003370', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#1D1363" onmousedown="alterfont('#1D1363', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#450E61" onmousedown="alterfont('#450E61', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#62055F" onmousedown="alterfont('#62055F', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#9E005C" onmousedown="alterfont('#9E005C', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#9D0039" onmousedown="alterfont('#9D0039', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td></tr><tr><td bgcolor="#790000" onmousedown="alterfont('#790000', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7B3000" onmousedown="alterfont('#7B3000', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7C4900" onmousedown="alterfont('#7C4900', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#827A00" onmousedown="alterfont('#827A00', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#3E6617" onmousedown="alterfont('#3E6617', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#045F20" onmousedown="alterfont('#045F20', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#005824" onmousedown="alterfont('#005824', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#005951" onmousedown="alterfont('#005951', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#005B7E" onmousedown="alterfont('#005B7E', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#003562" onmousedown="alterfont('#003562', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#002056" onmousedown="alterfont('#002056', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#0C004B" onmousedown="alterfont('#0C004B', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#30004A" onmousedown="alterfont('#30004A', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#4B0048" onmousedown="alterfont('#4B0048', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7A0045" onmousedown="alterfont('#7A0045', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td><td bgcolor="#7A0026" onmousedown="alterfont('#7A0026', 'COLOR')"><img src="/bitrix/images/1.gif" border="0" width="15" height="15"></td></tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+
+<table>
+<tr id="tr_TEXT">
+  <th>Текст:</th>
+  <td class="blog-detail-text"><div id="edit-post-text" style="display:none;">
+      <table class="blog-blog-edit-table">
+        <tr>
+          <td colspan="2"><table class="blog-blog-edit-table">
+              <tr>
+                <td><h5>Текст</h5>
+                  <!--//<select name="ffont" id="select_font" onchange="alterfont(this.options[this.selectedIndex].value, 'FONT')">
+											<option value="0">Шрифт</option>
+											<option value="Arial" style="font-family:Arial">Arial</option>
+											<option value="Times" style="font-family:Times">Times</option>
+											<option value="Courier" style="font-family:Courier">Courier</option>
+											<option value="Impact" style="font-family:Impact">Impact</option>
+											<option value="Geneva" style="font-family:Geneva">Geneva</option>
+											<option value="Optima" style="font-family:Optima">Optima</option>
+											<option value="Verdana" style="font-family:Verdana">Verdana</option>
+									</select>-->
+                </td>
+                <td><a id="FontColor" class="blogButton" href="javascript:ColorPicker()"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/font_color.gif" width="15" height="13" title="Цвет"></a> <a class="blogButton bold_button" href="javascript:simpletag('B')" title="Жирный текст">Ж</a> <a class="blogButton italic_button" href="javascript:simpletag('I')" title="Наклонный текст">К</a> <a class="blogButton under_button" href="javascript:simpletag('U')" title="Подчеркнутый текст">Ч</a> <a class="blogButton mdash_button" href="javascript:void(0)" onclick="doInsert('—', '', false)" title="Длинное тире">&mdash;</a> <a class="blogButton quot_button" href="javascript:simpletag('quots')" title="Кавычки">&laquo;&nbsp;&raquo;</a> <a class="blogButton" href="javascript:tag_url()"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/link.gif" width="15" height="13" title="Ввод гиперссылки"></a>
+                  <!--//<a class="blogButton" href="javascript:tag_image()"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/image_link.gif" width="15" height="13" title="Вставить ссылку на изображение" id="image-link"></a>-->
+                  <a class="blogButton" href="javascript:ShowImageUpload()"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/image.gif" width="15" height="13" title="Загрузить изображение" id="image-upload"></a> <a class="blogButton" href="javascript:ShowVideoInput()"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/video.gif" width="15" height="13" title="Вставить видео" id="videoImg"></a>
+                  <!--//<a class="blogButton" href="javascript:quoteMessage()"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/quote.gif" width="20" height="20" title="Оформление текста в виде цитаты"></a>
+										<a class="blogButton" href="javascript:simpletag('CODE')"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/code.gif" width="20" height="20" title="Оформление текста в виде кода"></a>
+										<a class="blogButton" href="javascript:tag_list()"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/list.gif" width="20" height="20" title="Оформление текста в виде списка"></a>-->
+                  <a class="blogButton" href="javascript:void(0)" onclick="doInsert('[CUT]', '', false)"><img class="blogButton" src="/bitrix/templates/fclub/components/bitrix/blog.post.edit/.default/images/cut.gif" width="15" height="13" title="Оформление текста предпросмотра" id="cutImg"></a> </td>
+                <td width="100%" align="right"><a id="close_all" style="visibility:hidden" class="blogButton" href="javascript:closeall()" title="Закрыть все открытые тэги">Закрыть все теги</a> </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td width="100%"><textarea tabindex="2" name="POST_MESSAGE" cols="15" rows="15" id="MESSAGE" onKeyPress="check_ctrl_enter(arguments[0])"></textarea></td>
+          <td valign="middle"><!--//<table class="blog-blog-edit-table-smiles">
+									<tr>											<td align="center"><img src="/bitrix/images/blog/smile/icon_neutral.gif" width="16" height="16" title="Скептически" OnClick="emoticon(':|')" style="cursor:pointer"></td>
+																					<td align="center"><img src="/bitrix/images/blog/smile/icon_idea.gif" width="16" height="16" title="Идея" OnClick="emoticon(':idea:')" style="cursor:pointer"></td>
+										</tr><tr>											<td align="center"><img src="/bitrix/images/blog/smile/icon_question.gif" width="16" height="16" title="Вопрос" OnClick="emoticon(':?:')" style="cursor:pointer"></td>
+																					<td align="center"><img src="/bitrix/images/blog/smile/icon_exclaim.gif" width="16" height="16" title="Восклицание" OnClick="emoticon(':!:')" style="cursor:pointer"></td>
+										</tr><tr>											<td align="center"><img src="/bitrix/images/blog/smile/icon_wink.gif" width="16" height="16" title="Шутливо" OnClick="emoticon(';)')" style="cursor:pointer"></td>
+																					<td align="center"><img src="/bitrix/images/blog/smile/icon_evil.gif" width="16" height="16" title="Со злостью" OnClick="emoticon(':evil:')" style="cursor:pointer"></td>
+										</tr><tr>											<td align="center"><img src="/bitrix/images/blog/smile/icon_cry.gif" width="16" height="16" title="Очень грустно" OnClick="emoticon(':cry:')" style="cursor:pointer"></td>
+																					<td align="center"><img src="/bitrix/images/blog/smile/icon_redface.gif" width="16" height="16" title="Смущенный" OnClick="emoticon(':oops:')" style="cursor:pointer"></td>
+										</tr><tr>											<td align="center"><img src="/bitrix/images/blog/smile/icon_kiss.gif" width="16" height="16" title="Поцелуй" OnClick="emoticon(':{}')" style="cursor:pointer"></td>
+																					<td align="center"><img src="/bitrix/images/blog/smile/icon_cool.gif" width="16" height="16" title="Здорово" OnClick="emoticon('8)')" style="cursor:pointer"></td>
+										</tr><tr>											<td align="center"><img src="/bitrix/images/blog/smile/icon_eek.gif" width="16" height="16" title="Удивленно" OnClick="emoticon(':o')" style="cursor:pointer"></td>
+																					<td align="center"><img src="/bitrix/images/blog/smile/icon_sad.gif" width="16" height="16" title="Печально" OnClick="emoticon(':(')" style="cursor:pointer"></td>
+										</tr><tr>											<td align="center"><img src="/bitrix/images/blog/smile/icon_smile.gif" width="16" height="16" title="С улыбкой" OnClick="emoticon(':)')" style="cursor:pointer"></td>
+																					<td align="center"><img src="/bitrix/images/blog/smile/icon_biggrin.gif" width="16" height="16" title="Широкая улыбка" OnClick="emoticon(':D')" style="cursor:pointer"></td>
+										</tr></tr>								</table>-->
+          </td>
+		  </tr>
+      </table>
+    </div></td>
+</tr>
+<script>
+				<!--
+				showEditField('text', 'N');
+				//-->
+				</script>
+</tr>
+</table>
+</body>
+</html>

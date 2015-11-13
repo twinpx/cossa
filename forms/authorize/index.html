@@ -1,0 +1,51 @@
+<!--#set var="page" value="authorize" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Cossa</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section" class="authorize">
+						<h1>Пожалуйста, авторизуйтесь</h1>
+						<div id="alternative_login">
+							<div class="decor"><div></div></div>
+							<div class="form">
+								<h5>Уже есть аккаунт?<br />Выбирай любой вариант входа:</h5>
+								<a href=""><img src="/images/icons/facebook.gif" width="93" height="28" title="Facebook" alt="Facebook" /></a>
+								<a href=""><img src="/images/icons/twitter.gif" width="87" height="28" title="Twitter" alt="Twitter" /></a>
+								<a href=""><img src="/images/icons/vkontakte.gif" width="91" height="28" title="Вконтакте" alt="Вконтакте" /></a>
+								<p>Используйте свой аккаунт в социальной сети Facebook или Twitter,
+					чтобы пользоваться сайтом</p>
+							</div>
+						</div>
+						<form action="" method="get" enctype="multipart/form-data">
+							<!--<div class="error_message">
+								<div class="pointer"><div></div></div>
+								<p>Неверный логин и пароль.</p>
+								<p>Почтовый адрес уже существует.</p>
+								<p>Эти надписи не настоящие, а только для примера.</p>
+							</div>-->
+							<div class="form_field">
+								<label>Логин <span class="no_text">?</span></label>
+								<input type="text" name="name" class="text" value="" />
+							</div>
+							<div class="form_field">
+								<label>Пароль <span class="no_text">?</span></label>
+								<input type="password" name="password" class="text" value="" />
+							</div>
+							<div class="links"><a href="/forms/registration/">Зарегистрироваться</a> <a href="/forms/remind/">Забыли пароль?</a></div>
+							<label class="checkbox"><input type="checkbox" name="conditions" /><span>Запомнить меня на этом компьютере</span></label>
+							<div class="button"><input type="submit" value="" class="submit" /></div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

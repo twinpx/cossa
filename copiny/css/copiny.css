@@ -1,0 +1,61 @@
+.b-copiny-link {
+	color: #f3892e;
+	font-size: 18pt;
+	font-weight: bold;
+	padding: 0;
+	float: right;
+	line-height: 1.1;
+	text-transform: uppercase;
+	width: 50px;
+	height: 50px;
+	background: url(/images/copiny/copiny-logo.png) no-repeat center center;
+	margin: -3px -4px 0 0;
+}
+.b-digital-link {
+    background: url("/images/digital/submenu-logo.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    float: right;
+    height: 54px;
+    margin: -3px 4px -18px 0;
+    vertical-align: top;
+    width: 48px;
+}
+
+.b-top-banner {
+	margin: 20px 0 -24px;
+	display: block;
+	position: relative;
+}
+
+#top_navigation.fixed .b-copiny-link,
+#top_navigation.fixed .b-top-banner,
+#top_navigation.fixed .b-digital-link {
+    display: none;
+}
+
+#articles_list .items_block {
+	margin-top: 0;
+}
+#articles_list .item {
+	border-top: none;
+	padding-top: 0;
+}
+#articles_list .item .image {
+	float: left;
+	width: 618px;
+	margin-right: 40px;
+}
+#articles_list .image a {
+	height: auto;
+}
+#articles_list .item .content {
+	float: left;
+	width: 286px;
+	margin-top: 7px;
+}
+
+.submenu-panel-decor {
+	width: 969px;
+	height: 19px;
+	background: url(/images/le-tour/submenu-panel-decor.png) no-repeat 0 0;
+}

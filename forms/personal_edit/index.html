@@ -1,0 +1,193 @@
+<!--#set var="page" value="personal_edit" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Cossa Редактирование профиля</title>
+</head>
+
+<body>
+	<!--#include virtual="/blocks/user_menu.html"-->
+	<!--#include virtual="/blocks/head.html"-->
+	<!--#include virtual="/blocks/top_navigation.html"-->
+				<div id="content" class="page">
+					<div id="form_section" class="edit_profile">
+						<h1>Редактирование профиля</h1>
+						<div id="alternative_login">
+							<div class="decor"><div></div></div>
+							<div class="form">
+								<h5>Уже есть аккаунт?<br />Выбирай любой вариант входа:</h5>
+								<a href=""><img src="/images/icons/facebook.gif" width="92" height="28" title="Facebook" alt="Facebook" /></a> или
+								<a href=""><img src="/images/icons/twitter.gif" width="87" height="28" title="Twitter" alt="Twitter" /></a>
+								<p>Используйте свой аккаунт в социальной сети Facebook или Twitter,
+					чтобы пользоваться сайтом</p>
+							</div>
+						</div>
+						<form action="" method="get" enctype="multipart/form-data">
+							<fieldset class="main_info">
+								<legend>Общая информация</legend>
+								<div class="userpic form_field">
+									<img src="/images/forms/empty_150x150.gif" width="150" height="150" alt="" class="empty" />
+									<div class="field">
+										Выберите изображение на вашем компьютере (1МБ макс.)
+										<input type="file" name="PERSONAL_PHOTO" />
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="form_field">
+									<label>Имя <span class="no_text">?</span></label>
+									<input type="text" name="name" class="text" value="Иван" />
+								</div>
+								<div class="form_field">
+									<label>Фамилия <span class="no_text">?</span></label>
+									<input type="text" name="last_name" class="text" value="Иванов" />
+								</div>
+								<div class="form_field">
+									<label>Мой пол <span class="no_text">?</span></label>
+									<select name="PERSONAL_GENDER">
+										<option value="male">Мужской</option>
+										<option value="female">Женский</option>
+									</select>
+								</div>
+								<div class="form_field date_field">
+									<label>Дата рождения</label>
+									<span class="date_field">
+										<select name="birth_day" class="day">
+											<option>20</option>
+											<option>21</option>
+											<option>21</option>
+										</select>
+										<select name="birth_month" class="month">
+											<option value="june">июня</option>
+											<option value="july">июля</option>
+											<option value="august">августа</option>
+										</select>
+										<select name="birth_year" class="year">
+											<option>2011</option>
+											<option>2012</option>
+											<option>2013</option>
+										</select>
+									</span>
+								</div>
+							</fieldset>
+							<fieldset class="job_info">
+								<legend>Информация о работе</legend>
+								<div class="form_field">
+									<div class="note"><div>Укажите последнее место работы</div></div>
+									<label>Место работы</label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label>Должность</label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label>Сайт</label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field date_field">
+									<label>Период работы</label>
+									<span class="date_field">
+										<select name="beginning_month" class="month">
+											<option value="june">июня</option>
+											<option value="july">июля</option>
+											<option value="august">августа</option>
+										</select>
+										<select name="beginning_year" class="year">
+											<option>2011</option>
+											<option>2012</option>
+											<option>2013</option>
+										</select>
+									</span>
+									<span id="end_work_date">
+										<span class="to">до</span>
+										<span class="date_field">
+											<select class="month">
+												<option value="june">июня</option>
+												<option value="july">июля</option>
+												<option value="august">августа</option>
+											</select>
+											<select class="year">
+												<option>2011</option>
+												<option>2012</option>
+												<option>2013</option>
+											</select>
+											<input type="hidden" name="ending_month" class="ending_month" value="" />
+											<input type="hidden" name="ending_year" class="ending_year" value="" />
+										</span>
+									</span>
+									<label class="checkbox still_work"><input type="checkbox" name="still_work" value="Y" /> <span>Я еще работаю здесь</span></label>
+								</div>
+							</fieldset>
+							<fieldset class="personal_info">
+								<legend>Информация о себе</legend>
+								<div class="form_field">
+									<div class="note"><div>Расскажите всем о себе</div></div>
+									<label>Немного обо мне</label>
+									<textarea name="you" cols="40" rows="5"></textarea>
+								</div>
+								<div class="form_field">
+									<div class="note"><div>Введите ваши интересы через запятую, например:<br />
+фотографи, милиционеры, узкие джинсы</div></div>
+									<label>Мои интересы</label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+							</fieldset>
+							<fieldset class="contact_info">
+								<legend>Контактная информация</legend>
+								<div class="form_field">
+									<label>Город</label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label>E-mail</label>
+									<input type="text" name="email" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label>Телефон</label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+							</fieldset>
+							<fieldset class="networks">
+								<legend>Присутствие в социальных сетях</legend>
+								<div class="form_field">
+									<label class="site"><span>Сайт</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label class="facebook"><span>Facebook</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label class="twitter"><span>Twitter</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label class="vkontakte"><span>Vkontakte</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label class="vimeo"><span>Vimeo</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label class="livejournal"><span>Livejournal</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label class="linkedin"><span>Linkedin</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+								<div class="form_field">
+									<label class="youtube"><span>Youtube</span></label>
+									<input type="text" name="you" class="text" value="" />
+								</div>
+							</fieldset>
+							<div class="button"><input type="submit" value="Сохранить" class="submit" /></div>
+						</form>
+					</div>
+				</div>
+		<!--#include virtual="/blocks/footer.html"-->
+<!--#include virtual="/blocks/popups.html"-->
+</body>
+</html>

@@ -1,0 +1,88 @@
+	<div style="height:20px; background:pink; width:100%; top:0;"></div>
+	<div style="position:fixed; height:20px; background:#ccc; width:100%; z-index:200; top:0;"></div>
+<!--#if expr="$page='index'" -->
+	<div id="login_menu">
+		<div class="page">
+			<div class="item"><a href="/forms/auth/" id="login_link">Вход</a></div>
+			<div class="item"><a href="/forms/registration/">Зарегистрироваться</a></div>
+		</div>
+	</div>
+<!--#else -->
+	<div id="user_menu">
+		<div class="page">
+			<div class="items">
+				<div class="activity">
+					<a href="#" class="button"><span>Создать</span></a>
+					<div class="menu">
+						<ul>
+							<li class="articles"><a href="/articles/add/">Статью</a></li>
+							<li class="events"><a href="/events/add/">Событие</a></li>
+							<li class="vacancies"><a href="/vacancies/add/">Вакансию</a></li>
+							<li class="education"><a href="/education/add/">Обучение</a></li>
+							<li class="vocabulary"><a href="/vocabulary/add/">Термин</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="profile">
+					<a href="#" class="button"><span>Редакция Cossa</span><span class="pointer"></span></a>
+					<div class="menu">
+						<ul>
+							<li class="profile_link">
+								<a href="/profile/?ID=1" class="link">
+									<span class="user expert"><img width="25" height="25" src="http://cossa.ru/upload/main/432/37fc642f9d0c996e6accfffdcb522d61_cossa.jpg" alt=""></span>							<span class="name">Ваш профиль</span>
+								</a>
+							</li>
+							<li class="list">
+								<a href="/profile/settings/" class="link">Настройки</a>
+								<a href="/?logout=yes" class="link">Выход</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="messages">
+					<a title="Сообщения" href="#" class="icon"></a>
+					<div class="menu">
+						<ul>
+							<li>
+								<a href="/articles/155/3516/#7800" class="link">
+									<span class="user expert"><img width="25" height="25" src="http://cossa.ru/upload/main/b2b/cde3ff179ed3d91c5dd0f626c61a3c5d_fa21eb2bc765t.jpg" alt=""></span>
+									<span class="text">
+										<b>Елизавета Трофимова</b>
+										<span class="message">Несмотря на то, что этот мини-фильм затрагивает серьезные проблемы дал...</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="/articles/211/2870/#4413" class="link">
+									<span class="user expert"><img width="25" height="25" src="http://cossa.ru/upload/main/432/37fc642f9d0c996e6accfffdcb522d61_cossa.jpg" alt=""></span>
+									<span class="text">
+										<b>Редакция Cossa</b>
+										<span class="message">http://www.cossa.ru/articles/rss/ &mdash; сверху справа иконка, над блоками ...</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="/articles/211/2870/#4410" class="link">
+									<span class="user expert"><img width="25" height="25" src="http://cossa.ru/images/male.jpg" alt=""></span>
+									<span class="text">
+										<b>Alex Kazinets</b>
+										<span class="message">Друзья, а как подписать на rss на новой cossa ?...</span>
+									</span>
+								</a>
+							</li>
+							<li class="all">
+								<a href="/profile/favourite_comments/"><b>Все комментарии</b></a>
+							</li>		
+						</ul>
+					</div>
+				</div>
+				<div class="favs">
+                    <a href="/profile/favourite_articles/" class="icon"><span class="num">2</span></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear">
+			</div>
+		</div>
+	</div>
+<!--#endif -->
