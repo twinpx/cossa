@@ -70,7 +70,7 @@ $(document).ready(function() {
 		$("#top_gallery").top_teaser({pointers:false, auto:topTeaserInterval});
 	}
 	
-	windowEvents();
+	setTimeout( function() { windowEvents(); }, 500);
 	
 	if(!window.topHintsInterval) {
 		var topHintsInt = 10000;
@@ -3541,22 +3541,22 @@ function windowEvents() {
 		var menuHeight = -scrolled;
 	}
 	
-	if($("#submenu_panel").offset()) {
+	/*if($("#submenu_panel").offset()) {
 		var fixedBorder = $("#submenu_panel").offset().top;
 		if($("#submenu_panel .b-submenu-logo").is("div")) {
 			fixedBorder = $("#submenu_panel .b-submenu-logo__link").offset().top;
 		}
 	}
-	else {
+	else {*/
 		fixedBorder = $("#logo").offset().top + $("#logo").height();
-	}
+	//}
 	fixedBorder -= menuHeight;
 	
 	for(var i = 0; i < pageElements.length; i++) {
 		if($(pageElements[i]).is(":visible")) {
 			
 			if($(".pager").is("div")) {
-				var bottomElem = ".pager";
+				var bottomElem = ".pager:first";
 			}
 			else {
 				bottomElem = "#footer"
@@ -3566,7 +3566,7 @@ function windowEvents() {
 				id : pageElements[i],
 				fixedBorder : {
 					top: $(pageElements[i]).offset().top,
-					bottom: $(bottomElem).offset().top - parseInt($(bottomElem).css("marginTop"))
+					bottom: $(bottomElem).offset().top - parseInt($(bottomElem).css("marginTop"), 10)
 				},
 				fixedFlag : false,
 				blockedFlag : false
@@ -3578,6 +3578,7 @@ function windowEvents() {
 	.scroll(function() {
 		scrolled = window.pageYOffset || document.documentElement.scrollTop;
 		topNavigationY = $topNavigation.offset().top;
+    var $elem;
 		
 		if((scrolled >= fixedBorder) && !fixedFlag) {
 			setFixed();
@@ -3588,29 +3589,33 @@ function windowEvents() {
 		
 		for(var i = 0; i < pageElements.length; i++) {
 			
-			if(typeof pageElements[i] == 'object') {
-				if(!pageElements[i].fixedFlag && (scrolled + panelHeight >= pageElements[i].fixedBorder.top - 20) && (scrolled + panelHeight < pageElements[i].fixedBorder.top)) {
-					pageElements[i].fixedBorder.top = $(pageElements[i].id).offset().top;
-				}
-				else if(!pageElements[i].fixedFlag && (scrolled + panelHeight >= pageElements[i].fixedBorder.top)) {
-					setFixedPageElement(pageElements[i]);
-				}
-				else if(pageElements[i].fixedFlag && (scrolled + panelHeight < pageElements[i].fixedBorder.top)) {
-					removeFixedPageElement(pageElements[i]);
-				}
-				else if(!pageElements[i].blockedFlag && (scrolled + panelHeight + $(pageElements[i].id).height() > pageElements[i].fixedBorder.bottom)) {
-					pageElements[i].blockedFlag = true;
-				}
-				else if(pageElements[i].blockedFlag) {
-					if((scrolled + panelHeight + $(pageElements[i].id).height() < pageElements[i].fixedBorder.bottom)) {
-						removeBlockedPageElement(pageElements[i], panelHeight);
-					}
-					else {
-						var diff = scrolled + parseInt($(pageElements[i].id).css("top")) + $(pageElements[i].id).height() - pageElements[i].fixedBorder.bottom;
-						setBlockedPageElement(pageElements[i], diff);
-					}
-				}
-			}
+      $elem = $(pageElements[i].id);
+     // if ( $elem.offset().top + $elem.height() + parseInt($elem.css( 'margin-bottom' ),10) + 10 < pageElements[i].fixedBorder.bottom ) {
+        if ( typeof pageElements[i] == 'object') {
+          
+          if(!pageElements[i].blockedFlag && (scrolled + panelHeight + $(pageElements[i].id).height() > pageElements[i].fixedBorder.bottom)) {
+            pageElements[i].blockedFlag = true;
+          }
+          else if(pageElements[i].blockedFlag) {
+            if((scrolled + panelHeight + $elem.height() < pageElements[i].fixedBorder.bottom)) {
+              removeBlockedPageElement(pageElements[i], panelHeight);
+            }
+            else {
+              var diff = scrolled + parseInt($elem.css("top")) + $elem.height() - pageElements[i].fixedBorder.bottom;
+              setBlockedPageElement(pageElements[i], diff);
+            }
+          }
+          else if(!pageElements[i].blockedFlag && !pageElements[i].fixedFlag && (scrolled + panelHeight >= pageElements[i].fixedBorder.top - 20) && (scrolled + panelHeight < pageElements[i].fixedBorder.top)) {
+            pageElements[i].fixedBorder.top = $(pageElements[i].id).offset().top;
+          }
+          else if(!pageElements[i].blockedFlag && !pageElements[i].fixedFlag && (scrolled + panelHeight >= pageElements[i].fixedBorder.top)) {
+            setFixedPageElement(pageElements[i]);
+          }
+          else if(pageElements[i].fixedFlag && (scrolled + panelHeight < pageElements[i].fixedBorder.top)) {
+            removeFixedPageElement(pageElements[i]);
+          }
+        }
+      //}
 		}
 	})
 	.resize(function() {
@@ -3658,7 +3663,7 @@ function windowEvents() {
 	function setFixedPageElement(elm) {
 		var $elem = $(elm.id);
 		
-		//setFixedElementSpacer(elm);
+		setFixedElementSpacer(elm);
 		
 		$elem
 			.css({
@@ -3675,7 +3680,7 @@ function windowEvents() {
 		
 		elm.fixedFlag = false;
 		
-		//removeFixedElementSpacer(elm);
+		removeFixedElementSpacer(elm);
 	}
 	
 	function setBlockedPageElement(elm, diff) {
