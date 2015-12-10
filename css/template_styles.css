@@ -746,7 +746,7 @@ li {padding-bottom:5px;}
 
 /*Menu*/
 #top_navigation {
-	margin-bottom:30px;}
+	margin-bottom:0/*30px*/;}
 
 #top_navigation_fixed {padding:39px 0 14px 0;}
 #top_navigation.fixed #top_navigation_fixed {
@@ -977,7 +977,7 @@ div.title-search-result-fixed {
 #submenu_panel {
 	background-color:#000000;
 	padding:6px 0;
-	margin-top:24px;
+	margin-top:0 !important /*24px*/;
   margin-bottom:30px;}
 #submenu {
 	font-size:10pt;
