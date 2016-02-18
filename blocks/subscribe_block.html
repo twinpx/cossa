@@ -1,4 +1,37 @@
-<div id="subscribe_block" class="subscribe">
+<div class="sandsay-subscription">
+  <!--// Для корректной  работы формы, не удаляйте из элементов служебный класс "sendsayFieldItem" //-->
+  <script type="text/javascript">
+    var PS_ErrPref = 'Поля не заполнены или заполнены неверно: \n'; 
+	</script>
+  <script type="text/javascript" src="https://sendsay.ru/account/js/formCheck.js"></script>
+	<div class="form_field">
+		<div class="subpro_forma">
+      <h3>Подписка</h3>
+      <p>Еженедельные дайджесты и статьи о маркетинге.</p>
+			<form id="sandsay_form" name="form_144" action="https://sendsay.ru/form/digdog/1" method="post" onsub="" mit="jav * ascript:if(typeof sendsay_check_form === 'function'){ return sendsay_check_form(this); }" accept-charset="utf-8">
+				<div id="_member_email" class="subpro_clear sendsayFieldItem" style="padding-top:5px; padding-bottom:25px;">
+					<div class="subpro_left" id="sp_label__member_email" data-title="Email">
+						Email <span style="color:#F00">*</span>
+					</div>
+					<div class="subpro_right">
+ <input type="text" class="subpro_input pro_mustbe form-control" style="padding-left:3px; width:280px;" data-type="email" name="_member_email" value="" size="" placeholder="Электронная почта">
+						<div id="_error" style="display:none;">
+						</div>
+					</div>
+				</div>
+				<div class="subpro_clear" id="sendsayFormSubmitBox" style="padding-top:5px; padding-bottom:25px;">
+					<div class="subpro_right">
+ <input class="subpro_btn" type="submit" name="bt_save" value="Сохранить">
+					</div>
+				</div>
+			</form>
+      <p class="note"><a href="">Подробнее о рассылке</a></p>
+		</div>
+	</div>
+</div>
+
+
+<!--<div id="subscribe_block" class="subscribe">
 	<div class="close"><a href="#" title="Скрыть"></a></div>
 	<div class="pad">
 		<p><b>Подписывайтесь</b><br /> и получайте самые интересные статьи<br />и новости от Cossa</p>
@@ -49,4 +82,4 @@
 			<a href="" class="vk" title="Вконтакте"></a>
 		</div>
 	</div>
-</div>
+</div>-->
