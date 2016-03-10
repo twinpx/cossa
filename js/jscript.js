@@ -808,7 +808,8 @@ $(document).ready(function() {
 		e.stopPropagation();
 	});
 	$("#form_section input.submit").click(function() {
-		_gaq.push(['_trackEvent', 'Отправка формы', 'Нажатие на кнопку Отправить в редакцию']);
+    if ( !window._gaq ) return;
+    _gaq.push(['_trackEvent', 'Отправка формы', 'Нажатие на кнопку Отправить в редакцию']);
 	});
 	$("img.img_align").each(function() {
 		var $img = $(this),
@@ -862,10 +863,9 @@ $(document).ready(function() {
 		.hover(function() {$(this).addClass("hover");}, function() {$(this).removeClass("hover");})
 		.click(function(e) {
 			var $ul = $(this).closest("div.select").find("ul");
-			if($ul.is(":visible")) {
+			if ($ul.is(":visible")) {
 				$("div.filter div.select ul:visible").hide();
-			}
-			else {
+			} else {
 				$("div.filter div.select ul:visible").hide();
 				$(this).closest("div.select").find("ul").show();
 			}
@@ -1601,7 +1601,7 @@ function stopEvent(e) {
 							var $input = $(this),
 								$val = $.trim($input.val()),
 								mailRegex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
-								sourceRegex = /^(([a-z]+:\/\/)?[-a-zа-я0-9]+\.)+[a-zа-я]{2,5}$/i,
+								sourceRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
 								phoneRegex = /^([0-9-()\++\s]{5,})$/i,
 								priceRegex = /^([0-9\s\.,]+)$/i,
 								$noText = $input.closest("div.form_field").find("span.no_text");
@@ -1627,7 +1627,7 @@ function stopEvent(e) {
 								console.log($val.split("http://"))[0];
 							}*/
 							
-							if (~$input.attr("name").indexOf("source") && $val != "" && $val != "http://" && $val != "https://") {
+							if (~$input.attr("name").indexOf("source") && $val !== "" && $val !== "http://" && $val !== "https://") {
 								if(!$val.match(sourceRegex)){methods.setAttention($input);}
 								else {methods.removeAttention($input);}
 							}
@@ -1687,10 +1687,10 @@ function stopEvent(e) {
 						});
 					},
 					submitForm:function(e) {
-						if($("#file-uploader .apply").is("div")) {
+						if ($("#file-uploader .apply").is("div")) {
 							$("#file-uploader .apply").click();
 						}
-						if($this.closest("div.body").parent().attr("id") == "email_popup") {
+						if ($this.closest("div.body").parent().attr("id") == "email_popup") {
 							var email = $this.find(":text").val();
 							$.ajax({
 								url:"/php/ajax_write_email.php",
@@ -1707,6 +1707,7 @@ function stopEvent(e) {
 							e.preventDefault();
 							return false;
 						}
+            $this.find(":submit").removeClass( 'i-disabled' );
 						return true;
 					},
 					trackEvent: function() {
@@ -1731,12 +1732,18 @@ function stopEvent(e) {
 					}
 				};
 			
-			$this.find(":submit").click(function(e) {
+			$this.find(":submit").click(function(e) {    
+        var $submit = $( this );    
 				if(!methods.check()) {
 					e.preventDefault();
 					return false;
 				}
 				else {
+          if ( $submit.hasClass( 'i-disabled' )) {
+            e.preventDefault();
+            return false;
+          }
+          $submit.addClass( 'i-disabled' );
 					methods.trackEvent();
 					methods.submitForm(e);
 				}
@@ -3588,6 +3595,8 @@ function windowEvents() {
 		}
 		
 		for(var i = 0; i < pageElements.length; i++) {
+    
+      pageElements[i].fixedBorder.bottom = $(bottomElem).offset().top - parseInt($(bottomElem).css("marginTop"), 10);
 			
       $elem = $(pageElements[i].id);
      // if ( $elem.offset().top + $elem.height() + parseInt($elem.css( 'margin-bottom' ),10) + 10 < pageElements[i].fixedBorder.bottom ) {
