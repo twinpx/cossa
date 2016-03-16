@@ -1,0 +1,114 @@
+﻿#top_navigation {
+  margin-bottom: 0;
+    
+  &.fixed .page {
+    border: 0;
+  }
+  
+  .page {
+    border: 3px solid #eaecec;
+    border-bottom: 0;
+    border-radius: 3px;
+    position: relative;
+    
+    > a {
+      position: absolute;
+      top: -51px;
+      right: 20px;
+      float: none !important;
+      margin: 0 !important;
+      
+      img {
+        width: 140px !important;
+        height: auto !important;
+      }
+    }
+  }
+}
+#top_navigation_fixed {
+    padding: 39px 0 0 0;
+}
+#top_navigation.fixed #top_navigation_fixed {
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    top: 40px;
+    z-index: 200;
+    padding-top: 0;
+}
+#top_navigation_spacer {
+    font-size: 0;
+}
+#top_navigation.fixed #logo,
+#top_navigation.fixed #top_menu,
+#top_navigation.fixed #top_menu_more {
+    display: none;
+}
+#top_navigation.fixed #submenu_panel {
+    margin-top: 0;
+}
+
+#logo,
+#top_logo {
+  line-height: normal;
+  margin: -31px 0 33px 18px;
+  
+  a {
+    display: inline-block;
+    background-color: #fff;
+    padding: 0 2px 0 11px;
+  }
+}
+#top_logo {
+  margin: 0;
+  float: left;
+}
+#logo img,
+#top_logo img {
+  width: 190px !important;
+  height: 57px !important;
+}
+#logo span,
+#logo a {
+  background-image: none !important;
+  background-color: #fff;
+  display: inline-block;
+  padding: 0 2px 0 11px;
+}
+/*#logo span,
+#logo a,
+#top_logo span,
+#top_logo a {
+    background: url(/images/cossa_logos.gif) no-repeat -11px -144px #ffffff;
+    display: inline-block;
+    width: 128px;
+    height: 39px;
+}
+#logo a {
+    background-position: -173px -144px;
+}
+#logo.logo1 span, #logo.logo1 a {background-position:-13px -10px;}
+#logo.logo2 span, #logo.logo2 a {background-position:-174px -10px;}
+#logo.logo3 span, #logo.logo3 a {background-position:-335px -10px;}
+#logo.logo4 span, #logo.logo4 a {background-position:-13px -77px;}
+#logo.logo5 span, #logo.logo5 a, #logo.logo6 span, #logo.logo6 a {background-position:-174px -77px;}
+#logo.logo0 span, #logo.logo0 a {background-position:-335px -77px;}*/
+
+#user_menu .logo span,
+#user_menu .logo a,
+#top_logo span,
+#top_logo a {
+    background-position: -322px -134px;
+    display: inline-block;
+    width: 73px;
+    height: 22px;
+    margin-top: 11px;
+    
+    img {
+      display: none;
+    }
+}
+#top_logo a,
+#top_logo a {
+    background-position: -322px -169px;
+}
