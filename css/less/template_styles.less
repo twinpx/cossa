@@ -253,19 +253,7 @@ label {
     padding-top: 8px;
 }
 /*_dj_select plugin_*/
-/*List*/
 
-ul,
-ol {
-    margin: 10px 0 10px 32px;
-}
-ul li {
-    list-style-type: disc;
-}
-li {
-    padding-bottom: 5px;
-}
-/*_List_*/
 /*Page*/
 
 .page {
@@ -528,7 +516,7 @@ body.min-padding #top_link {
 /*Articles*/
 
 .b-acricle-switch {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 .b-acricle-switch__tabs {
     margin: 10px 0;
@@ -536,7 +524,7 @@ body.min-padding #top_link {
 .main .b-acricle-switch__tabs a {
     display: inline-block;
     background: #ccc;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     width: 40px;
     height: 38px;
@@ -550,7 +538,7 @@ body.min-padding #top_link {
     -khtml-box-sizing: content-box;
 }
 .main .b-acricle-switch__tabs a.i-current {
-    color: #000;
+    color: #000 !important;
 }
 .b-acricle-switch__text {
     display: none;
@@ -641,13 +629,13 @@ body.min-padding #top_link {
 span.down {
     background-position: -250px 2px;
 }
-#articles_list .separator,
+/*#articles_list .separator,
 #news_list .separator,
 #events_list .separator,
 #event_item .separator,
 #education_list .separator {
     margin-top: 0;
-}
+}*/
 .submenu {
     margin-bottom: 25px;
 }
@@ -665,18 +653,19 @@ span.down {
     color: #747474;
 }
 .separator {
-    background: url(/images/pic.png) repeat-x 0 -16px;
+    /*background: url(/images/pic.png) repeat-x 0 -16px;
     height: 9px;
-    text-align: center;
-    margin: 35px 0;
+    text-align: center;*/
+    margin: 45px 0 0;
 }
 .separator span {
-    display: inline-block;
+    /*display: inline-block;
     background: url(/images/pic.png) no-repeat -60px 0;
     width: 40px;
     height: 9px;
     font-size: 0;
-    line-height: normal;
+    line-height: normal;*/
+    display: none;
 }
 .tags {
     font-size: 9pt;
@@ -799,12 +788,22 @@ span.down {
 }
 #news_item .main,
 #article_item .main {
-    border-bottom: 1px solid #e9e9e9;
+    border-bottom: 6px solid #feeecc;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    /*overflow:hidden;*/
+    /*overflow: hidden;*/
     
     overflow: visible;
+    
+    a {
+      color: #59a370;
+      
+      &:hover,
+      &:active,
+      &:focus {
+        color: #e14d4d ;
+      }
+    }
 }
 #news_item .main h3,
 #article_item .main h3 {
