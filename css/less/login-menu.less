@@ -1,5 +1,11 @@
 ﻿#login_menu .page {
-  overflow: hidden;
+  //overflow: hidden;
+  
+  &:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
 }
 #login_menu .item {
   float: right;
@@ -19,12 +25,14 @@
     height: 44px;
     z-index: 300;
 }
-#user_menu .items {
+#user_menu .items,
+#login_menu .items {
     float: right;
 }
 #user_menu .button {
   font-size: 11pt;
 }
+#login_menu .activity,
 #user_menu .activity {
     float: left;
     margin: 0 0 0 12px;
@@ -32,6 +40,10 @@
     height: 44px;
     z-index: 315;
 }
+#login_menu .activity {
+  margin-left: 30px;
+}
+#login_menu .activity .button,
 #user_menu .activity .button {
     color: #fff;
     background-color: #59a370;
@@ -40,11 +52,13 @@
     text-align: center;
     height: 44px;
 }
+#login_menu .activity .button span,
 #user_menu .activity .button span {
     line-height: 44px;
     width: 123px;
     display: inline-block;
 }
+#login_menu .activity .menu,
 #user_menu .activity .menu {
   width: 123px;
   display: none;
@@ -54,11 +68,13 @@
   background: #59a370;
   z-index: 315;
 }
+#login_menu .activity .menu ul,
 #user_menu .activity .menu ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
+#login_menu .activity .menu li,
 #user_menu .activity .menu li {
     list-style-type: none;
     font-size: 10pt;
@@ -76,12 +92,16 @@
       padding-bottom: 7px;
     }
 }
+#login_menu .activity .menu a:hover,
 #user_menu .activity .menu a:hover,
+#login_menu .activity .menu a:focus,
 #user_menu .activity .menu a:focus {
     color: #fff;
     text-decoration: none;
 }
+#login_menu .activity .menu a,
 #user_menu .activity .menu a,
+#login_menu .activity .menu span,
 #user_menu .activity .menu span {
     display: block;
     padding: 4px 0 5px;
@@ -286,6 +306,7 @@
   line-height: 11pt;
   box-shadow: 0 5px 7px rgba(0,0,0,0.1);
 }
+#login_menu .active .menu,
 #user_menu .active .menu {
     display: block;
 }

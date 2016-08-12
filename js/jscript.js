@@ -11,7 +11,7 @@ $(document).ready(function() {
 		})
 		.click(function() {
 			$("div.filter div.select").find("div.input").removeClass("focus").end().find("ul").hide();
-			$("#user_menu div.menu").parent().removeClass("active").find("a.button").removeClass("active").end().find("a.icon").removeClass("active");
+			$("#login_menu div.menu, #user_menu div.menu").parent().removeClass("active").find("a.button").removeClass("active").end().find("a.icon").removeClass("active");
 			$("#sent, #mail_block, #message").hide();
 			$(".visit_button .hint").removeClass("visible");
 			$("#top_menu_more").removeClass("open");
@@ -887,9 +887,9 @@ $(document).ready(function() {
 	commentsBlock();
 	
 	$("#rating_item .gallery").pns_gallery({beltHeight:246, beltWidth:370, vertAlign:true});
-	$("#user_menu a.button, #user_menu a.icon").click(function(e) {
+	$("#login_menu a.button, #user_menu a.button, #user_menu a.icon").click(function(e) {
 		var $this = $(this);
-		$("#user_menu a.button, #user_menu a.icon").each(function() {
+		$("#login_menu a.button, #user_menu a.button, #user_menu a.icon").each(function() {
 			if($(this).parent().attr("class") != $this.parent().attr("class")) {
 				$(this).removeClass("active").parent().removeClass("active");
 			}
