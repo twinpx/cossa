@@ -1977,14 +1977,14 @@ div.heading {
   top: 0;
 }
 #form_section .buttons input.submit {
-  background-position: -120px 0;
-  width: 180px;
+  background-position: -176px -621px;
+  width: 124px;
 }
 #form_section .buttons input.submit_hover {
-  background-position: -120px -33px;
+  background-position: -176px -654px;
 }
 #form_section .buttons input.submit_active {
-  background-position: -120px -66px;
+  background-position: -176px -686px;
 }
 #form_section .buttons .edit input.submit {
   background-position: 0 -1173px;
@@ -3604,9 +3604,9 @@ input.butn:focus {
 #form_section .buttons .preview input,
 #form_section .buttons .draft a,
 #form_section .buttons .draft input {
-  width: 97px;
+  width: 125px;
   height: 32px;
-  background: url(/images/but_images.png) no-repeat 0 -297px;
+  background: url('/images/but_images.png') no-repeat 0 -297px;
   text-indent: -200px;
   font-size: 0;
   color: #666666;
@@ -4866,46 +4866,6 @@ dd {
   -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
 }
-#top_banner img {
-  padding-bottom: 25px;
-}
-.b-top-banner img {
-  padding-bottom: 25px;
-}
-#top_logo a {
-  display: inline-block;
-  padding: 0 2px 0 11px;
-}
-table.table td a {
-  color: #848484;
-}
-#form_section .buttons input.submit {
-  background-position: -176px -621px;
-  width: 124px;
-}
-#form_section .buttons input.submit_hover {
-  background-position: -176px -654px;
-}
-#form_section .buttons input.submit_active {
-  background-position: -176px -686px;
-}
-#form_section .buttons .preview a,
-#form_section .buttons .preview input,
-#form_section .buttons .draft a,
-#form_section .buttons .draft input {
-  width: 125px;
-  height: 32px;
-  background: url('/images/but_images.png') no-repeat 0 -297px;
-  text-indent: -200px;
-  font-size: 0;
-  color: #666666;
-  overflow: hidden;
-  border: none;
-  cursor: pointer;
-}
-#footer .columns li.telegram a {
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikbvAAAA70lEQVQokZ3SvUpDQRCG4ef4g7FTBNFUQRELCwUltaJdInYBSZnKCxBsBAt7L0CwsNDOK9Cb0MrCQtBGQdRChBRJkV04OR6Jx6/amZ13vt1hkpmltY5/aqhg/RvO8PpXuIMb7KKMFm4HwU84xjy20MY4EqzmwW1coYYKDlHCJR7wjgVMwEiAPoLLOV5CroQjbGMHjyFfjU7R+St0HQ7xJu6wjo0U2AdH51mc6g3nAnN6Q2niO/O1H85RCRq4xn4OOIqV3+BY8Iln7KGeulvGWPbZWTUwhYMQn4RzNV2UFFjPe0xiepBznhaziaK73acuKokonRcTgIYAAAAASUVORK5CYII=') no-repeat 0 3px;
-}
 .btn {
   display: inline-block;
   padding: 0 22px;
@@ -5416,6 +5376,7 @@ table.table td a {
     display: inline-block;
     width: 128px;
     height: 39px;
+  padding: 0 2px 0 11px;
 }
 #logo a {
     background-position: -173px -144px;
@@ -5445,6 +5406,12 @@ table.table td a {
 #top_logo a,
 #top_logo a {
   background-position: -322px -169px;
+}
+#top_banner img {
+  padding-bottom: 25px;
+}
+.b-top-banner img {
+  padding-bottom: 25px;
 }
 #top_menu {
   line-height: normal;
@@ -6519,6 +6486,9 @@ table.table td {
   font-size: 10pt;
   line-height: 14pt;
 }
+table.table td a {
+  color: #848484;
+}
 table.table td.first {
   padding-top: 20px;
 }
@@ -6960,6 +6930,9 @@ table.table td.empty {
 }
 #footer .columns li.vk a {
   background: url("data:image/gif;base64,R0lGODlhDwAOANUAAGFudBwtNiEyO1JfZhstNnaBhjdGTurs7efp6t/i48rO0EtZYPz9/YmSl7S6vWVxd1hlbOjq6+bo6ZScoD1MVJ6mqvX29oSOk/n5+SQ1PnmDiM3R08nNz1BeZSc4QVNgZ////xkrNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAPAA4AAAZFwJBwSCwaj0aAErIIIEOgaBRhQEYbBQzoYgV9PAcQoGthgDiCrqOSACm6n9AjmjlGJ5oNKEKwS0ESA0gfhB0UTk+JikRBADs=") no-repeat 0 3px;
+}
+#footer .columns li.telegram a {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikbvAAAA70lEQVQokZ3SvUpDQRCG4ef4g7FTBNFUQRELCwUltaJdInYBSZnKCxBsBAt7L0CwsNDOK9Cb0MrCQtBGQdRChBRJkV04OR6Jx6/amZ13vt1hkpmltY5/aqhg/RvO8PpXuIMb7KKMFm4HwU84xjy20MY4EqzmwW1coYYKDlHCJR7wjgVMwEiAPoLLOV5CroQjbGMHjyFfjU7R+St0HQ7xJu6wjo0U2AdH51mc6g3nAnN6Q2niO/O1H85RCRq4xn4OOIqV3+BY8Iln7KGeulvGWPbZWTUwhYMQn4RzNV2UFFjPe0xiepBznhaziaK73acuKokonRcTgIYAAAAASUVORK5CYII=') no-repeat 0 3px;
 }
 #footer .partners {
   margin-bottom: 38px;
