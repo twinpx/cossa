@@ -5298,6 +5298,7 @@ dd {
 }
 #top_navigation {
   margin-bottom: 0;
+  padding-top: 30px;
 }
 #top_navigation.fixed .page {
   border: 0;
