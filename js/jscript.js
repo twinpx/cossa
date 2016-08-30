@@ -3645,7 +3645,7 @@ function windowEvents() {
 	.scroll()
 	.resize();
 	
-	$(document).click(function(e) {
+	/*$(document).click(function(e) {
 		if(fixedFlag &&
 			e.pageX < $("#content").offset().left &&
 			e.pageY > ($("#" + menuType + "").offset().top + $("#" + menuType + "").outerHeight())) {
@@ -3653,7 +3653,7 @@ function windowEvents() {
 			scrollToTop();
 			
 		}
-	});
+	});*/
 	
 	function setFixed() {
 		fixedFlag = true;
