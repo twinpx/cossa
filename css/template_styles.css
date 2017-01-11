@@ -3204,7 +3204,7 @@ input.filter-button:active {
   float: left;
 }
 .filter input.text {
-  height: 18px;
+  height: 32px;
   border: 1px solid #eaeaea;
   background-color: #fafafa;
 }
@@ -3316,9 +3316,9 @@ input.filter-button:active {
   padding-bottom: 15px;
   font-size: 10pt;
 }
-#search_list .filter {
+/*#search_list .filter {
   margin-top: -31px;
-}
+}*/
 #search_list .filter div.text {
   width: 645px;
 }
@@ -5321,7 +5321,7 @@ dd {
   height: auto !important;
 }
 #top_navigation_fixed {
-  padding: 39px 0 0 0;
+  padding: 60px 0 0 0;
 }
 #top_navigation.fixed #top_navigation_fixed {
   width: 100%;
